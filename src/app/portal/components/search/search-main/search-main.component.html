@@ -1,0 +1,57 @@
+<!-- <app-classified-search
+    (submitSearch)="onSubmitSearch($event)">
+</app-classified-search> -->
+
+<form #searchForm="ngForm">
+    <!-- <div class="row" style="background-color: #eff4ff;">
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5"> -->
+            <div *ngIf="categoryType==='business'" class="row">
+                <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 p-3">
+                    <div class="row" style="background-color: #ffffff;">
+                        <div class="col-sm-12 mr-3">
+                            <app-search-categories
+                                [tagId]="tagId"
+                                (selectTag)="onTagSelected($event)">
+                            </app-search-categories>
+                        </div>
+                        <div class="col-sm-12 mr-3 mt-5">
+                            <app-search-location></app-search-location>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 p-3">
+                    <app-search-results 
+                        [listings]="listings">
+                    </app-search-results>
+                </div>
+            </div>
+        <!-- </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    </div> -->
+        
+
+    <div *ngIf="categoryType==='classified'" class="row">
+        <!-- <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 p-3">
+            <div class="row" style="background-color: #ffffff;">
+                <div class="col-sm-12 mr-3">
+                    <app-search-categories
+                        [tagId]="tagId"
+                        (selectTag)="onTagSelected($event)">
+                    </app-search-categories>
+                </div>
+                <div class="col-sm-12 mr-3 mt-5">
+                    <app-search-location></app-search-location>
+                </div>
+            </div>
+        </div> -->
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-3">
+            <app-search-results 
+                [listings]="listings"
+                [categoryType]="categoryType"
+                [tagId]="tagId"
+                [form]="searchForm">
+            </app-search-results>
+        </div>
+    </div>
+</form>

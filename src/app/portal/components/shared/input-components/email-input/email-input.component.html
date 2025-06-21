@@ -1,0 +1,18 @@
+<label class="col-form-label alignLeft" [ngClass]="{'col-sm-3': inlineFlag===true, 'col-sm-12': inlineFlag===false}" *ngIf="title">{{ title }}</label>
+<div [ngClass]="{'col-sm-9': inlineFlag===true, 'col-sm-12': inlineFlag===false}">
+    <input *ngIf="section==='email'"
+        class="form-control w-100 input-text"
+        [ngClass]="{'inpu-text-contact': location==='contactPage'}"
+        placeholder="{{emailPlaceholder}}"
+        id="{{ section }}"  
+        name="{{ section }}" 
+        [attr.name]="section" 
+        type="email" 
+        [minlength]="validationData?.registration?.email.minLength"
+        [maxLength]="validationData?.registration?.email.maxLength"
+        [required]="isRequired"
+        [pattern]="validationData?.registration?.email.emailPattern"
+        [(ngModel)]="model.email" 
+        #email="ngModel" 
+        appEmail />
+</div>

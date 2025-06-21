@@ -1,0 +1,37 @@
+<div class="form-group row">      
+    <app-one-line-question 
+        [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'title'"
+        [model]="model"
+        [modelName]="'title'"
+        [defaultValue]=""
+        [title]="''"
+        [placeholder]="'pages.post.postTitle' | translate"
+        [isRequired]=false
+        [inlineFlag]=false
+        [largeFlag]=true
+        [isDisabled]="isDisabled"
+        [minLength]="validationData['listing']?.title.minLength"
+        [maxLength]="validationData['listing']?.title.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>    
+</div>
+<div class="form-group row mt-5">  
+    <app-multi-line-question [form]="form"
+        class="form-inline"
+        controlName="description"
+        [model]="model"
+        [modelName]="'description'"
+        [defaultValue]=""
+        [title]="''"
+        [placeholder]="'pages.post.listingDetails' | translate"
+        [isRequired]=true
+        [inlineFlag]=false
+        [largeFlag]=false
+        [isDisabled]="isDisabled"
+        [minLength]="validationData['listing']?.details.minLength"
+        [maxLength]="validationData['listing']?.details.maxLength"
+        [inputValidator]="'ct4 ct7 ct10 ct12'">
+    </app-multi-line-question>  
+</div>

@@ -1,0 +1,131 @@
+<div class="mt-5 mb-5">
+    <h2>{{ 'components.updateProfile.profileInformation' | translate }}</h2>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'accountName'"
+        [model]="model"
+        [modelName]="'accountName'"
+        [defaultValue]=""
+        [title]="'*' + ('components.profile.profileInfo.accountName' | translate) + ':'"
+        [placeholder]="'components.profile.profileInfo.accountName' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.accountName.minLength"
+        [maxLength]="validationData['customer']?.accountName.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+    <div *ngIf="submitted && form.controls['accountName'].errors">
+        <small class="form-text error-message" invalid *ngIf="form.controls['accountName'].errors['required']">{{validationData['customer']?.accountName.errorMessageRequired}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['accountName'].errors['minlength']">{{validationData['customer']?.accountName.errorMessage}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['accountName'].errors['maxlength']">{{validationData['customer']?.accountName.errorMessage}}</small>
+    </div>
+</div>
+
+<!-- <div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'firstName'"
+        [model]="model"
+        [modelName]="'firstName'"
+        [defaultValue]=""
+        [title]="'*' + ('components.profile.profileInfo.firstName' | translate) + ':'"
+        [placeholder]="'components.profile.profileInfo.firstName' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.firstName.minLength"
+        [maxLength]="validationData['customer']?.firstName.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+    <div *ngIf="submitted && form.controls['firstName'].errors">
+        <small class="form-text error-message" invalid *ngIf="form.controls['firstName'].errors['required']">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['firstName'].errors['minlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['firstName'].errors['maxlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
+    </div>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question 
+    [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'lastName'"
+        [model]="model"
+        [modelName]="'lastName'"
+        [defaultValue]=""
+        [title]="'*' + ('components.profile.profileInfo.lastName' | translate) + ':'"
+        [placeholder]="'components.profile.profileInfo.lastName' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.lastName.minLength"
+        [maxLength]="validationData['customer']?.lastName.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+    <div *ngIf="submitted && form.controls['lastName'].errors">
+        <small class="form-text error-message" invalid *ngIf="form.controls['lastName'].errors['required']">{{validationData['customer']?.lastName.errorMessageRequired}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['lastName'].errors['minlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['lastName'].errors['maxlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
+    </div>
+</div> -->
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'businessName'"
+        [model]="model"
+        [modelName]="'businessName'"
+        [defaultValue]=""
+        [title]="('components.profile.profileInfo.businessName' | translate) + ':'"
+        [placeholder]="'components.profile.profileInfo.businessName' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.businessName.minLength"
+        [maxLength]="validationData['customer']?.businessName.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+    <div *ngIf="submitted && form.controls['businessName'].errors">
+        <small class="form-text error-message" invalid *ngIf="form.controls['businessName'].errors['required']">{{validationData['customer']?.businessName.errorMessageRequired}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['businessName'].errors['minlength']">{{validationData['customer']?.businessName.errorMessage}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['businessName'].errors['maxlength']">{{validationData['customer']?.businessName.errorMessage}}</small>
+    </div>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'website'"
+        [model]="model"
+        [modelName]="'website'"
+        [defaultValue]=""
+        [title]="('components.profile.profileInfo.website' | translate) + ':'"
+        [placeholder]="'components.profile.profileInfo.website' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.website.minLength"
+        [maxLength]="validationData['customer']?.website.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+    <div *ngIf="submitted && form.controls['website'].errors">
+        <small class="form-text error-message" invalid *ngIf="form.controls['website'].errors['required']">{{validationData['customer']?.website.errorMessageRequired}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['website'].errors['minlength']">{{validationData['customer']?.website.errorMessage}}</small>
+        <small class="form-text error-message" invalid *ngIf="form.controls['website'].errors['maxlength']">{{validationData['customer']?.website.errorMessage}}</small>
+    </div>
+</div>
+
+<div class="form-group row mt-3">
+    <div class="col-sm-12 form-message">
+        {{ 'components.profile.profileInfo.profileInfoNote' | translate }}
+    </div>
+</div>
+
+<div class="form-group row mt-3">
+    <div class="col-sm-12">
+        <div class="border-bottom"></div>
+    </div>
+</div>

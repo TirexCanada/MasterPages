@@ -1,0 +1,148 @@
+<form #profileForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row" style="background-color: #ccdcff;">
+        <div class="col-sm-12 p-5">
+            <h1>{{ 'components.updateProfile.title' | translate }}</h1>
+        </div>
+    </div>
+
+    <!-- <div class="row" style="height: 500px;">
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 p-5">
+            <div class="row m-2 mt-5" [style.backgroundImage]="'url(' + businessUrl + ')'" style="background-repeat: no-repeat;background-position-y: top; background-size: 100% 200px; height: 400px;">
+                <div class="col-sm-12" [appDisable]="isDisabled['businessImage']">   
+                    <div class="row" style="height: 100px;">
+                        <div class="col-sm-10">
+                        
+                        </div>
+                        <div class="col-sm-2 pt-3">
+                            <label for="file-upload-business" class="custom-file-upload btn btn-primary btn-block" *ngIf="isDisabled['business-image']===true">
+                                {{ 'common.buttons.edit' | translate }}
+                            </label>                         
+                            <input #BusinessImage id="file-upload-business" type="file" (change)="onSelectFile($event, 'business-image')" *ngIf="isDisabled['business-image']===true"/>
+                            <button type="button" class="btn btn-success btn-block" (click)="saveClick('business-image')" *ngIf="isDisabled['business-image']===false">{{ 'common.buttons.save' | translate }}</button>
+                            <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('business-image')" *ngIf="isDisabled['business-image']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                        </div>
+                    </div>
+                    <div class="row" style="height: 200px;">
+                        <div class="col-sm-1">
+                        
+                        </div>
+                        <div class="col-sm-2 border" [style.backgroundImage]="'url(' + profileUrl + ')'" style="background-repeat: no-repeat; background-position: center; background-repeat: no-repeat; z-index: 1000;" [appDisable]="isDisabled['profileImage']">
+                        
+                            
+                        </div>
+                        <div class="col-sm-1">
+                            <label for="file-upload-profile" class="custom-file-upload btn btn-primary btn-block" *ngIf="isDisabled['profile-image']===true">
+                                {{ 'common.buttons.edit' | translate }}
+                            </label>                         
+                            <input #ProfileImage id="file-upload-profile" type="file" (change)="onSelectFile($event, 'profile-image')" *ngIf="isDisabled['profile-image']===true"/>
+                            <button type="button" class="btn btn-success btn-block" (click)="saveClick('profile-image')" *ngIf="isDisabled['profile-image']===false">{{ 'common.buttons.save' | translate }}</button>
+                            <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('profile')" *ngIf="isDisabled['profile-image']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                        </div>
+                        <div class="col-sm-7">
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    </div> -->
+
+    <div class="row" style="background-color: #eff4ff;">
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-2"></div>
+        <div class="col-sm-12 col-md-10 col-lg-8 col-xl-8 p-5">
+            <div class="row m-2 mt-5">
+                <div class="col-sm-10" [appDisable]="isDisabled['profile']">   
+                    <app-profile-info 
+                        [title]=""
+                        [form]="form"
+                        [model]="model"
+                        [submitted]="submitted"
+                        [currentCustomer]="currentCustomer"
+                        [isDisabled]="isDisabled['profile']">
+                    </app-profile-info>
+                    <div *ngIf="errorMessage!==''">
+                        <small class="form-text error-message" invalid >{{ errorMessage }}</small>
+                    </div>
+                </div>
+            
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-block" (click)="editClick('profile')" *ngIf="isDisabled['profile']===true">{{ 'common.buttons.edit' | translate }}</button>
+                    <button type="button" class="btn btn-success btn-block" (click)="saveClick('profile')" *ngIf="isDisabled['profile']===false">{{ 'common.buttons.save' | translate }}</button>
+                    <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('profile')" *ngIf="isDisabled['profile']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                </div>
+            </div>
+
+            <div class="row m-2 mt-5">
+                <div class="col-sm-10" [appDisable]="isDisabled['contact']">   
+                    <app-contact-info 
+                        [title]=""
+                        [form]="form"
+                        [model]="model"
+                        [submitted]="submitted"
+                        [currentCustomer]="currentCustomer"
+                        [isDisabled]="isDisabled['contact']">
+                    </app-contact-info>
+                    <div *ngIf="errorMessage!==''">
+                        <small class="form-text error-message" invalid >{{ errorMessage }}</small>
+                    </div>
+                </div>
+            
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-block" (click)="editClick('contact')" *ngIf="isDisabled['contact']===true">{{ 'common.buttons.edit' | translate }}</button>
+                    <button type="button" class="btn btn-success btn-block" (click)="saveClick('contact')" *ngIf="isDisabled['contact']===false">{{ 'common.buttons.save' | translate }}</button>
+                    <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('contact')" *ngIf="isDisabled['contact']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                </div>
+            </div>
+
+            <div class="row m-2 mt-5">
+                <div class="col-sm-10" [appDisable]="isDisabled['socialProfiles']">   
+                    <app-social-profiles 
+                        [title]=""
+                        [form]="form" 
+                        [model]="model" 
+                        [submitted]="submitted"
+                        [currentCustomer]="currentCustomer"
+                        [isDisabled]="isDisabled['socialProfiles']">
+                    </app-social-profiles>
+                </div>
+            
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-primary btn-block" (click)="editClick('socialProfiles')" *ngIf="isDisabled['socialProfiles']===true">{{ 'common.buttons.edit' | translate }}</button>
+                    <button type="button" class="btn btn-success btn-block" (click)="saveClick('socialProfiles')" *ngIf="isDisabled['socialProfiles']===false">{{ 'common.buttons.save' | translate }}</button>
+                    <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('socialProfiles')" *ngIf="isDisabled['socialProfiles']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-2"></div>
+    </div>
+
+    <div class="row mt-5" style="background-color: #ffffff;">
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-1"></div>
+        <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>   
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">   
+                    <button type="button" class="btn btn-primary btn-block" (click)="goToListings()" >{{ 'common.buttons.listings' | translate }}</button>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>   
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
+    </div>
+
+     <div class="row mt-5 mb-5" style="background-color: #ffffff;">
+        <div class="col-sm-12 col-md-1 col-lg-2 col-xl-1"></div>
+        <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>   
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">   
+                    <button type="button" class="btn btn-primary btn-block" (click)="backToPortal()" >{{ 'common.buttons.home' | translate }}</button>
+                </div>
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3"></div>   
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
+    </div>
+</form>

@@ -1,0 +1,8 @@
+<div class="d-flex flex-wrap">
+    <div class="tag" *ngFor="let tag of listingTags;">
+        <a [routerLink]="['/portal/category/' + tag.tagId]">
+            <span *ngIf="translateService.currentLang==='en'">{{ tag.tagName }}</span>
+            <span *ngIf="translateService.currentLang==='ru'">{{ tag.tagName_RU }}</span>
+        </a>
+    </div>
+</div>

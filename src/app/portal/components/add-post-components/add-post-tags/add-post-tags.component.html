@@ -1,0 +1,61 @@
+<div class="row" style="background-color: #ffffff;">
+    <div class="col-sm-12">
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <h3>{{ 'pages.post.tagsTitle' | translate }}:</h3>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <app-tags-input
+                [model]="model"
+                [listingTags]="listingTags"
+                (tagAdded)="onTagAdded($event)" 
+                (tagDeleted)="onTagDeleted($event)">
+            </app-tags-input>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-6">
+                <div class="row m-2">
+                    <app-dropdown-question 
+                        [form]="form"
+                        [controlName]="'categories'"
+                        [model]="tagModel"
+                        [modelName]="'id'"
+                        [defaultValue]=null
+                        [id]="'categories'"
+                        [defaultText]="'pages.post.selectCategory' | translate"
+                        [inlineFlag]=false
+                        [title]="''"
+                        [data]="categories"
+                        [isRequired]=true
+                        [isDisabled]=false
+                        [backgroundColor]=true
+                        (selectItem)="selectCategory()">
+                    </app-dropdown-question>     
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row m-2">
+                    <app-dropdown-question 
+                        [form]="form"
+                        [controlName]="'subcategories'"
+                        [model]="tagModel1"
+                        [modelName]="'id'"
+                        [id]="'subcategories'"
+                        [defaultValue]=null
+                        [defaultText]="'pages.post.selectSubcategory' | translate"
+                        [inlineFlag]=false
+                        [title]="''"
+                        [data]="subcategories"
+                        [isRequired]=true
+                        [isDisabled]=false
+                        [backgroundColor]=true
+                        (selectItem)="selectSubcategory()">
+                    </app-dropdown-question>     
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

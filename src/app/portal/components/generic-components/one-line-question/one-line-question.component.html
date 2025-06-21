@@ -1,0 +1,22 @@
+<label class="col-form-label input-label alignLeft" [ngClass]="{'col-sm-4': inlineFlag===true}" *ngIf="title!==''" [innerHTML]="title"></label>
+<div class="h-100" [ngClass]="{'col-sm-8': inlineFlag===true}">
+    <!-- <input name="{{controlName}}" disabled="disabled" type="text" id="{{controlName}}" style="display:none;"> -->
+    <input type="text" 
+        autocomplete={{uid}}
+        class="form-control input-text w-100 h-100 align-bottom"
+        name="{{controlName}}" 
+        id="{{controlName}}" 
+        [value]="defaultValue"
+        (change)="writeValue(innerValue)"
+        [(ngModel)]= "innerValue"
+        [attr.name]="controlName"
+        #oneLineTextInputCtrl="ngModel"
+        [required]="isRequired"
+        [placeholder]="placeholder"
+        [disabled]="isDisabled"
+        [minlength]="minLength"
+        [maxlength]="maxLength"
+        [ngClass]="{'input-large': largeFlag===true, 'input-small': largeFlag===false}"
+        appInputValidator
+        [InputValidator]="inputValidator">
+</div>

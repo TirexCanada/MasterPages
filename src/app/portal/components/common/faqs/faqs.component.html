@@ -1,0 +1,52 @@
+<div class="row" style="background-color: #ccdcff;">
+    <div class="col-sm-12 p-5 mt-5 mb-5text-center">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4 p-3" [ngClass]="{'activeTab': faqCategory.sortOrder===selectedTabSortOrder}" *ngFor="let faqCategory of faqCategories"><a (click)="selectTab(faqCategory)"><h3>{{ faqCategory.faqCategoryName | uppercase }}</h3></a></div>
+                </div>
+            </div>
+            <div class="col-sm-3"></div>
+        </div>
+    </div>
+    <div class="col-sm-12 p-5" style="background-color: #eff4ff;">
+        <div id="content" class="site-content mb-5">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <div class="container">
+                        <ngb-accordion #acc="ngbAccordion" [closeOthers]="false" [activeIds]="categoryFaqs[0]?.id">
+                            <ngb-panel [id]="faq.id" *ngFor="let faq of categoryFaqs" class="faq">
+                                <ng-template ngbPanelTitle>
+                                    <h2>{{ faq.faqQuestion }}</h2>
+                                </ng-template>
+                                <ng-template ngbPanelContent class="answer">
+                                    <h6 [innerHTML]="faq.faqAnswer" class="p-5"></h6>
+                                </ng-template>
+                            </ngb-panel>
+                        </ngb-accordion>
+                    </div>    
+                </main><!-- .site-main -->
+            </div><!-- .content-area -->
+        </div><!-- .site-content -->
+    </div>
+    <div class="col-sm-12 p-5" style="background-color: #eff4ff;">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary btn-block" (click)="expandAll()">Expand All</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button type="button" class="btn btn-primary btn-block" (click)="collapseAll()">Collapse All</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>

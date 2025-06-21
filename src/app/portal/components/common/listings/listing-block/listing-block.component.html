@@ -1,0 +1,149 @@
+<div *ngIf="categoryType==='business'" class="row image-height-block" [ngClass]="{ 'bannerBlog': listing.bannerFlag, 'carouselBlog': listing.carouselFlag }">    
+    <div class="col-sm-3" *ngIf="currentView==='list'"
+        [style.backgroundImage]="'url(' + listing.listingImageUrl + ')'"
+        style="background-size: auto;
+        background-repeat: no-repeat;
+        background-position-y: center; 
+        background-position-x: center;">
+    </div> 
+
+    <div class="col-sm-3">
+        <img [src]="listing.listingImageUrl" class="img-fluid" *ngIf="currentView==='list'">
+    </div>
+
+    {{ listing.listingImageUrl }}
+
+    <div class="col-sm-9 block-listing-height" style="height: 90%;">   
+        <div class="row mb-3 mt-2">
+            <div class="col-sm-11">
+                <h3>{{ listing?.listingDate | dateFormatLong }}</h3>
+            </div>
+            <div class="col-sm-1">
+                <!-- <img class="img-fluid" src="assets/images/listings/share.png" /> -->
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-sm-12 h10">
+                <a [routerLink]="['/portal/listing/' + listing.listingId]" class="h10">{{ listing?.title }}</a>  
+            </div>           
+        </div>
+        <div class="row mb-2" style="height: 100%;">
+            <div class="col-sm-9">
+                <!-- <h4>{{ listing?.description | shortDescription }}</h4> -->
+                <h4 class="description" [innerHTML]="listing?.description | linebreaks"></h4>
+            </div>
+            <div class="col-sm-3">
+                <!-- <h4>{{ listing?.description | shortDescription }}</h4> -->
+                <h4 class="description" [innerHTML]="listing?.phoneNumber"></h4>
+            </div>
+        </div>
+        <div class="row mb-3" *ngIf="location==='search-results'">
+            <div class="col-sm-1 nopadding" style="padding: 0px !important;">
+                <img class="img-fluid" src="assets/images/listings/pin.png" />
+            </div>
+            <div class="col-sm-11">
+                <h4>Toronto, Ontario</h4>
+            </div>
+        </div>      
+    </div>
+</div>
+
+<div *ngIf="location==='my-listings'">
+
+    <div *ngIf="categoryType==='classified' || listing.businessFlag!==true" class="row image-height-block bannerBlog">    
+        <div class="col-sm-3"
+            [style.backgroundImage]="'url(' + listing.listingImageUrl + ')'"
+            style="background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: center; 
+            background-position-x: center;">
+        </div>
+
+        <div class="col-sm-6 block-listing-height" style="height: 90%;">   
+            <div class="row mb-3 mt-2">
+                <div class="col-sm-11">
+                    <h4>{{ listing?.listingDate | dateFormatLong }}</h4>
+                </div>
+                <div class="col-sm-1">
+                    <!-- <img class="img-fluid" src="assets/images/listings/share.png" /> -->
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-12 h10">
+                    {{ listing?.title }}
+                </div>           
+            </div>
+            <div class="row mb-3" style="height: 100%;">
+                <div class="col-sm-12">
+                    <!-- <h4>{{ listing?.description | shortDescription }}</h4> -->
+                    <!-- <h4 class="description" [innerHTML]="listing?.description | linebreaks"></h4> -->
+                    <div class="description h12" [innerHTML]="listing?.description | linebreaks"></div>
+                </div>
+            </div>
+        <!--  <div class="row mb-3" *ngIf="location==='search-results'">
+                <div class="col-sm-1 nopadding" style="padding: 0px !important;">
+                    <img class="img-fluid" src="assets/images/listings/pin.png" />
+                </div>
+                <div class="col-sm-11">
+                    <h4>Toronto, Ontario</h4>
+                </div>
+            </div>       -->
+        </div>
+        <div class="col-sm-3 mt-2 text-end">
+            <h4 class="description" [innerHTML]="listing?.phone | phoneFormat"></h4>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="location!=='my-listings'">
+    <a [routerLink]="['/portal/listing/' + listing.listingId]">
+        <div *ngIf="categoryType==='classified' || listing.businessFlag!==true" class="row image-height-block bannerBlog">    
+            <div class="col-sm-3"
+                [style.backgroundImage]="'url(' + listing.listingImageUrl + ')'"
+                style="background-size: cover;
+                background-repeat: no-repeat;
+                background-position-y: center; 
+                background-position-x: center;">
+            </div>
+
+            <div class="col-sm-6 block-listing-height" style="height: 90%;">   
+                <div class="row mb-3 mt-2">
+                    <div class="col-sm-11">
+                        <h4>{{ listing?.listingDate | dateFormatLong }}</h4>
+                    </div>
+                    <div class="col-sm-1">
+                        <!-- <img class="img-fluid" src="assets/images/listings/share.png" /> -->
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-12 h10">
+                        {{ listing?.title }}
+                    </div>           
+                </div>
+                <div class="row mb-3" style="height: 100%;">
+                    <div class="col-sm-12">
+                        <!-- <h4>{{ listing?.description | shortDescription }}</h4> -->
+                        <!-- <h4 class="description" [innerHTML]="listing?.description | linebreaks"></h4> -->
+                        <div class="description h12" [innerHTML]="listing?.description | linebreaks"></div>
+                    </div>
+                </div>
+            <!--  <div class="row mb-3" *ngIf="location==='search-results'">
+                    <div class="col-sm-1 nopadding" style="padding: 0px !important;">
+                        <img class="img-fluid" src="assets/images/listings/pin.png" />
+                    </div>
+                    <div class="col-sm-11">
+                        <h4>Toronto, Ontario</h4>
+                    </div>
+                </div>       -->
+            </div>
+            <div class="col-sm-3 mt-2 text-end">
+                <h4 class="description" [innerHTML]="listing?.phone | phoneFormat"></h4>
+                <!-- <div class="mt-5">
+                    <app-listing-tags 
+                        [listingTags]="listing?.listingTagsInformation">
+                    </app-listing-tags>
+                </div> -->
+            </div>
+        </div>
+    </a>
+</div>

@@ -1,0 +1,146 @@
+<form #form="ngForm" novalidate>
+    <div class="row mt-5 mb-5">
+        <div class="col-sm-12">
+            <div class="row p-2" style="border: 20px solid #516394; border-radius: 14px; background-color: #ffffff;">
+                <div class="col-sm-6">
+                    <div class="form-row p-3" style="border: 1px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
+                        <div class="col-sm-12 mb-1">
+                            <div class="row">
+                                <div class="col-sm-1 nopadding pt-3">
+                                    <img class="img-search" src="assets/images/home/home-search.png" />
+                                </div>
+                                <div class="col-sm-11 pl-5">
+                                    <div class="h7">Search Here</div> 
+                                    <div>
+                                        <app-one-line-question 
+                                            [form]="form"
+                                            [controlName]="'searchText'"
+                                            [model]="searchModel"
+                                            [modelName]="'searchText'"
+                                            [defaultValue]=""
+                                            [title]=""
+                                            [isRequired]=false
+                                            [isDisabled]=false
+                                            [inlineFlag]=false>
+                                        </app-one-line-question>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="form-row p-3" style="border: 1px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
+                        <div class="col-sm-12 mb-1">
+                            <div class="row">
+                                <div class="col-sm-1 nopadding pt-3">
+                                    <img class="img-search" src="assets/images/home/home-select.png" />
+                                </div>
+                                <div class="col-sm-11 pl-5">
+                                    <div class="h7">Select Category</div> 
+                                    <div class="row">
+                                        <app-dropdown-question [form]="form"
+                                            class="input-text-small w-100"
+                                            [controlName]="'categoryId'"
+                                            [backgroundColor]=false
+                                            [id]="'sortBy'"
+                                            [model]="searchModel"
+                                            [modelName]="'searchCategoryId'"
+                                            [defaultValue]=null
+                                            [defaultText]="'Select...'"
+                                            [inlineFlag]=false
+                                            [title]="''"
+                                            [data]="categories"
+                                            [isRequired]="true"
+                                            [isDisabled]="false"
+                                            (selectItem)="selectSortBy()">
+                                        </app-dropdown-question>     
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 pt-4">
+                    <button class="btn btn-search btn-block text-end" type="button" (click)="search()">Search</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 
+            <div class="row p-2" style="background-color: #ffffff;"> 
+                <div class="col-sm-8">
+                </div>
+
+                <div class="col-sm-8">
+                    <div class="form-row p-3" style="border: 1px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
+                        <div class="col-sm-12 mb-3">
+                            <div class="input-group mb-2 ">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text input-text">Search for:</div>
+                                </div>
+                                <app-one-line-question 
+                                    [form]="form"
+                                    [controlName]="'searchText'"
+                                    [model]="searchModel"
+                                    [modelName]="'searchText'"
+                                    [defaultValue]=""
+                                    [title]=""
+                                    [isRequired]=false
+                                    [isDisabled]=false
+                                    [inlineFlag]=false>
+                                </app-one-line-question>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2 pl-5">
+                    <div class="h7">Select Category</div> 
+                    <div class="row">
+                        <app-dropdown-question [form]="form"
+                            class="input-text-small w-100"
+                            [controlName]="'categoryId'"
+                            [backgroundColor]=false
+                            [id]="'sortBy'"
+                            [model]="searchModel"
+                            [modelName]="'searchCategoryId'"
+                            [defaultValue]=null
+                            [defaultText]="'Select...'"
+                            [inlineFlag]=false
+                            [title]="''"
+                            [data]="categories"
+                            [isRequired]="true"
+                            [isDisabled]="false"
+                            (selectItem)="selectSortBy()">
+                        </app-dropdown-question>     
+                    </div>
+                </div>
+                <div class="col-sm-2 pt-4 text-right">
+                    <button class="btn btn-link btn-link-rl btn-refresh input-text" type="button">
+                        <i class="fa fa-refresh mr-1"></i>Refresh
+                    </button>
+                </div> -->
+               <!--  <div class="col-sm-2 pt-4">
+                    <app-dropdown-question [form]="form"
+                        class="input-text w-100"
+                        [controlName]="'sortBy'"
+                        [backgroundColor]=true
+                        [id]="'sortBy'"
+                        [model]="searchModel"
+                        [modelName]="'id'"
+                        [defaultValue]="0"
+                        [defaultText]="'Latest'"
+                        [inlineFlag]=false
+                        [title]="''"
+                        [data]="sortByOptionsData"
+                        [isRequired]="true"
+                        [isDisabled]="false"
+                        (selectItem)="selectSortBy()">
+                    </app-dropdown-question>     
+                </div>
+            </div>
+        </div> -->
+    
+    
+    </div>
+</form>

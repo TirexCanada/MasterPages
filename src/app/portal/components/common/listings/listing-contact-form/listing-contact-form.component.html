@@ -1,0 +1,115 @@
+<form #contactForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-sm-12 pl-5 mt-3 pr-5 pb-3">
+            <h3 *ngIf="location!=='contactPage'">Contact Seller</h3>
+        </div>
+    </div>
+   <!--  <div class="row pl-5 pr-5 pb-3 mb-3">
+        <div class="col-sm-12">
+            <h3>Contact us for general inquiries, technical support, or any other questions you might have for our team.</h3>
+        </div>
+    </div> -->
+
+    <div class="form-group row pl-4 pr-4 pb-3">
+        <div class="col-sm-12">   
+            <input class="form-control input-text-contact"
+            id="'firstName'" 
+            name="'firstName'" 
+            [attr.name]="'firstName'" 
+            placeholder="Name" 
+            type="text" 
+            [required]=true
+            appInputValidator
+            InputValidator="'ct1 ct2 ct5 ct6'"
+           />
+
+            <!-- <input class="form-control input-text-contact"
+                id="'firstName'" 
+                name="'firstName'" 
+                [attr.name]="'firstName'" 
+                placeholder="Name" 
+                type="text" 
+                minlength="{{validationData['customer']?.firstName.minLength}}"
+                maxlength="{{validationData['customer']?.firstName.maxLength}}"
+                [required]=true
+                [(ngModel)]="model.firstName" 
+                appInputValidator
+                InputValidator="'ct1 ct2 ct5 ct6'"
+                #nameCtrl="ngModel"/> -->
+            <!-- <div class="text-left" *ngIf="submitted && firstName.errors">
+                <small class="form-text error-message" invalid *ngIf="firstName.errors.required">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="firstName.errors.minlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="firstName.errors.maxlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+            </div>      -->  
+        </div>
+    </div>
+
+    <div class="form-group row pl-4 pr-4 pb-3">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <input class="form-control input-text-contact"
+                    id="'subject'" 
+                    name="'subject'" 
+                    [attr.name]="'subject'" 
+                    placeholder="Subject" 
+                    type="text" 
+                    [required]=true
+                    appInputValidator
+                    InputValidator="'ct1 ct2 ct5 ct6'"
+                    />
+
+                    <!-- <input class="form-control input-text-contact"
+                    id="'subject'" 
+                    name="'subject'" 
+                    [attr.name]="'subject'" 
+                    placeholder="Subject" 
+                    type="text" 
+                    minlength="{{validationData['customer']?.lastName.minLength}}"
+                    maxlength="{{validationData['customer']?.lastName.maxLength}}"
+                    [required]=true
+                    [(ngModel)]="model.subject" 
+                    appInputValidator
+                    InputValidator="'ct1 ct2 ct5 ct6'"
+                    #subjectCtrl="ngModel"/> -->
+
+             <!--    <div class="text-left" *ngIf="submitted && subject.errors">
+                     <small class="form-text error-message" invalid *ngIf="subject.errors.required">{{validationData['customer']?.lastName.errorMessageRequired}}</small>
+                    <small class="form-text error-message" invalid *ngIf="subject.errors.minlength">{{validationData['customer']?.lastName.errorMessage}}</small>
+                    <small class="form-text error-message" invalid *ngIf="subject.errors.maxlength">{{validationData['customer']?.lastName.errorMessage}}</small>
+                 </div> -->
+            </div>
+        </div>
+    </div> 
+
+    <div class="form-group row pl-4 pr-4 pb-3">
+        <div class="col-sm-12">
+            <app-multi-line-question
+                class="form-inline input-text-contact"
+                controlName="messageText"
+                [model]="model"
+                [modelName]="'requestText'"
+                [defaultValue]=""
+                [title]=""
+                [placeholder]="'Message (maximum 1000 characters)'"
+                [isRequired]=true
+                [minLength]="validationData['listing']?.details.minLength"
+                [maxLength]="validationData['listing']?.details.maxLength"
+                [inputValidator]="'ct4 ct7 ct10 ct12'">
+            </app-multi-line-question>  
+        </div>  
+    </div>
+
+    <!-- <div class="row mb-3" *ngIf="serverErrors!==null && serverErrors!==undefined && serverErrors.length>0">
+        <div class="col-sm-12">
+            <app-error-message 
+                [errors]="serverErrors">
+            </app-error-message>
+        </div>
+    </div> -->
+
+    <div class="row mt-4 justify-content-center" [ngClass]="{'m-3': location==='contactPage'}">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-primary btn-block" (click)="submit()" [ngClass]="{'btn-warning btn-classified': location==='contactPage', 'btn-primary': location!=='contactPage'}">SUBMIT</button>
+        </div>
+    </div>  
+</form>

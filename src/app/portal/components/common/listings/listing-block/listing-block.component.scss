@@ -1,0 +1,47 @@
+.active {
+    background-color: #ccdcff;
+}
+
+.notactive {
+    background-color: #ffffff;
+}
+
+.bannerBlog {
+  border: 20px solid #516394; 
+  border-radius: 14px; 
+  padding-left: 10px !important;
+  padding-top: 10px !important;
+  padding-right: 0px !important;
+  padding-bottom: 10px !important;
+}
+
+.carouselBlog {
+  border: 20px solid #ffb900; 
+  border-radius: 14px;
+}
+
+// .block-listing-height {
+//     max-height: 300px;
+// }
+
+.block-listing-height {
+    //height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+  }
+  
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap; /* Preserve whitespace and line breaks */
+}
+
+.size-80 {
+  background-size: 100%;
+}
+
+.size-100 {
+  background-size: auto;
+}

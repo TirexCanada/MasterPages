@@ -1,0 +1,20 @@
+<label class="col-form-label alignLeft" [innerHTML]="title" *ngIf="title!==''" [ngClass]="{'col-sm-3 alignLeft': inlineFlag===true}"></label>
+<div class="col-sm-12 nopadding-left" style="width:100%; height: 100%;" [ngClass]="{'col-sm-9': inlineFlag===true}">
+    <select class="form-control input-text-small w-100"
+        [ngClass]="{'bg-color': backgroundColor===true}"
+        id="{{controlName}}" 
+        name="{{controlName}}" 
+        [attr.name]="controlName"
+        #dropdownInputCtrl="ngModel"
+        [(ngModel)]= "innerValue"
+        (change)="writeValue(innerValue)"
+        [required]="isRequired"
+        [disabled]="isDisabled"
+        style="width: 100%; height: 100%; display: block;">
+        <option [ngValue]="defaultValue" selected style="width: 100%; height: 100%; display: block;">{{defaultText}}</option>
+        <option *ngFor="let item of data" [value]="item.code" style="width: 100%; height: 100%; display: block;">
+            <span *ngIf="translateService.currentLang==='en'">{{ item.text }}</span>
+            <span *ngIf="translateService.currentLang==='ru'">{{ item.textRu }}</span>
+        </option>
+    </select>
+</div>

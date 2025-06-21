@@ -1,0 +1,111 @@
+<div class="mt-5 mb-5">
+    <h2>{{ 'components.updateProfile.contactInformation' | translate }}</h2>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'address'"
+        [model]="model && model.customerContactInformation"
+        [modelName]="'addressLine1'"
+        [defaultValue]=""
+        [title]="'&nbsp;&nbsp;' + ('components.profile.contactInfo.address' | translate) + ':'"
+        [placeholder]="'components.profile.contactInfo.address' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.address.minLength"
+        [maxLength]="validationData['customer']?.address.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'city'"
+        [model]="model && model.customerContactInformation"
+        [modelName]="'city'"
+        [defaultValue]=""
+        [title]="'&nbsp;&nbsp;' + ('components.profile.contactInfo.city' | translate) + ':'"
+        [placeholder]="'components.profile.contactInfo.city' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.city.minLength"
+        [maxLength]="validationData['customer']?.city.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'province'"
+        [model]="model && model.customerContactInformation"
+        [modelName]="'province'"
+        [defaultValue]=""
+        [title]="'&nbsp;&nbsp;' + ('components.profile.contactInfo.province' | translate) + ':'"
+        [placeholder]="'components.profile.contactInfo.province' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.province.minLength"
+        [maxLength]="validationData['customer']?.province.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'postalCode'"
+        [model]="model && model.customerContactInformation"
+        [modelName]="'postalCode'"
+        [defaultValue]=""
+        [title]="'&nbsp;&nbsp;' + ('components.profile.contactInfo.postalCode' | translate) + ':'"
+        [placeholder]="'components.profile.contactInfo.postalCode' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.postalCode.minLength"
+        [maxLength]="validationData['customer']?.postalCode.maxLength"
+        [inputValidator]="'ct4 ct5 ct6'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'phoneNumber'"
+        [model]="model && model.customerContactInformation"
+        [modelName]="'phoneNumber'"
+        [defaultValue]=""
+        [title]="'&nbsp;&nbsp;' + ('components.profile.contactInfo.phone' | translate) + ':'"
+        [placeholder]="'components.profile.contactInfo.phone' | translate"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.phoneNumber.minLength"
+        [maxLength]="validationData['customer']?.phoneNumber.maxLength"
+        [inputValidator]="'ct3'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mt-3">
+    <!-- <div class="col-sm-12 form-message">
+        {{ 'components.profile.contactInfo.contactInfoNote' | translate }}
+    </div> -->
+    <div class="col-sm-12 form-message">
+        {{ 'components.profile.contactInfo.contactInfoNote1' | translate }}
+    </div>
+    <div class="col-sm-12 form-message">
+        {{ 'components.profile.contactInfo.contactInfoNote2' | translate }}
+    </div>
+</div>
+
+<div class="form-group row mt-3">
+    <div class="col-sm-12">
+        <div class="border-bottom"></div>
+    </div>
+</div>

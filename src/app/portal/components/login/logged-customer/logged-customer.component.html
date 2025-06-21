@@ -1,0 +1,14 @@
+<!-- <ul class="navbar-nav mr-auto">   -->
+    <li class="nav-item dropdown pl-2 pr-2" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="loggedCustomer" role="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="onToggleClick()" ngbDropdownToggle>
+            <img class="mr-1" src="assets/images/navbar/navbar-user.png" height="30" />
+        </a>
+        <div class="dropdown-menu zindex1000" aria-labelledby="loggedCustomer" ngbDropdownMenu>
+            <a class="dropdown-item h7" [routerLink]="['profile/change-password']">Change Password</a>
+            <a class="dropdown-item h7" [routerLink]="['profile/profile']">Edit Profile</a>
+            <a class="dropdown-item h7" [routerLink]="['profile/my-listings']">My Listings</a>
+            <a class="dropdown-item h7" [routerLink]="['profile/my-orders']">My Orders</a>
+            <a class="dropdown-item h7" (click)="logout()" href="#">Log out</a>
+        </div>
+    </li>
+<!-- </ul> -->

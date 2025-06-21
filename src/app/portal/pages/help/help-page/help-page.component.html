@@ -1,0 +1,20 @@
+<div class="row mt-5" style="background-color: #eff4ff;">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row mb-1 mt-1">
+            <div class="col-sm-12">
+                <a [routerLink]="['/portal/help/' + content.url]" class="h10">
+                    <h4 *ngIf="translateService.currentLang==='en'">{{ content?.contentName }}</h4>
+                    <h4 *ngIf="translateService.currentLang==='ru'">{{ content?.contentName_RU }}</h4>
+                </a>  
+            </div>           
+        </div>
+        <div class="row mb-1 mt-1">
+            <div class="col-sm-12">
+                <h6 *ngIf="translateService.currentLang==='en'" [innerHTML]="content?.contentText"></h6>  
+                <h6 *ngIf="translateService.currentLang==='ru'" [innerHTML]="content?.contentText_RU"></h6>  
+            </div>           
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>

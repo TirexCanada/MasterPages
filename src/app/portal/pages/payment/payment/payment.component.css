@@ -1,0 +1,51 @@
+/* bootstrap override: */
+
+:host ::ng-deep .payment .card .card-header {
+    background-color: #2484ab !important;
+    color: #ffffff;
+}
+
+:host ::ng-deep .accordion .card .card-header .btn-link{
+    color: #ffffff;
+}
+
+.btn-link {
+    color: #ffffff;
+}
+
+.scrollable {
+    overflow-y: scroll;
+    overflow-x:hidden;
+    max-height: 650px;
+}
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+
+.modal-dialog { 
+  position:relative;
+  top:0;
+  left:60%;
+  margin: 0px;
+  height:100%;
+}
+.modal-lg {
+    height: 100%;
+}
+.modal-content {
+    height: 100%;
+}
+
+/* .selected { 
+    background-color: #2ea5d6; 
+    color: #ffffff;
+} */
+

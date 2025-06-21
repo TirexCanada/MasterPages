@@ -1,0 +1,65 @@
+<div class="row" style="background-color: #ccdcff;">
+    <div class="col-sm-12 p-5 text-center">
+        <h1>{{ 'components.registration-completed.title' | translate }}</h1>
+        <!-- <h3>{{ 'components.registration-completed.loginLabel' | translate }}</h3> -->
+    </div>
+</div>
+
+<form #loginForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row" style="background-color: #eff4ff;">
+        <div class="col-sm-12 col-md-3 col-lg-4 col-xl-4"></div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 p-5 text-center">
+            <div class="row mb-3">
+                <div class="col-sm-12 text-center">
+                    <h1>{{ 'components.registration-completed.loginLabel' | translate }}</h1>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <app-login [isVisible]=true 
+                        [mainLogin]=true
+                        (loggedIn)="onLoggedIn($event)" 
+                        (loginFailed)="onLoginFailed($event)"
+                        [form]="loginForm"
+                        [token]="token"
+                        [(model)]="loginModel">
+                    </app-login>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-12">
+                    <app-error-message *ngIf="serverErrors && sessionExpired !== 'true'" 
+                        [errors]="serverErrors">
+                    </app-error-message>
+                </div>
+            </div>
+            <div class="row mb-3" *ngIf="errorCode==='locked'">
+                <div class="col-sm-12">
+                    <button type="button" class="btn btn-primary btn-block" (click)="requestUnlock()">{{ 'common.buttons.requestToUnlock' | translate }}</button>
+                </div>
+            </div>
+          <!--   <div class="row mb-3">
+                <div class="col-sm-12 text-center">
+                    <h1>OR</h1>
+                </div>
+            </div> -->
+           <!--  <div class="row mb-3">
+                <div class="col-sm-12 text-center">
+                    <h1>Sign up for an account</h1>
+                </div>
+            </div> -->
+           <!--  <div class="row mb-3">
+                <div class="col-sm-12"> -->
+                   <!--  <app-checkout-registration 
+                        [form]="registrationForm"
+                        [(model)]="registrationModel"
+                        (clickRegister)="onClickRegister($event)">
+                    </app-checkout-registration> -->
+                <!-- </div>
+            </div> -->
+
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-4 col-xl-4"></div>
+    </div>
+</form>
+

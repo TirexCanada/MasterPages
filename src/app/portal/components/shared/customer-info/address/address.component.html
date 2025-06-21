@@ -1,0 +1,231 @@
+<div class="row mb-2">
+    <div class="col-sm-12">
+        <h4 [innerHTML]="title"></h4>
+    </div>
+</div>
+
+<div *ngIf="hideAddress===false">
+    <div class="form-group row"> 
+        <app-one-line-question [form]="form"
+            class="form-inline col-sm-8"
+            [controlName]="section + 'AddressLine1'"
+            [model]="model"
+            [modelName]="section + 'AddressLine1'"
+            [defaultValue]="defaultAddressLine1"
+            [title]="addressLineTitle"
+            [isRequired]=true
+            [inlineFlag]=true
+            [minLength]="validationData['customer']?.address.minLength"
+            [maxLength]="validationData['customer']?.address.maxLength"
+            [inputValidator]="'ct2 ct4 ct5 ct6 ct12'">
+        </app-one-line-question>
+        <div class="col-sm-4">
+            <div *ngIf="submitted && form.controls[section + 'AddressLine1']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'AddressLine1']?.errors.required">{{validationData['customer']?.address.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'AddressLine1']?.errors.minlength">{{validationData['customer']?.address.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'AddressLine1']?.errors.maxlength">{{validationData['customer']?.address.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row" *ngIf="addressLine2ShowFlag!==false"> 
+        <app-one-line-question [form]="form"
+            class="form-inline col-sm-8"
+            [controlName]="section + 'AddressLine2'"
+            [model]="model"
+            [modelName]="section + 'AddressLine2'"
+            [defaultValue]="defaultAddressLine1"
+            [title]="'Address Line 2'"
+            [isRequired]=false
+            [inlineFlag]=true
+            [minLength]="validationData['customer']?.address.minLength"
+            [maxLength]="validationData['customer']?.address.maxLength"
+            [inputValidator]="'ct2 ct4 ct5 ct6 ct12'">
+        </app-one-line-question>
+        <div class="col-sm-4">
+            <div *ngIf="submitted && form.controls[section + 'AddressLine2']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'AddressLine2']?.errors.minlength">{{validationData['customer']?.address.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'AddressLine2']?.errors.maxlength">{{validationData['customer']?.address.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group row"> 
+        <app-one-line-question [form]="form"
+            class="form-inline col-sm-8"
+            [controlName]="section + 'City'"
+            [model]="model"
+            [modelName]="section + 'City'"
+            [defaultValue]="defaultCity"
+            [title]="'City'"
+            [isRequired]=true
+            [inlineFlag]=true
+            [minLength]="validationData['customer']?.city.minLength"
+            [maxLength]="validationData['customer']?.city.maxLength"
+            [inputValidator]="'ct1 ct2 ct5 ct6'">
+        </app-one-line-question>
+        <div class="col-sm-4">
+            <div *ngIf="submitted && form.controls[section + 'City']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'City']?.errors.required">{{validationData['customer']?.city.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'City']?.errors.minlength">{{validationData['customer']?.city.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'City']?.errors.maxlength">{{validationData['customer']?.city.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="model && model[section + 'CanadianResidenceFlag']===true">
+        <div class="form-group row">
+            <app-dropdown-question [form]="form"
+                class="form-inline"
+                [ngClass]="{'col-sm-8': oneColumnMode===false, 'col-sm-12': oneColumnMode===true}"
+                [controlName]="section + 'Province'"
+                [id]="section + 'Province'"
+                [model]="model"
+                [modelName]="section + 'Province'"
+                [defaultValue]="defaultProvince"
+                [inlineFlag]=true
+                [title]="'Province'"
+                [data]="canadianProvinceOptionsData"
+                [newValue]="selectedProvince"
+                [isRequired]="isProvinceRequired"
+                [isDisabled]="isProvinceDisabled">
+            </app-dropdown-question>     
+            <div [ngClass]="{'col-sm-4': oneColumnMode===false, 'col-sm-12': oneColumnMode===true}">
+                <div *ngIf="submitted && form.controls[section + 'Province']?.errors">
+                    <small class="form-text error-message" invalid>{{validationData['common']?.dropdownOptionRequired}}</small>
+                </div>
+            </div>
+        </div>   
+    </div>
+    
+    <div *ngIf="provinceShowFlag===true">
+        <div class="form-group row">
+            <app-one-line-question [form]="form"
+                class="form-inline col-sm-8"
+                [controlName]="section + 'Province'"
+                [model]="model"
+                [modelName]="section + 'Province'"
+                [defaultValue]="''"
+                [title]="getProvinceTitle()"
+                [isRequired]=true
+                [isDisabled]="false"
+                [inlineFlag]=true
+                [minLength]="validationData['customer']?.country.minLength"
+                [maxLength]="validationData['customer']?.country.maxLength"
+                [inputValidator]="'ct1 ct2 ct5 ct6'">
+            </app-one-line-question>       
+            <div class="col-sm-4">
+                <div *ngIf="submitted && form.controls[section + 'Province']?.errors">
+                    <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Province']?.errors.required">{{validationData['customer']?.province.errorMessageRequired}}</small>
+                    <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Province']?.errors.minlength">{{validationData['customer']?.province.errorMessage}}</small>
+                    <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Province']?.errors.maxlength">{{validationData['customer']?.province.errorMessage}}</small>
+                </div>
+                <div *ngIf="submitted && isProvinceValid===false">
+                    <small class="form-text error-message" *ngIf="section==='customer'" invalid>{{validationData['customer']?.province.errorMessageCustomerOntario}}</small>
+                    <small class="form-text error-message" *ngIf="section==='spouse'" invalid>{{validationData['customer']?.province.errorMessageSpouseOntario | spousePartner: marriageFlag}}</small> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group row" *ngIf="postalcodeShowFlag===true"> 
+        <app-one-line-question [form]="form"
+            class="form-inline col-sm-8"
+            [controlName]="section + 'PostalCode'"
+            [model]="model"
+            [modelName]="section + 'PostalCode'"
+            [defaultValue]="defaultAddressLine1"
+            [title]="getPostalCodeTitle()"
+            [isRequired]=true
+            [inlineFlag]=true
+            [minLength]="validationData['customer']?.postalCode.minLength"
+            [maxLength]="maxPostalCode"
+            [inputValidator]="'ct4'">
+        </app-one-line-question>
+        <div class="col-sm-4">
+            <div *ngIf="submitted && form.controls[section + 'PostalCode']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PostalCode']?.errors.required">{{validationData['customer']?.postalCode.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PostalCode']?.errors.minlength">{{validationData['customer']?.postalCode.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PostalCode']?.errors.maxlength">{{validationData['customer']?.postalCode.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group row mt-1" *ngIf="countryShowFlag===true">
+        <app-one-line-question [form]="form"
+            class="form-inline"
+            [ngClass]="{'col-sm-8': oneColumnMode===false, 'col-sm-12': oneColumnMode===true}"
+            [controlName]="section + 'Country'"
+            [model]="model"
+            [modelName]="section + 'Country'"
+            [attr.name]="section + 'Country'" 
+            [defaultValue]="defaultCountry"
+            [title]="'Country'"
+            [isRequired]=true
+            [isDisabled]="countryDisabledFlag"
+            [inlineFlag]=true
+            [minLength]="validationData['customer']?.country.minLength"
+            [maxLength]="validationData['customer']?.country.maxLength"
+            [inputValidator]="'ct1 ct2 ct5 ct6'">
+        </app-one-line-question>
+        <div [ngClass]="{'col-sm-4': oneColumnMode===false, 'col-sm-12': oneColumnMode===true}">
+            <div *ngIf="submitted && form.controls[section + 'Country']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Country']?.errors.required">{{validationData['customer']?.country.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Country']?.errors.minlength">{{validationData['customer']?.country.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls[section + 'Country']?.errors.maxlength">{{validationData['customer']?.country.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="form-group row" *ngIf="phoneNumberShowFlag!==false"> 
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-8"
+        [controlName]="section + 'PhoneNumber'"
+        [model]="model"
+        [modelName]="section + 'PhoneNumber'"
+        [defaultValue]="defaultAddressLine1"
+        [title]="'Phone number'"
+        [isRequired]=true
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.phoneNumber.minLength"
+        [maxLength]="validationData['customer']?.phoneNumber.maxLength"
+        [inputValidator]="'ct3 ct14'">
+    </app-one-line-question>
+    <div class="col-sm-4">
+        <div *ngIf="submitted && form.controls[section + 'PhoneNumber']?.errors">
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PhoneNumber']?.errors.required">{{validationData['customer']?.phoneNumber.errorMessageRequired}}</small>
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PhoneNumber']?.errors.minlength">{{validationData['customer']?.phoneNumber.errorMessage}}</small>
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'PhoneNumber']?.errors.maxlength">{{validationData['customer']?.phoneNumber.errorMessage}}</small>
+        </div>
+    </div>
+</div>
+
+<div class="row m-2 mt-4 p-2 alert alert-warning" role="alert" *ngIf="emailMessageFlag">
+    <div class="col-sm-12 font-weight-bold alert-note" [innerHTML]="'You may wish to enter a different email address than the one already provided, as this email address will be placed in the court forms. Having a separate email address will assist you in keeping your documents organized. You may leave this field blank if you wish to use the email address already provided.'"></div>
+</div>
+
+<div class="form-group row" *ngIf="emailShowFlag!==false"> 
+    <div class="col-sm-8">
+        <app-email-input 
+            class="form-inline"
+            [section]="section"
+            [submitted]="submitted"
+            [form]="form" 
+            [model]="model"
+            [emailPlaceholder]=""
+            [title]="'Email'"
+            [isRequired]="isEmailRequired"
+            [inlineFlag]=true
+            [validate]=true>
+        </app-email-input>
+    </div>
+    <div class="col-sm-4">
+        <div *ngIf="submitted && form.controls[section + 'email']?.errors">
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'email']?.errors.required">Please, enter email</small>
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'email']?.errors.isNotEmail">Email is not valid</small>
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'email']?.errors.minlength">Min Length is 5</small>
+            <small class="form-text error-message" invalid *ngIf="form.controls[section + 'email']?.errors.maxlength">Max Length is 50</small>
+        </div>
+    </div>
+</div>

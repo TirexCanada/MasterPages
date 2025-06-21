@@ -1,0 +1,21 @@
+<div class="row category">
+    <div class="col-sm-10">
+        <a [routerLink]="['/portal/category/' + category.categoryId]"><h4>{{ category.categoryName}}</h4></a>
+    </div>
+    <div class="col-sm-2">
+        {{ category.count}}
+    </div>
+</div>
+<div *ngIf="category.selected">
+    <div class="row category" *ngFor="let item of category.subcategories; index as i">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-9">
+            <a [routerLink]="['/portal/category/' + item.categoryId]"><h5>{{ item.categoryName}}</h5></a>
+        </div>
+        <div class="col-sm-2">
+            {{ item.count}}
+        </div>
+    </div>
+</div>
+

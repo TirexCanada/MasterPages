@@ -1,0 +1,32 @@
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+  
+.banner {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: -100%; 
+    transition: bottom 1s ease-in-out; 
+}
+
+.banner-wrapper .banner {
+    bottom: 0; /* Move to the view */
+}
+
+.banner {
+    background-size: 100% auto; /* Set the width to 100% and height to auto */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    background-position: center; /* Center the background image */
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+}
+
+.banner.show {
+    opacity: 1;
+}

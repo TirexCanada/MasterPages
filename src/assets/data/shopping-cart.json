@@ -1,0 +1,20 @@
+{
+    "id": "1",
+    "dateCreated": "01/01/2018",
+    "subtotal": 100.00,
+    "hst": 13.00,
+    "total": 113.00,
+    "items":
+    [
+        {
+            "id": "1",
+            "product": "Digital Consult Service",
+            "price": 100.00
+        },
+        {
+            "id": "2",
+            "product": "Child Expense Report",
+            "price": 0.00
+        }
+    ]
+}

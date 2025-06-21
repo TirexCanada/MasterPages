@@ -1,0 +1,26 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">{{title.dictionaryTitle}}</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div [innerHTML]="title.dictionaryContent" class="p-2 scrollable"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<span [innerHTML]="title && title.value1 | safe: 'html'" *ngIf="title && title.value1!==''"></span>
+<span *ngIf="title && title.clickHereFlag===false">
+    <button class="btn btn-link btnNoPadding" (click)="openLg(content)">{{title.dictionaryName}}</button>
+</span>
+<span *ngIf="title && title.clickHereFlag===true">
+    <!-- <button class="btn btn-link btnNoPadding" (click)="openLg(content)" *ngIf="title">click here</button> -->
+    <!-- <button class="btn btn-link btnNoPadding" (click)="openLg(content)" *ngIf="title && title.capitalFlag===true">Click here</button> -->
+    <button class="btn btn-link btnNoPadding" (click)="openLg(content)" *ngIf="title">{{title.clickHereString}}</button>
+</span>
+<span [innerHTML]="title && title.value2 |safe: 'html'" *ngIf="title && title.value2!==''"></span>
+

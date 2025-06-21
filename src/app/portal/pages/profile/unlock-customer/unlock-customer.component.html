@@ -1,0 +1,73 @@
+<h1>Unlock Account Request</h1>
+
+<div class="row" *ngIf="mode==='request'">
+    <div class="col-sm-12 col-md-8 col-lg-6">
+        <app-request-validation-code       
+            [model]="model"
+            [title]="'Unlock Account'"
+            [message1]="'Please enter your email and click Submit button. You will get email with instructions on how to unlock your password.'"
+            [message2]="'components.login.verificationCodeEmail' | translate"
+            [type]="'locked'"
+            (submitForm)="onSubmitForm($event)"
+            (submitFormCode)="onSubmitFormCode($event)"
+            (submitFailed)="onSubmitFailed($event)"
+            (cancelForm)="onCancelForm($event)">
+        </app-request-validation-code>
+
+        <app-error-message *ngIf="serverErrors && mode === 'request'" 
+            [errors]="serverErrors">
+        </app-error-message>
+    </div>
+</div> 
+
+
+<div *ngIf="mode==='result'">
+    <form #form="ngForm" novalidate>
+        <div class="row mb-5">
+            <div class="col-sm-12">
+                <div class="row m-1 p-2 alert alert-success" role="alert">
+                    <div class="col-sm-12 alert-note">Your Account had been successfully unlocked.</div>
+                    <div class="col-sm-12 alert-note">Please enter and confirm your new password.</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-9 col-xl-8">
+                <app-update-password           
+                    [currentCustomer]="currentCustomer"
+                    [form]="form"
+                    [model]="model"
+                    [isChangeMode]="false"
+                    (submitForm)="onSubmitForm($event)"
+                    (submitFormPassword)="onSubmitFormPassword($event)"
+                    (submitFailed)="onSubmitFailed($event)"
+                    (cancelForm)="onCancelForm($event)">
+                </app-update-password>
+            </div>
+        </div> 
+    </form>
+</div>
+
+<div *ngIf="mode==='message'">
+    <div class="card">
+        <div class="card-header">Change Password</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <app-error-message *ngIf="serverErrors" 
+                            [errors]="serverErrors">
+                        </app-error-message>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <button class="btn btn-secondary" (click)="backToPortal()">Return to Login page</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+

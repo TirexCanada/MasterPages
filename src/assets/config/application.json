@@ -1,0 +1,328 @@
+{
+    "config": {
+        "appName": "Classified"
+    },
+    "validations": {
+        "common": {
+            "radioOptionRequired": "Please select Yes or No",
+            "optionRequired": "Please select an option above",
+            "dropdownOptionRequired": "Please select an option from the list",
+            "textRequired": "Please, verify that you have entered all the required information for this question.",
+            "minMarriageAge": 10
+        },
+        "registration": {
+            "email": {
+                "minLength": 5,
+                "maxLength": 50,
+                "errorMessageRequired": "Email address is required",
+                "emailPattern": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+            },
+            "password": {
+                "minLength": 8,
+                "maxLength": 16,
+                "regex": "/^(?=.*?[A-Za-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/",
+                "specialCharacterPattern": "^(?=.*[!@#$%^&*(),.?:{}|<>]).*$"
+            },
+            "requestText": {
+                "errorMessageRequired": "Please, enter your enquiry text"
+            },
+            "verification": {
+                "minLength": 6,
+                "maxLength": 6,
+                "errorMessage": "Verification Code should have 6 digits",
+                "errorMessageRequired": "Verification Code is required"          
+            }
+        },
+        "customer": {  
+            "accountName": {
+                "minLength": 2,
+                "maxLength": 100,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Account name should be 2 - 100 characters",
+                "errorMessageRequired": "Account Name is required"
+            }, 
+            "firstName": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "First name should be 2 - 30 characters",
+                "errorMessageRequired": "First Name is required"
+            },
+            "lastName": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Last name (surname) should be 2 - 30 characters",
+                "errorMessageRequired": "Last Name (surname) is required"
+            },     
+            "businessName": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Business name should be 2 - 30 characters",
+                "errorMessageRequired": "Business Name is required"
+            },
+            "website": {
+                "minLength": 2,
+                "maxLength": 50,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Website should be 2 - 50 characters",
+                "errorMessageRequired": "Website is required"
+            },     
+            "country": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Country should be 2 - 30 characters",
+                "errorMessageRequired": "Country is required"
+            },
+            "province": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Province should be 2 - 30 characters",
+                "errorMessageRequired": "Province is required",
+                "errorMessageCustomerOntario": "You have specified that you DO NOT live in Ontario. Please select another Province.",
+                "errorMessageSpouseOntario": "You have specified that your {{spouse-partner}} DOES NOT live in Ontario. Please select another Province."
+            },
+            "city": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "City should be 2 - 30 characters",
+                "errorMessageRequired": "City is required"
+            },
+            "address": {
+                "minLength": 2,
+                "maxLength": 30,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Address should be 2 - 30 characters",
+                "errorMessageRequired": "Address is required"
+            },
+            "postalCode": {
+                "minLength": 2,
+                "maxCanadianLength": 6,
+                "maxOtherLength": 20,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Postal code should be 2 - 20 characters",
+                "errorMessageRequired": "Postal code is required"
+            },
+            "email": {
+                "minLength": 5,
+                "maxLength": 50,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Email should be 5 - 50 characters",
+                "errorMessageRequired": "Email is required",
+                "errorMessageValid": "Email is not valid"
+            },
+            "password": {
+                "minLength": 8,
+                "maxLength": 16,
+                "errorMessage": "Password should be 8 - 16 characters",
+                "errorMessageRequired": "Pasword is required",
+                "errorMessageValid": "Password is not valid"
+            },
+            "phoneNumber": {
+                "minLength": 10,
+                "maxLength": 20,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Phone number should be 10 - 20 characters and can contain dashes and spaces",
+                "errorMessageRequired": "Phone number is required"
+            },
+            "socialProfileLink": {
+                "minLength": 2,
+                "maxLength": 100,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Phone number should be 10 - 20 characters and can contain dashes and spaces",
+                "errorMessageRequired": "Phone number is required"
+            }
+        },
+        "listing": {
+            "title": {
+                "minLength": 5,
+                "maxLength": 50,
+                "errorMessageRequired": "Title is required"
+            },
+            "description": {
+                "minLength": 5,
+                "maxLength": 50,
+                "errorMessageRequired": "Decription is required"
+            },
+            "details": {
+                "minLength": 2,
+                "maxLength": 1000,
+                "errorMessageRequired": "Listing is required"
+            }
+        },
+        "refund": {
+            "refundRequestMessage": {
+                "minLength": 2,
+                "maxLength": 1000,
+                "regex": "/^[a-zA-Z-'àâäçéèêëîïôöûùüÿÀÂÄÉÈÊËÎÏÔÖÙÛÜŸÇ`’œ ]*$/",
+                "errorMessage": "Refund request message should be 2 - 1000 characters",
+                "errorMessageRequired": "Refund request message is required"
+            }
+        },
+        "promoCodes": {
+            "promoCode": {
+                "errorMessageRequired": "Promo code is required"
+            }
+        },
+        "faqs": {
+            "faqQuestion": {
+                "minLength": 2,
+                "maxLength": 150,
+                "errorMessage": "Faq Question should be 2 - 150 characters",
+                "errorMessageRequired": "Faq Question is required"
+            },
+            "faqAnswer": {
+                "minLength": 2,
+                "maxLength": 10000,
+                "errorMessage": "Faq Answer should be 2 - 10000 characters",
+                "errorMessageRequired": "Faq Answer is required"
+            },
+            "sortOrder": {
+                "errorMessageRequired": "Sort Order is required"
+            }
+        },
+        "testimonials": {
+            "testimonialText": {
+                "minLength": 2,
+                "maxLength": 10000,
+                "errorMessage": "Testimonial Text should be 2 - 10000 characters",
+                "errorMessageRequired": "Testimonial Text is required"
+            },
+            "sortOrder": {
+                "errorMessageRequired": "Sort Order is required"
+            }
+        },
+        "blogs": {
+            "blogTitle": {
+                "minLength": 2,
+                "maxLength": 150,
+                "errorMessage": "Blog Title should be 2 - 150 characters",
+                "errorMessageRequired": "Blog Title is required"
+            },
+        
+            "blogAbstract": {
+                "minLength": 2,
+                "maxLength": 1000,
+                "errorMessage": "Blog Abstract should be 2 - 1000 characters",
+                "errorMessageRequired": "Blog Abstract is required"
+            }     
+        }
+    },
+    "content": {
+        "termsAndConditions": "Terms and conditions will be here line 1 <br /> Terms and conditions will be here line 2"
+    },
+    "endpoints": {
+        "basePath": "/api",
+
+        "getFaqs": "/support/getFaqs",
+        "updateFaq": "/support/updateFaq",
+        "getFaqCategories": "/support/getFaqCategories",
+        "updateFaqCategory": "/support/updateFaqCategory",
+        "getContentList": "/support/getContentList",
+        "getContent": "/support/getContent",
+
+        "getTags": "/support/getTags",
+        "updateTag": "/support/updateTag",
+
+        "getCategories": "/support/getCategories",
+        "updateCategory": "/support/updateCategory",
+        "getCategoriesCounts": "/classified/getCategoriesCounts",
+
+        "getClassifiedCategories": "/support/getClassifiedCategories",
+        "updateClassifiedCategory": "/support/updateClassifiedCategory",
+        "getClassifiedCategoriesCounts": "/classified/getClassifiedCategoriesCounts",
+
+        "getTopListings": "/classified/getTopListings",
+        "getTopClassifiedListings": "/classified/getTopClassifiedListings",
+        "getTopPriorityListings": "/classified/getTopPriorityListings",
+        "getTopClassifiedPriorityListings": "/classified/getTopClassifiedPriorityListings",
+        "getListing": "/classified/getListing",
+        "getListingsByTagId": "/classified/getListingsByTagId",
+        "getCurrentMarketingCampaign": "/classified/getCurrentMarketingCampaign",
+        "getListingsByParams": "/classified/getListingsByParams",
+
+        "createCustomer": "/customers/createCustomer",
+        "updateCustomer": "/customers/updateCustomer",
+        "deleteCustomer": "/customers/deleteCustomer",
+        "validateCustomer": "/customers/validateCustomer",
+        "getCustomer": "/customers/getCustomer",
+        "createCustomerRequest": "/customers/createCustomerRequest",
+        "processCustomerSubscriptionRequest": "/customers/processCustomerSubscriptionRequest",
+        "getCustomers": "/customers/getCustomers",
+        "sendCustomerEmail": "/customers/sendCustomerEmail",
+        "uploadFiles": "/customers/uploadFiles",
+        "uploadImage": "/customers/uploadImage",
+        "uploadListingImage": "/customers/uploadListingImage",
+
+        "getCustomerListings": "/customers/getCustomerListings",
+        "updateListing": "/customers/updateListing",
+        "updateListingContact": "/customers/updateListingContact",
+        "updateListingTags": "/customers/updateListingTags",
+        "updateListingStatus": "/customers/updateListingStatus",
+        "deleteListing": "/customers/deleteListing",
+        "updateListingHits": "/customers/updateListingHits",
+        
+        "login": "/auth/login",
+        "templogin": "/auth/templogin",
+        "unlockCustomer": "/auth/unlockCustomer",
+        "verifyEmail": "/auth/verifyEmail",
+        "verifyCode": "/auth/verifyCode",
+
+        "updatePassword": "/customers/updatePassword",
+        "changePassword": "/customers/changePassword",
+        "requestPassword": "/customers/requestPassword",
+        "lockCustomer": "/customers/lockCustomer",
+
+    
+        "createShoppingCart": "/shoppingCart/createShoppingCart",
+        "getCustomerShoppingCarts": "/shoppingCart/getCustomerShoppingCarts",
+        "getCustomerShoppingCart": "/shoppingCart/getCustomerShoppingCart",
+        "updateShoppingCart": "/shoppingCart/updateShoppingCart",
+        "applyPromoCode": "/shoppingCart/applyPromoCode",
+        
+
+        "getLawDictionary": "/support/getLawDictionary",
+        "getLawLibraryCategories": "/support/getLawLibraryCategories",
+        "getSectionQuestionInstructions": "/support/getSectionQuestionInstructions",
+        "getProductCategories": "/products/getProductCategories",
+        "getEmailSettings": "/support/getEmailSettings",
+        "getCourts": "/support/getCourts",
+        "getPromoCodes": "/support/getPromoCodes",
+        "updatePromoCode": "/support/updatePromoCode",
+        "getEmailCampaigns": "/support/getEmailCampaigns",
+        "updateEmailCampaign": "/support/updateEmailCampaign",
+        "getEmailCampaignCustomers": "/support/getEmailCampaignCustomers",
+        "resetPromoCode": "/support/resetPromoCode",
+        "uploadAdminImage": "/support/uploadAdminImage",
+
+
+        "getArticle": "/support/getArticle",
+        "getArticles": "/support/getArticles",
+        "getArticlesCategories": "/support/getArticlesCategories",
+
+        "getActiveBanners": "/classified/getActiveBanners",
+      
+        "getBlogs": "/support/getBlogs",
+
+        "adminLogin": "/auth/adminLogin",
+        "getAdmin": "/admin/getAdmin",
+        "getAdmins": "/admin/getAdmins",
+        "updateAdmin": "/admin/updateAdmin",
+        "changeAdminPassword": "/admin/changeAdminPassword",
+        
+        "updateSectionSamples": "/admin/updateSectionSamples",
+        "updateQuestionOption": "/admin/updateQuestionOption",
+        "updateQuestionDescription": "/admin/updateQuestionDescription",
+        "updateQuestionInstruction": "/admin/updateQuestionInstruction",
+        "deleteSection": "/admin/deleteSection",
+        "updateSection": "/admin/updateSection",
+        "deleteSectionQuestion": "/admin/deleteSectionQuestion",
+        "updateSectionQuestion": "/admin/updateSectionQuestion",
+        "deleteQuestionOption": "/admin/deleteQuestionOption",
+        "deleteQuestionInstruction": "/admin/deleteQuestionInstruction"
+    }
+}

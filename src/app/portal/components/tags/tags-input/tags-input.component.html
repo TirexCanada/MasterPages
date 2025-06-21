@@ -1,0 +1,5 @@
+<div class="d-flex flex-wrap">
+    <div class="tag" *ngFor="let tag of listingTags;">{{ tag.tagName }}
+        <button (click)="removeTag(tag)">x</button>
+    </div>
+</div>

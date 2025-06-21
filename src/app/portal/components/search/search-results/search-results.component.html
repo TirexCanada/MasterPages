@@ -1,0 +1,154 @@
+<div >
+    <div class="row pb-5 ml-5" style="background-color: #ffffff;">
+        <div class="col-sm-12">
+            <div class="row mb-5">          
+                <div class="col-sm-12 p-5" *ngFor="let listing of listings; index as i">
+                    <div class="row nopadding-left">
+                        <div class="col-sm-12 nopadding-left">
+                            <app-listing-block 
+                                [categoryType]="'business'"
+                                [currentView]="'list'"
+                                [location]="'search-results'"
+                                [listing]="listing">
+                            </app-listing-block>
+                        </div>
+                    </div>
+                    <div class="row border mt-5"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<div class="row">
+    <div class="col-sm-12 custom-align-right">               
+        <button (click)="toggle('list')">
+            <i class="fa fa-th-list"></i>
+        </button>
+        <button class="btn-margin-left" (click)="toggle('grid')">
+            <i class="fa fa-th-large"></i>
+        </button>
+    </div>
+</div> -->
+
+<div *ngIf="categoryType==='business' && currentView==='list'">
+    <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-5" *ngFor="let listing of listings; index as i">
+            <div class="row nopadding-left">
+                <div class="col-sm-12 nopadding-left" style="background-color: #ffffff;">
+                    <app-listing-block 
+                        style="display: contents;"
+                        [location]="'top-ads'"
+                        [listing]="listing"
+                        [currentView]="currentView">
+                    </app-listing-block>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="currentView==='grid'">
+    <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
+        <div class="col-sm-3 p-5" *ngFor="let listing of listings; index as i">
+            <div class="row nopadding-left">
+                <div class="col-sm-12 nopadding-left" style="background-color: #ffffff;">
+                    <app-listing-block 
+                        style="display: contents;"
+                        [location]="'top-ads'"
+                        [listing]="listing"
+                        [currentView]="currentView">
+                    </app-listing-block>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="categoryType==='classified'">
+    <div class="row mb-3">
+        <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
+        <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 p-5 text-center">
+            <h2 class="mb-3">
+                <span *ngIf="translateService.currentLang==='en'">{{ currentTag?.tagName }}</span>
+                <span *ngIf="translateService.currentLang==='ru'">{{ currentTag?.tagName_RU }}</span>
+            </h2>
+            <div class="border-bottom"></div>
+        </div>
+        <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-left p5">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4>{{ 'components.searchComponents.subcategory' | translate }}:</h4>
+                </div>
+                <div class="col-sm-6">
+                    <app-dropdown-question 
+                        [form]="form"
+                        [controlName]="'subcategories'"
+                        [id]="'subcategories'"
+                        [model]="model"
+                        [modelName]="'subcategoryId'"
+                        [defaultValue]=null
+                        [defaultText]="'components.searchComponents.selectSubcategory' | translate"
+                        [inlineFlag]=false
+                        [title]="''"
+                        [data]="subcategories"
+                        [isRequired]=true
+                        [isDisabled]=false
+                        [backgroundColor]=true
+                        (selectItem)="selectSubcategory()">
+                    </app-dropdown-question>  
+                </div>  
+                <div class="col-sm-2">
+                    
+                </div> 
+            </div>
+        </div>
+        <div class="col-sm-6 text-left p5">
+            <div class="row">
+                <div class="col-sm-2">
+                    
+                </div> 
+                <div class="col-sm-3 text-end pr-3">
+                    <h4>{{ 'components.searchComponents.sortBy' | translate }}:</h4>
+                </div>
+                <div class="col-sm-7">
+                    <app-dropdown-question 
+                        [form]="form"
+                        [controlName]="'sortOptions'"
+                        [id]="'sortOptions'"
+                        [model]="model"
+                        [modelName]="'sortOption'"
+                        [defaultValue]=null
+                        [defaultText]="'components.searchComponents.selectSorting' | translate"
+                        [inlineFlag]=false
+                        [title]="''"
+                        [data]="sortOptionsList"
+                        [isRequired]=true
+                        [isDisabled]=false
+                        [backgroundColor]=true
+                        (selectItem)="selectSortOption()">
+                    </app-dropdown-question>  
+                </div>   
+            </div>
+        </div>
+    </div>
+    <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-5" *ngFor="let listing of listings; index as i">
+            <div class="row nopadding-left">
+                <div class="col-sm-12 nopadding-left" style="background-color: #ffffff;">
+                    <app-listing-block 
+                        style="display: contents;"
+                        [location]="'top-ads'"
+                        [listing]="listing"
+                        [currentView]="currentView"
+                        [categoryType]="categoryType">
+                    </app-listing-block>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row pb-5" style="background-color: #ccdcff;">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5 pb-5">
+        <h1>Classified Search</h1>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+</div>
+<div class="row" style="background-color: #eff4ff;">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5">
+        <div class="row">
+            <div style="margin-top: -150px; width: 100%">
+                <app-search-component
+                    (submitSearch)="onSubmitSearch($event)">
+                </app-search-component>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+</div>
+      

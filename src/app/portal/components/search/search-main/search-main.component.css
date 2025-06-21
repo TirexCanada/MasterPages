@@ -1,0 +1,23 @@
+.active {
+    background-color: #242c42 !important;
+    border-color: #242c42 !important;
+    color: #ffffff !important
+}
+
+.non-active {
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+    color: #242c42! important;
+}
+
+.custom-align-right {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.btn-margin-left {
+    margin-left: 10px; /* Adjust the value as needed */
+    /* margin-right: 10px; */ /* Adjust the value as needed */
+}

@@ -1,0 +1,12 @@
+<input class="form-control"
+    [id]="section" 
+    name="{{section}}" 
+    [attr.name]="section" 
+    type="text" 
+    minlength="{{validationData['registration']?.legalName.firstName.minLength}}"
+    maxlength="{{validationData['registration']?.legalName.firstName.axnLength}}"
+    [required]="isRequired"
+    [ngModel]="model" 
+    (ngModelChange)="model[key]=$event" 
+    #firstName="ngModel" 
+     />

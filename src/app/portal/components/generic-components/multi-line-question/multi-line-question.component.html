@@ -1,0 +1,22 @@
+<label class="col-form-label alignLeft" [ngClass]="{'col-sm-3': inlineFlag===true, 'col-sm-12': inlineFlag===false}" *ngIf="title">{{title}}</label>
+<div [ngClass]="{'col-sm-9': inlineFlag===true, 'col-sm-12': inlineFlag===false}">
+    <input name="{{controlName}}" disabled="disabled" type="text" id="{{controlName}}"  style="display:none;">
+    <textarea rows="8" cols="100"     
+        class="form-control input-text w-100"
+        name="{{controlName}}" 
+        id="{{controlName}}" 
+        [value]="defaultValue"
+        (change)="writeValue($event.target)"
+        [(ngModel)]= "innerValue"
+        (keyup)="onKeyUp($event)" 
+        [attr.name]="controlName"
+        #multiLineTextInputCtrl="ngModel"
+        [required]=isRequired
+        [disabled]="isDisabled"
+        [minlength]="minLength"
+        [maxlength]="maxLength"
+        [placeholder]="placeholder"
+        style="resize: both;">
+    </textarea>
+    <div id="count{{controlName}}" style="position: relative; bottom: 20px; right: -10px; width: 50%; z-index: 1000;">{{charCount}} of {{maxLength}}</div>
+</div>

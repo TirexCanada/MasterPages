@@ -1,0 +1,114 @@
+<form #paymentForm="ngForm" novalidate>
+    <div class="row" style="background-color: #ccdcff;">
+        <div class="col-sm-12 p-5">
+            <h1>Upgrade Your Listing</h1>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6"></div>
+        <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
+    </div>
+
+    <div class="row mt-5 mb-5">
+        <div class="col-sm-1 col-md-1 col-lg-1 col-xl-2"></div>
+        <div class="col-sm-10 col-md-10 col-lg-10 col-xl-8" style="background-color: #eff4ff;">
+            <div class="row mt-3">
+                <div class="col-sm-12">
+                    <h4>1. Choose your upgrade</h4>
+                </div>
+            </div>
+        
+            <div class="form-group row mt-3 mb-5 ">
+                <label for="daysOption" class="col-sm-12 col-md-12 col-lg-4 col-xl-4 pt-2 h11">Upgrade my listing for</label>
+                <div class="col-sm-12 col-md-3 col-lg-2 col-xl-2 mr-2 mb-2">
+                    <div class="row">
+                        <app-dropdown-question 
+                            style="display: contents;"
+                            [form]="form"
+                            [controlName]="'paymentPeriodNumber'"
+                            [model]="paymentModel"
+                            [modelName]="'paymentPeriodNumber'"
+                            [defaultValue]=null
+                            [id]="'paymentPeriodNumber'"
+                            [defaultText]=null
+                            [inlineFlag]=false
+                            [title]="''"
+                            [data]="paymentPeriodsNumbersOptions"
+                            [isRequired]=true
+                            [isDisabled]=false
+                            [backgroundColor]=true
+                            (selectItem)="selectPaymentPeriodNumber()">
+                        </app-dropdown-question>     
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7 col-lg-3 col-xl-3">
+                    <div class="row">
+                        <app-dropdown-question 
+                            style="display: contents;"
+                            [form]="form"
+                            [controlName]="'paymentPeriod'"
+                            [model]="paymentModel"
+                            [modelName]="'paymentPeriod'"
+                            [defaultValue]=null
+                            [id]="'paymentPeriod'"
+                            [defaultText]=null
+                            [inlineFlag]=false
+                            [title]="''"
+                            [data]="paymentPeriodsOptions"
+                            [isRequired]=true
+                            [isDisabled]=false
+                            [backgroundColor]=true
+                            (selectItem)="selectPaymentPeriod()">
+                        </app-dropdown-question>    
+                    </div> 
+                </div>
+                <div class="col-sm-12 col-md-2 col-lg-1 col-xl-1 pt-2 h11">
+                    {{ paymentModel.price | currency }}
+                </div>
+            </div>
+
+            <div class="row mt-5">
+            <div class="col-sm-12 h7">
+                    Order sub-total: {{ paymentModel.subtotal | currency }}
+            </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 h7">
+                    HST: {{ paymentModel.hst | currency }}
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-12 h11">
+                    Order total: {{ paymentModel.total | currency }}
+                </div>
+            </div>
+
+            <div class="row mt-3 mb-3">
+                <div class="col-sm-1 col-md-2 col-lg-3 col-xl-3"></div>
+                <div class="col-sm-10 col-md-8 col-lg-6 col-xl-6">
+                    <button type="button" class="btn btn-primary btn-block" (click)="goToPayment()">Proceed to Payment</button>
+                    <!-- <button type="button" class="btn btn-primary btn-block" (click)="return initiateLightbox();">Proceed to Payment</button> -->
+
+                   <!--  <form method="POST" action="/%3Cyour-hosted-card-accepting-endpoint%3E">
+                        <script
+                            src="https://https://uat2.hpp.converge.eu.elavonaws.com/client/index.js"
+                            class="converge-button"
+                            data-session-id={{ paymentSessionId }}
+                        ></script>
+                    </form> -->
+                </div>
+                <div class="col-sm-1 col-md-2 col-lg-3 col-xl-2"></div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-sm-12 h7">
+                    Token: <input id="token" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-1 col-lg-1 col-xl-3"></div>
+    </div>
+</form>

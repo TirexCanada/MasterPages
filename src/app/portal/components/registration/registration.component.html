@@ -1,0 +1,202 @@
+<div class="form-group row mb-2">
+    <div class="col-sm-12">
+        <div class="form-group text-start">
+            <input class="form-control input-text"
+                id="'accountName'" 
+                name="'accountName'" 
+                [attr.name]="'accountName'" 
+                [placeholder]="'components.registration.accountName' | translate"
+                type="text" 
+                [minlength]="validationData?.customer?.accountName.minLength"
+                [maxlength]="validationData?.customer?.accountName.maxLength"
+                [required]=true
+                [(ngModel)]="model.accountName" 
+                appInputValidator
+                InputValidator="'ct1 ct2 ct5 ct6'"
+                #accountNameCtrl="ngModel"/>
+            <div class="text-start" *ngIf="submitted && accountNameCtrl.errors">
+                <small class="form-text error-message" invalid *ngIf="accountNameCtrl.errors['required']">{{ 'common.errorMessages.signupErrors.accountNameRequiredError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="accountNameCtrl.errors['minlength']">{{ 'common.errorMessages.signupErrors.accountNameValueError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="accountNameCtrl.errors['maxlength']">{{ 'common.errorMessages.signupErrors.accountNameValueError' | translate }}</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="form-group row mb-2">
+    <div class="col-sm-6">
+        <div class="form-group text-start">
+            <input class="form-control input-text"
+                id="'firstName'" 
+                name="'firstName'" 
+                [attr.name]="'firstName'" 
+                [placeholder]="'components.registration.firstName' | translate"
+                type="text" 
+                [minlength]="validationData?.customer?.firstName.minLength"
+                [maxlength]="validationData?.customer?.firstName.maxLength"
+                [required]=true
+                [(ngModel)]="model.firstName" 
+                appInputValidator
+                InputValidator="'ct1 ct2 ct5 ct6'"
+                #firstNameCtrl="ngModel"/>
+            <div class="text-start" *ngIf="submitted && firstNameCtrl.errors">
+                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['required']">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['minlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['maxlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group text-start">
+            <input class="form-control input-text"
+                id="'lastName'" 
+                name="'lastName'" 
+                [attr.name]="'lastName'" 
+                [placeholder]="'components.registration.lastName' | translate"
+                type="text" 
+                [minlength]="validationData?.customer?.lastName.minLength"
+                [maxlength]="validationData?.customer?.lastName.maxLength"
+                [required]=true
+                [(ngModel)]="model.lastName" 
+                appInputValidator
+                InputValidator="'ct1 ct2 ct5 ct6'"
+                #lastNameCtrl="ngModel"/>
+            <div class="text-start" *ngIf="submitted && lastNameCtrl.errors">
+                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['required']">{{validationData['customer']?.lastName.errorMessageRequired}}</small>
+                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['minlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
+                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['maxlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
+            </div>
+        </div>
+    </div>
+</div>  -->
+
+<div class="row mb-2">
+    <div class="col-sm-12">
+        <div class="form-group text-start">
+            <app-email-input 
+                [isRequired]="true" 
+                [section]="'email'"
+                [submitted]="submitted"
+                [form]="form" 
+                [model]="model"
+                [emailPlaceholder]="'components.registration.email' | translate"
+                [validate]=true>
+            </app-email-input>
+            <div class="text-start" *ngIf="submitted && form.controls['email']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls['email']?.errors['required']">{{ 'common.errorMessages.signupErrors.emailRequiredError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['email']?.errors['pattern']">{{ 'common.errorMessages.signupErrors.emailNotValidError' | translate }}</small>
+                <br/>
+                <small class="form-text error-message" invalid *ngIf="form.controls['email']?.errors['minlength']">{{ 'common.errorMessages.signupErrors.emailMinLengthError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['email']?.errors['maxlength']">{{ 'common.errorMessages.signupErrors.emailMaxLengthError' | translate }}</small>
+            </div>
+        </div>
+    </div>
+</div> 
+        
+<div class="row mb-2">
+    <div class="col-sm-12"> 
+        <div class="form-group text-start">
+            <div class="input-group no-padding">
+                <app-password-input 
+                    class="form-control no-padding"
+                    [isRequired]="true"  
+                    [section]="'password'" 
+                    [submitted]="submitted" 
+                    [form]="form" 
+                    [type]="showPassword" 
+                    [model]="model"
+                    appPassword> 
+                </app-password-input>  
+                <button class="btn btn-outline-secondary btn-toggle" (click)="togglePassword()" type="button" tabindex="-1">
+                    <i [ngClass]="buttonClass"></i>
+                </button>
+            </div>
+            <div class="text-start" *ngIf="submitted && form.controls['password']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['required']">{{ 'common.errorMessages.signupErrors.passwordRequiredError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['minlength']  || form.controls['password']?.errors['pattern']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small>
+                <!-- <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['maxlength']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['pattern'] && !form.controls['password']?.errors['minlength']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small> -->
+            </div>      
+        </div>
+    </div>
+</div>
+
+<div class="row mb-2">
+    <div class="col-sm-12">   
+        <div class="form-group text-start">
+            <app-password-input 
+                [isRequired]="true" 
+                [section]="'confirmPassword'"
+                [submitted]="submitted"
+                [form]="form" 
+                [type]="showPassword"
+                [model]="model"
+                appPassword>
+            </app-password-input>
+            <div class="text-left" *ngIf="submitted && form.controls['confirmPassword']?.errors">
+                <small class="form-text error-message" invalid *ngIf="form.controls['confirmPassword']?.errors['required']">{{ 'common.errorMessages.signupErrors.passwordRequiredError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['confirmPassword']?.errors['minlength']  || form.controls['confirmPassword']?.errors['pattern']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small>
+                <small class="form-text error-message" invalid *ngIf="form.controls['confirmPassword']?.errors['maxlength']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small>
+            </div>   
+            <div *ngIf="errorMessage">
+                <small class="form-text error-message">{{ 'common.errorMessages.signupErrors.passwordsNotMatchError' | translate }}</small>
+            </div>
+        </div>
+    </div>
+</div> 
+      
+<div class="form-group text-start row mb-2">
+    <div class="col-sm-12">
+        {{ 'components.registration.emailNote' | translate }}
+    </div>
+</div>
+
+<div class="form-group text-start row mt-5">
+    <div class=" col-sm-12">
+        <div class="form-check">
+            <input class="form-check-input" 
+                type="checkbox" 
+                id="signupCheck"
+                name="signupCheck" 
+                [(ngModel)]="model.signupFlag" >
+            <label class="form-check-label" for="signCheck">
+                {{ 'components.registration.signupCheck' | translate }}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" 
+                type="checkbox" 
+                id="agreeCheck"
+                name="agreeCheck" 
+                [(ngModel)]="model.agreeFlag"
+                #agreeFlag="ngModel">
+            <label class="form-check-label" for="agreeCheck">
+                {{ 'components.registration.agreeCheck' | translate }} <button class="btn btn-link" (click)="openLg(content)">{{ 'components.registration.termsAndConditions' | translate }}</button>
+            </label>
+        </div>
+        <div *ngIf="submitted && !model.agreeFlag">
+            <small class="form-text error-message" invalid *ngIf="!model.agreeFlag">{{ 'common.errorMessages.signupErrors.termsAndConditionsRequiredError' | translate }}</small>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4 justify-content-center">
+    <div class="col-sm-12">
+        <button type="button" class="btn btn-primary btn-block" (click)="register()">{{ 'components.registration.createAccountButton' | translate }}</button>
+    </div>
+</div>  
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">{{ 'components.registration.termsAndConditions' | translate }}</h4>
+        <!-- <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button> -->
+    </div>
+    <div class="modal-body">
+        <div [innerHtml]="termsAndConditions | safe: 'html'"></div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="modal.close('Close click')">{{ 'common.buttons.close' | translate }}</button>
+    </div>
+</ng-template>

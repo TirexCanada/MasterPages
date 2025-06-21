@@ -1,0 +1,13 @@
+.input-group-text {
+    background-color: #ffffff;
+    border-color: #ffffff;
+}
+
+.form-control-dropdown {
+    background-color: #ccdcff;
+}
+
+.nopadding { 
+    padding-right: 0px !important; 
+    padding-left: 0px !important;
+} 

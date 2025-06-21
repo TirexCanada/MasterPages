@@ -1,0 +1,101 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="col-sm-12 p-2 border" style="background-color: #ffffff">
+        <div class="row m-2" style="height: 210px; background-image: url('assets/images/profile/business.jpg'); background-repeat: no-repeat;">
+            <div class="col-sm-12">   
+                <div class="row" style="height: 150px;">
+                    <div class="col-sm-12">
+                    
+                    </div>
+
+                    <!--  <div class="col-sm-2 pt-3">
+                            <button type="button" class="btn btn-primary btn-block" (click)="editClick('profile')" *ngIf="isDisabled['business-image']===true">{{ 'common.buttons.edit' | translate }}</button>
+                            <button type="button" class="btn btn-success btn-block" (click)="saveClick('profile')" *ngIf="isDisabled['business-image']===false">{{ 'common.buttons.save' | translate }}</button>
+                            <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('profile')" *ngIf="isDisabled['business-image']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                        </div> -->
+                </div>
+                <div class="row">
+                    <div class="col-sm-1">
+                    
+                    </div>
+                    <div class="col-sm-3 border" style="height: 120px; background-image: url('assets/images/profile/profile.jpg'); background-position: center; background-size: 100%; background-repeat: no-repeat; z-index: 1000;" [appDisable]="isDisabled['profile-image']">
+                    </div>
+                    <div class="col-sm-1">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick('profile')" *ngIf="isDisabled['profile-image']===true">{{ 'common.buttons.edit' | translate }}</button>
+                        <button type="button" class="btn btn-success btn-block" (click)="saveClick('profile')" *ngIf="isDisabled['profile-image']===false">{{ 'common.buttons.save' | translate }}</button>
+                        <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('profile')" *ngIf="isDisabled['profile-image']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                    </div>
+                    <div class="col-sm-7">
+                    
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row m-2 mt-5">
+            <div class="col-sm-12 mt-5">   
+                <div class="row p-2">
+                    <div class="col-sm-1 nopadding">
+                        <img class="img-fluid" src="assets/images/listing/phonenumber.png"/>
+                    </div>
+                    <div class="col-sm-9 pt-1" [appDisable]="isDisabled['phone']">
+                        <div class="form-group row mb-3">
+                            <app-one-line-question [form]="form"
+                                class="form-inline col-sm-12"
+                                [controlName]="'phone'"
+                                [model]="model"
+                                [modelName]="'phone'"
+                                [defaultValue]=null
+                                [title]="''"
+                                [placeholder]="'pages.post.phone' | translate"
+                                [isRequired]=false
+                                [inlineFlag]=false
+                                [minLength]="validationData['customer']?.phoneNumber.minLength"
+                                [maxLength]="validationData['customer']?.phoneNumber.maxLength"
+                                [inputValidator]="'ct4 ct5 ct6'">
+                            </app-one-line-question>
+                        </div>
+                        <!-- <h3>{{ model.phone }}</h3> -->
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('phone')" *ngIf="isDisabled['phone']===false"><i class="fa fa-refresh"></i></button>
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick('phone')" *ngIf="isDisabled['phone']===true"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-success btn-block" (click)="saveClick('phone')" *ngIf="isDisabled['phone']===false"><i class="fa fa-save"></i></button>
+                    </div>
+                </div>
+                <div class="row p-2 mt-2">
+                    <div class="col-sm-1 nopadding">
+                        <img class="img-fluid" src="assets/images/listing/web.png" />
+                    </div>
+                    <div class="col-sm-9 pt-1" [appDisable]="isDisabled['website']">
+                        <div class="form-group row mb-3">
+                            <app-one-line-question [form]="form"
+                                class="form-inline col-sm-12"
+                                [controlName]="'website'"
+                                [model]="model"
+                                [modelName]="'website'"
+                                [defaultValue]=null
+                                [title]="''"
+                                [placeholder]="'pages.post.website' | translate"
+                                [isRequired]=false
+                                [inlineFlag]=false
+                                [minLength]="validationData['customer']?.website.minLength"
+                                [maxLength]="validationData['customer']?.website.maxLength"
+                                [inputValidator]="'ct4 ct5 ct6'">
+                            </app-one-line-question>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('website')" *ngIf="isDisabled['website']===false"><i class="fa fa-refresh"></i></button>
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick('website')" *ngIf="isDisabled['website']===true"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-success btn-block" (click)="saveClick('website')" *ngIf="isDisabled['website']===false"><i class="fa fa-save"></i></button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</form>

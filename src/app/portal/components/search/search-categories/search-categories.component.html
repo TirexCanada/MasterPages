@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-sm-12 pl-5 pr-5 pt-3 pb-3">
+        <h3>ALL CATEGORIES</h3>
+    </div>
+</div>
+<div class="row pl-5 pr-5 pb-3 mb-3">
+    <div class="col-sm-12 border-bottom"></div>
+</div>
+<div class="row">
+    <div class="col-sm-12" style="background-color: #ffffff;" *ngFor="let item of categories; index as i">
+        <!-- <app-category-search-item
+            [category]="item"
+            [tagId]="tagId">
+        </app-category-search-item> -->
+
+        <div class="row category">
+            <div class="col-sm-10">
+                <button class="btn btn-link h10"
+                    (click)="selectCategory(item)">
+                    {{ item.categoryName}}
+                </button>
+            </div>
+            <div class="col-sm-2">
+                {{ item.count}}
+            </div>
+        </div>
+        <div *ngIf="item.selected">
+            <div class="row category" *ngFor="let s of item.subcategories; index as i">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-sm-9">
+                    <button 
+                        class="btn btn-link h11"
+                        (click)="selectSubcategory(s.categoryId)">
+                        {{ s.categoryName}}
+                    </button>
+                </div>
+                <div class="col-sm-2">
+                    {{ s.count}}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

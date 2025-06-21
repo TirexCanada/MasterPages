@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-sm-11 nopadding">
+        <button class="btn btn-primary" (click)="back()"><i class="fa fa-arrow-left ms-1 me-2"></i>{{ 'common.buttons.back' | translate }}</button>
+    </div>
+    <div class="col-sm-1 nopadding">
+        <ng-template #popoverContent>       
+            <div style="width: 250px; height: 40px">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <!-- <a href="https://www.facebook.com/sharer/sharer.php?u=https://classifiedportal.azurewebsites.net/#/portal/listing/6275ea94-0d55-46a5-afa8-247ab77a541f" target='_blank'><img src='/assets/images/listing/facebook.png' width=35 height='auto'/></a> -->
+                        <a href="#" click="fb($event)"><img src='/assets/images/listing/facebook.png' width=35 height='auto'/></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href='http://twitter.com' target='_blank'><img src='/assets/images/listing/twitter.png' width=35 height='auto'/></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href='http://instagram.com' target='_blank'><img src='/assets/images/listing/instagram.png' width=35 height='auto'/></a>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href='http://youtube.com' target='_blank'><img src='/assets/images/listing/youtube.png' width=35 height='auto'/></a>
+                    </div>
+                </div>
+            </div>  
+        </ng-template>
+
+        <!-- <button type="button" class="btn" placement="bottom"
+            [ngbPopover]="popoverContent" popoverTitle="">
+            <img class="img-fluid" src="/assets/images/listing/share.png"/>
+        </button> -->
+    </div>
+</div>
+<div class="row mt-3 mb-3 listing">
+    <div class="col-sm-12">       
+        <h2>{{ listing?.title }}</h2>
+    </div>
+</div>
+<div class="row mb-3 listing">
+    <div class="col-sm-12">       
+        <h3>{{ listing?.listingDate | dateFormatLong }}</h3>
+    </div>
+</div>  
+
+<div class="row mb-3" style="background-color: #ffffff;">
+    <div class="col-sm-12">
+        <div class="row mt-5 mb-5">
+            <div class="col-sm-12">
+                <h4 class="pl-3" [innerHTML]="listing?.description | linebreaks"></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row image-height-listing bannerBlog">
+    <div class="col-sm-12"
+        [style.backgroundImage]="'url(' + listing.listingImageUrl + ')'"
+        style="background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: center; 
+        background-position-x: center;">
+    </div>
+</div>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>

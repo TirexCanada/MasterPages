@@ -1,0 +1,17 @@
+<div class="row" [style.backgroundImage]="'url(' + marketingCampaign?.marketingImage + ')'" style="min-height: 730px;">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5 pb-5">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mt-5 mb-5"><h3 [innerHTML]="marketingCampaign?.marketingText1"></h3></div>
+                <div class="mt-5 mb-5"><h1 [innerHTML]="marketingCampaign?.marketingText2"></h1></div>
+                <div class="mt-5 mb-5"><h3 [innerHTML]="marketingCampaign?.marketingText3"></h3></div>
+                <div class="mt-5">
+                    <button type="button" class="btn btn-warning btn-classified" (click)=marketingCampaignClick()>{{ marketingCampaign?.marketingCampaignButtonInformation.buttonText }}</button>
+                </div>
+            </div>
+            <div class="col-sm-6"></div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+</div>

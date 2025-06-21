@@ -1,0 +1,99 @@
+<div class="mt-5 mb-5">
+    <h2>{{ 'components.updateProfile.socialProfiles' | translate }}</h2>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'whatsup'"
+        [model]="model && model.customerSocialProfilesInformation"
+        [modelName]="'whatsupLink'"
+        [defaultValue]=""
+        [title]="'Whats up:'"
+        [placeholder]="'Whats up'"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.socialProfileLink.minLength"
+        [maxLength]="validationData['customer']?.socialProfileLink.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'facebook'"
+        [model]="model && model.customerSocialProfilesInformation"
+        [modelName]="'facebookLink'"
+        [defaultValue]=""
+        [title]="'Facebook:'"
+        [placeholder]="'Facebook'"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.socialProfileLink.minLength"
+        [maxLength]="validationData['customer']?.socialProfileLink.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'twitter'"
+        [model]="model && model.customerSocialProfilesInformation"
+        [modelName]="'twitterLink'"
+        [defaultValue]=""
+        [title]="'Twitter:'"
+        [placeholder]="'Twitter'"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.socialProfileLink.minLength"
+        [maxLength]="validationData['customer']?.socialProfileLink.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'instagram'"
+        [model]="model && model.customerSocialProfilesInformation"
+        [modelName]="'instagramLink'"
+        [defaultValue]=""
+        [title]="'Instagram:'"
+        [placeholder]="'Instagram'"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.socialProfileLink.minLength"
+        [maxLength]="validationData['customer']?.socialProfileLink.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mb-3">
+    <app-one-line-question [form]="form"
+        class="form-inline col-sm-12"
+        [controlName]="'youtube'"
+        [model]="model && model.customerSocialProfilesInformation"
+        [modelName]="'youtubeLink'"
+        [defaultValue]=""
+        [title]="'Youtube:'"
+        [placeholder]="'Youtube'"
+        [isRequired]=false
+        [isDisabled]="isDisabled"
+        [inlineFlag]=true
+        [minLength]="validationData['customer']?.socialProfileLink.minLength"
+        [maxLength]="validationData['customer']?.socialProfileLink.maxLength"
+        [inputValidator]="'ct4 ct5 ct6 ct8'">
+    </app-one-line-question>
+</div>
+
+<div class="form-group row mt-3">
+    <div class="col-sm-12">
+        <div class="border-bottom"></div>
+    </div>
+</div>

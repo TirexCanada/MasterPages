@@ -1,0 +1,72 @@
+<div class="row" style="background-color: #eff4ff;">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10">
+        <div class="row mb-3">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
+            <div class="col-sm-12 col-md-8 col-lg-8 col-xl-8 p-5 text-center">
+                <h2 *ngIf="categoryType==='business'" class="mb-3">{{ 'components.topAdds.titleTop' | translate }}</h2>
+                <h2 *ngIf="categoryType==='classified'" class="mb-3">{{ 'components.topClassifiedAdds.titleTop' | translate }}</h2>
+                <h4 *ngIf="categoryType==='business'">{{ 'components.topAdds.titleBottom' | translate }}</h4>
+                <div class="border-bottom"></div>
+            </div>
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-1 col-lg-2 col-xl-2"></div>
+            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 p-5 text-center">
+                <button type="button" class="btn btn-primary btn-block" (click)="getListings('recent')" [ngClass]="{ 'active': isRecentActive, 'non-active': !isRecentActive }">{{ 'common.buttons.mostRecent' | translate }}</button>
+            </div>
+            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 p-5 text-center">
+                <button type="button" class="btn btn-primary btn-block" (click)="getListings('popular')" [ngClass]="{ 'active': !isRecentActive, 'non-active': isRecentActive }">{{ 'common.buttons.mostPopular' | translate }}</button>
+            </div>
+            <div class="col-sm-12 col-md-1 col-lg-2 col-xl-2"></div>
+        </div>
+
+        <!-- <div class="row">
+            <div class="col-sm-12 custom-align-right">               
+                <button (click)="toggle('list')">
+                    <i class="fa fa-th-list"></i>
+                </button>
+                <button class="btn-margin-left" (click)="toggle('grid')">
+                    <i class="fa fa-th-large"></i>
+                </button>
+            </div>
+        </div> -->
+
+        <div *ngIf="currentView==='list'">
+            <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-5" *ngFor="let listing of listings; index as i">
+                    <div class="row nopadding-left">
+                        <div class="col-sm-12 nopadding-left" style="background-color: #ffffff;">
+                            <app-listing-block 
+                                style="display: contents;"
+                                [location]="'top-ads'"
+                                [listing]="listing"
+                                [currentView]="currentView"
+                                [categoryType]="categoryType">
+                            </app-listing-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div *ngIf="currentView==='grid'">
+            <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
+                <div class="col-sm-3 p-5" *ngFor="let listing of listings; index as i">
+                    <div class="row nopadding-left">
+                        <div class="col-sm-12 nopadding-left" style="background-color: #ffffff;">
+                            <app-listing-block 
+                                style="display: contents;"
+                                [location]="'top-ads'"
+                                [listing]="listing"
+                                [currentView]="currentView">
+                            </app-listing-block>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-sm-1"></div>
+</div>

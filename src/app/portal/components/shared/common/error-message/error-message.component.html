@@ -1,0 +1,5 @@
+<div *ngIf="errors && errors.length > 0" [ngClass]="{'alert-danger': !isSuccess, 'alert-success': isSuccess}" class="alert mt-5" role="alert">
+    <div *ngFor="let error of errors">
+        <p [innerHTML]="error.displayMessage"></p>
+    </div>
+</div>

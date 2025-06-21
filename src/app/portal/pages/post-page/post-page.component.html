@@ -1,0 +1,129 @@
+<div class="row" style="background-color: #ccdcff;">
+    <!-- <div class="col-sm-12 nopadding">
+        <button class="btn btn-primary" (click)="cancelClick('listing')"><i class="fa fa-arrow-left mr-2">{{ 'common.buttons.back' | translate }}</i></button>
+    </div> -->
+    <div class="col-sm-12 p-5">
+        <h1 *ngIf="mode==='add'">{{ 'pages.post.addTitle' | translate }}</h1>
+        <h1 *ngIf="mode==='edit'">{{ 'pages.post.editTitle' | translate }}</h1>
+        <h1 *ngIf="mode==='delete'">{{ 'pages.post.deleteTitle' | translate }}</h1>
+    </div>
+</div>
+
+<form #postForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="row p-5">
+        <div class="col-sm-12">
+            @if(mode==='add') {
+                <div class="form-group row mb-5"> 
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10">
+                        <h2>{{ 'pages.post.selectDirectory' | translate }}</h2>
+                        <app-radio-input-question 
+                            [form]="form"
+                            [controlName]="'businessFlag'"
+                            [model]="newModel"
+                            [modelName]="'businessFlag'"
+                            [defaultValue]="null"
+                            [title]=""
+                            [data]="listingTypesOptionsData"
+                            [isRequired]=true
+                            [isDisabled]=false>
+                        </app-radio-input-question>
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+            }
+        </div>
+    </div>
+    
+    <div class="row p-5" *ngIf="newModel.businessFlag!==null && newModel.businessFlag!==0" style="background-color: #eff4ff;"> 
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6 pt-5">
+            <div class="row mb-5">
+                <div class="col-sm-12" [appDisable]="isDisabled['listing']">
+                    <app-add-post 
+                        [title]=""
+                        [form]="postForm" 
+                        [model]="model" 
+                        [mode]="mode"
+                        [currentCustomer]="currentCustomer">
+                    </app-add-post>
+                    <div *ngIf="errorMessage!==''">
+                        <small class="form-text error-message" invalid >{{ errorMessage }}</small>
+                    </div>
+                </div>
+                <div class="col-sm-2 mt-3 mb-3">
+                    <button type="button" class="btn btn-secondary btn-block" (click)="deleteClick('listing')" *ngIf="mode==='delete'">{{ 'common.buttons.delete' | translate }}</button>
+                    <button type="button" class="btn btn-primary btn-block" (click)="editClick('listing')" *ngIf="isDisabled['listing']===true && newListingFlag===false && mode!=='delete'">{{ 'common.buttons.edit' | translate }}</button>
+                    <button type="button" class="btn btn-success btn-block" (click)="saveClick('listing')" *ngIf="isDisabled['listing']===false">{{ 'common.buttons.save' | translate }}</button>
+                </div>
+                <div class="col-sm-2 mt-3 mb-3">
+                    <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('listing')" *ngIf="isDisabled['listing']===false && newListingFlag===false">{{ 'common.buttons.cancel' | translate }}</button>
+                </div>
+            </div>      
+
+            @if (mode!='delete') {
+                <div class="row mb-5">
+                    <div class="col-sm-12 mt-5" [appDisable]="isDisabled['tags']">
+                        <app-add-post-tags 
+                            [title]=""
+                            [form]="postForm" 
+                            [listingTags]="listingTags"
+                            [model]="model" 
+                            [mode]="mode"
+                            [currentCustomer]="currentCustomer"
+                            [businessFlag]="newModel?.businessFlag">
+                        </app-add-post-tags>
+                    </div>
+                    <div class="col-sm-2 mt-3 mb-3">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick('tags')" *ngIf="isDisabled['tags']===true">{{ 'common.buttons.edit' | translate }}</button>
+                        <button type="button" class="btn btn-success btn-block" (click)="saveClick('tags')" *ngIf="isDisabled['tags']===false">{{ 'common.buttons.save' | translate }}</button>
+                    </div>
+                    <div class="col-sm-2 mt-3 mb-3">
+                        <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('tags')" *ngIf="isDisabled['tags']===false">{{ 'common.buttons.cancel' | translate }}</button>
+                    </div>
+                </div>      
+                <div class="row mb-5" style="background-color: #ffffff;">
+                    <div class="col-sm-12 mt-3">
+                        <app-add-post-images 
+                            [title]=""
+                            [form]="postForm" 
+                            [model]="model" 
+                            [mode]="mode"
+                            [currentCustomer]="currentCustomer">
+                        </app-add-post-images>
+                    </div>
+                </div>             
+                <div class="row mb-5">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-block" (click)="saveStatus(false)">{{ 'common.buttons.saveDraft' | translate }}</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-block" (click)="saveStatus(true)">{{ 'common.buttons.savePublish' | translate }}</button>
+                    </div>
+                    <div class="col-sm-4 text-text-end">
+                        <button type="button" class="btn btn-primary btn-block" (click)="cancelClick('listing')">{{ 'common.buttons.cancel' | translate }}</button>
+                    </div>
+                </div>    
+            }
+        </div>
+        <div class="col-sm-4 p-5">
+            @if( mode!=='delete') {
+                <div class="row">
+                    <app-add-post-contact    
+                        style="display: contents;"
+                        [model]="model"
+                        [currentCustomer]="currentCustomer">
+                    </app-add-post-contact>
+                </div>
+                <div class="row">
+                    <app-add-post-map    
+                        style="display: contents;"
+                        [model]="model"
+                        [currentCustomer]="currentCustomer">
+                    </app-add-post-map>
+                </div>
+            }
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</form>

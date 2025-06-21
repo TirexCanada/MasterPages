@@ -1,0 +1,101 @@
+<div class="row">
+    <div class="col-sm-12 pl-5 pr-5 pt-3 pb-3">
+        <h3>LOCATION</h3>
+    </div>
+</div>
+<div class="row pl-5 pr-5 pb-3 mb-3">
+    <div class="col-sm-12 border-bottom"></div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group row pl-1 pr-1 pb-3">
+            <div class="col-sm-12">       
+                <!-- <input class="form-control input-text-contact"
+                id="'location'" 
+                name="'location'" 
+                [attr.name]="'location'" 
+                placeholder="Search by location" 
+                type="text" 
+                [required]=true
+                [(ngModel)]="model && model.location" 
+                appInputValidator
+                InputValidator="'ct1 ct2 ct5 ct6'"
+                #locationCtrl="ngModel"/> -->
+
+                <!-- <input class="form-control input-text-contact"
+                    id="'location'" 
+                    name="'location'" 
+                    [attr.name]="'location'" 
+                    placeholder="Search by location" 
+                    type="text" 
+                    minlength="{{validationData['customer']?.firstName.minLength}}"
+                    maxlength="{{validationData['customer']?.firstName.maxLength}}"
+                    [required]=true
+                    [(ngModel)]="model && model.location" 
+                    appInputValidator
+                    InputValidator="'ct1 ct2 ct5 ct6'"
+                    #locationCtrl="ngModel"/> -->
+
+                <!-- <div class="text-left" *ngIf="submitted && locationCtrl.errors">
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.required">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.minlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.maxlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                </div>        -->
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <div class="form-group row pl-1 pb-3">
+            <div class="col-sm-12">           
+                <!-- <input class="form-control input-text-contact"
+                    id="'locationFrom'" 
+                    name="'locationFrom'" 
+                    [attr.name]="'location'" 
+                    placeholder="1 km" 
+                    type="text" 
+                    minlength="{{validationData['customer']?.firstName.minLength}}"
+                    maxlength="{{validationData['customer']?.firstName.maxLength}}"
+                    [required]=true
+                    [(ngModel)]="model && model.locationFrom" 
+                    appInputValidator
+                    InputValidator="'ct1 ct2 ct5 ct6'"
+                    #locationFromCtrl="ngModel"/>
+                <div class="text-left" *ngIf="submitted && locationFromCtrl.errors">
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.required">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.minlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.maxlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                </div>        -->
+            </div>
+        </div> 
+    </div>
+    <div class="col-sm-1">-</div>
+    <div class="col-sm-4">
+        <div class="form-group row pb-3">
+            <div class="col-sm-12">           
+                <!-- <input class="form-control input-text-contact"
+                    id="'locationTo'" 
+                    name="'location'" 
+                    [attr.name]="'locationTo'" 
+                    placeholder="100 km" 
+                    type="text" 
+                    minlength="{{validationData['customer']?.firstName.minLength}}"
+                    maxlength="{{validationData['customer']?.firstName.maxLength}}"
+                    [required]=true
+                    [(ngModel)]="model && model.locationTo" 
+                    appInputValidator
+                    InputValidator="'ct1 ct2 ct5 ct6'"
+                    #locationToCtrl="ngModel"/>
+                <div class="text-left" *ngIf="submitted && locationToCtrl.errors">
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.required">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.minlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                    <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors.maxlength">{{validationData['customer']?.firstName.errorMessage}}</small>
+                </div>        -->
+            </div>
+        </div> 
+    </div>
+    <div class="col-sm-3">
+        <button type="button" class="btn btn-primary btn-block" (click)="submit()">GO</button>
+    </div>
+</div>

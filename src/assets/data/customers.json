@@ -1,0 +1,62 @@
+[
+    {
+        "id": "1",
+        "email": "test1@test.com",
+        "legalName": {
+            "firstName": "ATestFN",
+            "lastName": "ATestLN"
+        },
+        "spouseLegalName": {
+            "firstName": "CTestFN",
+            "lastName": "CTestLN"
+        }
+    },
+    {
+        "id": "2",
+        "email": "test2@test.com",
+        "legalName": {
+            "firstName": "BTestFN",
+            "lastName": "BTestLN"
+        },
+        "spouseLegalName": {
+            "firstName": "DTestFN",
+            "lastName": "DTestLN"
+        }
+    },
+    {
+        "id": "3",
+        "email": "test3@test.com",
+        "legalName": {
+            "firstName": "CTestFN",
+            "lastName": "CTestLN"
+        },
+        "spouseLegalName": {
+            "firstName": "ATestFN",
+            "lastName": "ATestLN"
+        }
+    },
+    {
+        "id": "4",
+        "email": "test4@test.com",
+        "legalName": {
+            "firstName": "DTestFN",
+            "lastName": "DTestLN"
+        },
+        "spouseLegalName": {
+            "firstName": "BTestFN",
+            "lastName": "BTestLN"
+        }
+    },
+    {
+        "id": "5",
+        "email": "test5@test.com",
+        "legalName": {
+            "firstName": "ETestFN",
+            "lastName": "ETestLN"
+        },
+        "spouseLegalName": {
+            "firstName": "",
+            "lastName": ""
+        }
+    }
+]

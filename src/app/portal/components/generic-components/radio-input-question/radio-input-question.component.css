@@ -1,0 +1,44 @@
+.btnNoPadding {padding: 0px 0px 5px 0px !important;}
+
+.dark-modal .modal-content {
+    background-color: #292b2c;
+    color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
+}
+/* 
+.modal-dialog { 
+  position:relative;
+  top:0;
+  left:60%;
+  margin: 0px;
+  height:100%;
+}
+
+.modal-lg {
+    height: 100%;
+}
+.modal-content {
+    height: 100%;
+} */
+
+
+.tooltip-box .tooltip-inner {
+  background-color:  #2484ab;
+}
+.tooltip-box .arrow::before {
+  border-top-color:  #2484ab;
+}
+
+.left-margin {
+  margin-left: -50px;
+}
+
+.font-medium {
+  font-size: 24px; 
+}
+

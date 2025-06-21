@@ -1,0 +1,24 @@
+<div class="category-icon">
+    <!-- <div class="row mt-1 mb-1 nopadding">
+        <div class="col-sm-12 padding5">
+        <h3 *ngIf="categoryType==='business'">{{ 'categories.category-business-icon.label' | translate }}</h3>
+        <h3 *ngIf="categoryType==='classified'">{{ 'categories.category-classified-icon.label' | translate }}</h3>
+        </div>                   
+    </div> -->
+    <div class="row mt-3 mb-1 nopadding">
+        <div class="col-sm-6 col-md-1 col-lg-1 col-xl-1 padding5" *ngFor="let category of categories; index as i">
+            <a [routerLink]="['/portal/category/' + categoryType + '/' + category.id]">
+                <!--  <div class="text-center p-1" style="vertical-align: middle; border: 1px solid #ffffff; border-radius: 14px; background-color: #ffffff;" >                   
+                    <img class="img-fluid" [src]="category.categoryImage" />
+                </div> -->
+                <div class="text-center p-1" style="vertical-align: middle; border: 3px solid #516394; border-radius: 14px; background-color: #ffffff;" >                   
+                    <div class="text-center"><i class="{{category.categoryImage}}" style="color: #242c42; font-size: 48px;"></i></div>
+                </div>
+                <div class="text-center">
+                    <h5 *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</h5>
+                    <h5 *ngIf="translateService.currentLang==='ru'">{{ category.categoryName_RU }}</h5>
+                </div>
+            </a>
+        </div>                   
+    </div>
+</div>

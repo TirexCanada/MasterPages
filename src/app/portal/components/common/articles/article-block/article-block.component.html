@@ -1,0 +1,35 @@
+<div class="row nopadding-left">   
+    <div class="col-sm-3 nopadding" *ngIf="currentView==='list'"
+        [style.backgroundImage]="'url(assets/images/articles/categories/3876f52b-20ab-4e9e-b784-03ed74828ad3.jpg)'" 
+        style="background-size:contain;
+        background-repeat: no-repeat;
+        background-position-y: top; 
+        background-position-x: center;">
+    </div>
+
+    <div class="col-sm-9 pl-3" [ngClass]="{ 'active': article.priorityFlag, 'notactive': !article.priorityFlag }">   
+        <div class="row mb-1 mt-1">
+            <div class="col-sm-11">
+                <h3>{{ article.dateCreated | dateFormatLong }}</h3>
+            </div>
+            <div class="col-sm-1"> 
+                
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col-sm-12">
+                <a [routerLink]="['/portal/article/' + article.id]" class="h10"><h4>{{ article?.contentName_RU }}</h4></a>  
+            </div>           
+        </div>
+        <div class="row mb-3">
+            <div class="col-sm-12 h4" [innerHTML]="article?.contentAbstract_RU">
+                <!-- <h4>{{ article?.contentAbstract_RU }}</h4> -->
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-sm-12 custom-align-right">
+                <button type="button" class="btn btn-primary btn-block" (click)="getArticle(article)">{{ 'common.buttons.more' | translate }}</button>
+            </div>
+        </div>
+    </div>
+</div>

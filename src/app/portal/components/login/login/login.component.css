@@ -1,0 +1,14 @@
+.button { 
+    vertical-align: middle; 
+    position: relative; 
+    bottom: 2px; 
+}
+
+.btn-toggle {
+    background-color: #fff; 
+    box-shadow: none; 
+}
+
+no-padding {
+    padding: 0 !important; 
+}

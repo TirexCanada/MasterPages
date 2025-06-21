@@ -1,0 +1,30 @@
+<div class="row pb-5" style="background-color: #eff4ff;">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5">
+        <div class="row footer-background p-5 text-white footer-text">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-12 mr-3">
+                        <app-contact-form-info
+                            [location]="'contactPage'">
+                        </app-contact-form-info>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-5 mb-5">
+                <div class="row" style="background-color: #ffffff;">
+                    <app-contact-form
+                    [location]="'contactPage'"
+                    [subject]="subject"
+                    [message]="message">
+                </app-contact-form>
+                </div>
+            </div>
+            <div class="col-sm-1">
+                
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+</div>

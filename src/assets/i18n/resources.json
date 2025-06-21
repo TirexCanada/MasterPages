@@ -1,0 +1,900 @@
+{
+    "common": {
+        "buttons": {
+            "yes": {
+                "en": "Yes"
+            },
+            "no": {
+                "en": "No"               
+            },
+            "back": {
+                "en": "Back",
+                "ru": "Назад"
+            },
+            "exit": {
+                "en": "Exit",
+                "ru": "Выход"
+            },
+            "exitAnyways": {
+                "en": "Exit Anyways"
+            },
+            "save": {
+                "en": "Save",
+                "ru": "Сохранить"
+            },
+            "submit": {
+                "en": "Submit",
+                "ru": "Отправить"
+            },
+            "cancel": {
+                "en": "Cancel",
+                "ru": "Отменить"
+            },
+            "edit": {
+                "en": "Edit",
+                "ru": "Редактировать"
+            },
+            "reset": {
+                "en": "Reset",
+                "ru": "Сбросить"
+            },
+            "delete": {
+                "en": "Delete",
+                "ru": "Удалить"
+            },
+            "save&continue": {
+                "en": "Save & Continue",
+                "ru": "Сохранить и продолжить"
+            },
+            "save&exit": {
+                "en": "Save & Exit",
+                "ru": "Сохранить и выйти"
+            },
+            "continue": {
+                "en": "Continue",
+                "ru": "Продолжить"
+            },
+            "confirm": {
+                "en": "Confirm",
+                "ru": "Подтвердить"
+            },
+            "close": {
+                "en": "Close",
+                "ru": "Закрыть"
+            },
+            "purchase": {
+                "en": "Purchase now"
+            },
+            "search": {
+                "en": "Search",
+                "ru": "Искать"
+            },
+            "continueShopping": {
+                "en": "Continue Shopping"
+            },
+            "goToCheckout": {
+                "en": "Proceed to Checkout",
+                "ru": "Перейти к оформлению заказа"
+            },
+            "goToPayment": {
+                "en": "Proceed to Payment",
+                "ru": "Перейти к оплате"
+            },
+            "addProduct": {
+                "en": "Add Product"
+            },
+            "returnToShoppingCart": {
+                "en": "Return to Shopping Cart"
+            },
+            "returnToPortal": {
+                "en": "Return to Portal",
+                "ru": "Вернуться на портал"
+            },
+            "login": {
+                "en": "Customer log in"
+            },
+            "loginButton": {
+                "en": "Login",
+                "ru": "Войти"
+            },
+            "register": {
+                "en": "Register"
+            },
+            "returnBack": {
+                "en": "Return Back"
+            },
+            "print": {
+                "en": "Print"
+            },
+            "goBack": {
+                "en": "Go Back Anyways"
+            },
+            "stayOnPage": {
+                "en": "Stay on this page"
+            },
+            "forgotPassword": {
+                "en": "Forgot Password?",
+                "ru": "Забыли пароль?"
+            },
+            "requestToUnlock": {
+                "en": "Request to unlock account"
+            },
+            "requestRefund": {
+                "en": "Request a Refund"
+            },
+            "submitRefundRequest": {
+                "en": "Submit Refund Request"
+            },
+            "home": {
+                "en": "Back to Portal",
+                "ru": "На портал"
+            },
+            "listings": {
+                "en": "Go to My Listings",
+                "ru": "Мои объявления"
+            },
+            "saveDraft": {
+                "en": "Save to Drafts",
+                "ru": "Сохранить  без публикации"
+            },
+            "savePublish": {
+                "en": "Save and Publish",
+                "ru": "Сохранить и опубликовать"
+            },
+            "addPost": {
+                "en": "Add Post",
+                "ru": "Добавить объявление"
+            },
+            "mostRecent": {
+                "en": "Most Recent",
+                "ru": "Последние"
+            },
+            "mostPopular": {
+                "en": "Most Popular",
+                "ru": "Популярные"
+            },
+            "publish": {
+                "en": "Publish",
+                "ru": "Опубликовать"
+            },
+            "boost": {
+                "en": "Boost",
+                "ru": "Продвигать"
+            },
+            "more": {
+                "en": "Read more",
+                "ru": "Читать далее"
+            },
+            "deactivate": {
+                "en": "Deactivate",
+                "ru": "Деактивировать"
+            }
+        },
+        "errorMessages": {
+            "signupErrors": {
+                "accountNameRequiredError": {
+                    "en": "Please, enter account name",
+                    "ru": "Пожалуйста, введите имя аккаунта"
+                },
+                "accountNameValueError": {
+                    "en": "Account name should be 2 - 100 characters",
+                    "ru": "Имя аккаунта должно содержать от 2 до 100 символов"
+                },
+                "emailRequiredError": {
+                    "en": "Please, enter email and password",
+                    "ru": "Пожалуйста, введите адрес электронной почты"
+                },
+                "emailNotValidError": {
+                    "en": "Email is not valid",
+                    "ru": "Электронная почта недействительна"
+                },
+                "emailMinLengthError": {
+                    "en": "Min Length is 5",
+                    "ru": "Минимальное количество символов 5"
+                },
+                "emailMaxLengthError": {
+                    "en": "Max Length is 50",
+                    "ru": "Максимальное количество символов 50"
+                },
+                "passwordRequiredError": {
+                    "en": "Password is required",
+                    "ru": "Пароль обязателен"
+                },
+                "confirmPasswordRequiredError": {
+                    "en": "Confirm Password is required",
+                    "ru": "Подтверждение пароля обязательно"
+                },
+                "passwordsNotMatchError": {
+                    "en": "Passwords should match",
+                    "ru": "Пароли должны совпадать"
+                },
+                "passwordValueError": {
+                    "en": "Password should be 8 - 16 characters long and has at least one letter, one numeric and one special character",
+                    "ru": "Пароль должен содержать от 8 до 16 символов и содержать хотя бы одну букву, одну цифру и один специальный символ"
+                },
+                "termsAndConditionsRequiredError": {
+                    "en": "Please, agree to Terms and Conditions",
+                    "ru": "Пожалуйста, согласитесь с условиями"
+                }
+            },
+            "loginErrors": {
+                "emailRequiredError": {
+                    "en": "Enter email",
+                    "ru": "Введите адрес электронной почты"
+                },
+                "passwordRequiredError": {
+                    "en": "Enter password",
+                    "ru": "Введите пароль"
+                }
+            }
+        }
+    },
+    "components": {
+        "header": {
+            "home": {
+                "en": "Welcome to MasterPages",
+                "ru": "Добро пожаловать - MasterPages"
+            },
+            "business": {
+                "en": "Business Directory",
+                "ru": "Бизнес справочник"
+            },
+            "classified": {
+                "en": "Classified",
+                "ru": "Классифайд"
+            },
+            "articles": {
+                "en": "Articles",
+                "ru": "Статьи"
+            },
+            "products": {
+                "en": "Products"
+            },
+            "contact": {
+                "en": "Contact",
+                "ru": "Контакты"
+            },
+            "faq": {
+                "en": "FAQ",
+                "ru": "Вопросы"
+            },
+            "signup": {
+                "en": "Sign Up",
+                "ru": "Регистрация"
+            },
+            "changePassword": {
+                "en": "Change Password",
+                "ru": "Изменить пароль"
+            },
+            "editProfile": {
+                "en": "Edit Profile",
+                "ru": "Редактировать профайл"
+            },
+            "myListings": {
+                "en": "My Listings",
+                "ru": "Мои объявления"
+            },
+
+            "myOrders": {
+                "en": "My Orders",
+                "ru": "Мои заказы"
+            },
+            "login": {
+                "en": "Login",
+                "ru": "Логин"
+            },
+            "logOut": {
+                "en": "Log out",
+                "ru": "Выйти"
+            },
+            "addPost": {
+                "en": "Add Post",
+                "ru": "Добавить объявление"
+            },
+            "eng": {
+                "en": "EN",
+                "ru": "АНГ"
+            },
+            "rus": {
+                "en": "RU",
+                "ru": "РУС"
+            }
+        },
+        "login": {
+            "title": {
+                "en": "Log in to your account",
+                "ru": "Войдите в свой аккаунт"
+            },
+            "password": {
+                "en": "Password",
+                "ru": "Пароль"
+            },
+            "email": {
+                "en": "Email",
+                "ru": "Электронная почта"
+            },
+            "returningCustomerLabel": {
+                "en": "Returning Customer?"
+            },
+            "loginLabel": {
+                "en": "Please login"
+            },
+            "emailLabel": {
+                "en": "Email Address"
+            },
+            "passwordLabel": {
+                "en": "Password"
+            },
+            "verificationCodeLabel": {
+                "en": "Verification Code"
+            },
+            "newCustomerLabel": {
+                "en": "New Customer"
+            },
+            "verificationTitle": {
+                "en": "Verify Your Account"
+            },
+            "verificationCodeEmail": {
+                "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button."
+            }
+        },
+        "registration": {
+            "title": {
+                "en": "Sign up for an account",
+                "ru": "Зарегистрируйтесь"
+            },
+            "accountName": {
+                "en": "Account name",
+                "ru": "Имя"
+            },
+            "firstName": {
+                "en": "First name",
+                "ru": "Имя"
+            },
+            "lastName": {
+                "en": "Last name",
+                "ru": "Фамилия"
+            },
+            "email": {
+                "en": "Email",
+                "ru": "Электронная почта"
+            },
+            "emailNote": {
+                "en": "Your password must be at least 8 characters long, and contain at least 1 letter, 1 number, and 1 symbol",
+                "ru": "Ваш пароль должен быть не менее 8 символов и содержать не менее 1 буквы, 1 цифры и 1 символа"
+            },
+            "password": {
+                "en": "Password",
+                "ru": "Пароль"
+            },
+            "confirmPassword": {
+                "en": "Confirm password",
+                "ru": "Подтвердите пароль"
+            },
+            "oldPassword": {
+                "en": "Previous password",
+                "ru ": "Предыдущий пароль"
+            },
+            "signupCheck": {
+                "en": "Sign me up for updates, new services, and promotion codes",
+                "ru": "Подпишите меня на обновления, новые услуги и промо-коды"
+            },
+            "agreeCheck": {
+                "en": "I agree to",
+                "ru": "Я согласен с"
+            },
+            "termsAndConditions": {
+                "en": "Terms and Conditions",
+                "ru": "Условия и положения"
+            },
+            "verificationCodeEmail": {
+                "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button."
+            },
+            "createAccountButton": {
+                "en": "Create account",
+                "ru": "Создать аккаунт"
+            }
+
+        },
+        "registration-completed": {
+            "title": {
+                "en": "Thank you very much for your registration on MasterPages!",
+                "ru": "Большое спасибо за регистрацию на MasterPages!"
+            },
+            "loginLabel": {
+                "en": "Please login to your account now!",
+                "ru": "Пожалуйста, войдите в свой аккаунт!"
+            },
+            "message": {
+                "en": "Thank you for registering with us. We have sent you an email with a verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button."
+            }
+        },
+        "login-registration": {
+            "title": {
+                "en": "To add new post you need to login to your account or register",
+                "ru": "Чтобы добавить новое объявление, вам необходимо войти в свой аккаунт или зарегистрироваться"
+            },
+            "password": {
+                "en": "Password",
+                "ru": "Пароль"
+            },
+            "email": {
+                "en": "Email",
+                "ru": "Электронная почта"
+            },
+            "returningCustomerLabel": {
+                "en": "Returning Customer?",
+                "ru": "Вы уже были зарегистрированы?"
+            },
+            "loginLabel": {
+                "en": "Please login",
+                "ru": "Пожалуйста, войдите в свой аккаунт"
+            },
+            "emailLabel": {
+                "en": "Email Address",
+                "ru": "Электронная почта"
+            },
+            "passwordLabel": {
+                "en": "Password",
+                "ru": "Пароль"
+            },
+            "verificationCodeLabel": {
+                "en": "Verification Code",
+                "ru": "Код подтверждения"
+            },
+            "newCustomerLabel": {
+                "en": "New Customer",
+                "ru": "Новый клиент"
+            },
+            "verificationTitle": {
+                "en": "Verify Your Account",
+                "ru": "Подтвердите ваш аккаунт"
+            },
+            "verificationCodeEmail": {
+                "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button.",
+                "ru": "Мы отправили вам электронное письмо с вашим кодом подтверждения. Пожалуйста, проверьте папку со спамом, если вы не получите электронное письмо с кодом подтверждения в течение нескольких минут. Как только вы получите свой код подтверждения, введите его ниже и нажмите кнопку <b>'Отправить'</b>."
+            }
+        },
+        "lock": {
+            "verificationCodeEmail": {
+                "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button. Your account will be locked.",
+                "ru": "Мы отправили вам электронное письмо с вашим кодом подтверждения. Пожалуйста, проверьте папку со спамом, если вы не получите электронное письмо с кодом подтверждения в течение нескольких минут. Как только вы получите свой код подтверждения, введите его ниже и нажмите кнопку <b>'Отправить'</b>. Ваш аккаунт будет заблокирован."
+            }
+        },
+        "forgotPassword": {
+            "title": {
+                "en": "Forgot Password",
+                "ru": "Забыли пароль"
+            },
+            "message1": {
+                "en": "Please enter your email and click Submit button. You will get email with instructions on how to reset your password.",
+                "ru": "Пожалуйста, введите свой адрес электронной почты и нажмите кнопку 'Отправить'. Вы получите электронное письмо с инструкциями о том, как изменить пароль."
+            },
+            "verificationCodeEmail": {
+                "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button. You will get a form to reset you password.",
+                "ru": "Мы отправили вам электронное письмо с вашим кодом подтверждения. Пожалуйста, проверьте папку со спамом, если вы не получите электронное письмо с кодом подтверждения в течение нескольких минут. Как только вы получите свой код подтверждения, введите его ниже и нажмите кнопку <b>'Отправить'</b>. Вы получите форму для сброса пароля."
+            },
+            "email": {
+                "en": "Email",
+                "ru": "Электронная почта"
+            },
+            "enterCode": {
+                "en": "Enter verification code",
+                "ru":  "Введите код подтверждения:"
+            },
+            "code": {
+                "en": "Code",
+                "ru": "Код"
+            }
+        },
+        "checkout": {
+            "title": {
+                "en": "Checkout",
+                "ru": "Оформление заказа"
+            },
+            "labelNewCustomer": {
+                "en": "New customer? Click here to Register",
+                "ru": "Новый клиент? Нажмите здесь, чтобы зарегистрироваться"
+            },
+            "labelReturningCustomer": {
+                "en": "Returning customer? Click here to Login",
+                "ru": "Вы уже были зарегистрированы? Нажмите здесь, чтобы войти в свой аккаунт"
+            }
+        },
+        "checkoutRegistration": {
+            "labelNewCustomer": {
+                "en": "Registration",
+                "ru": "Регистрация"
+            },
+            "labelEmail": {
+                "en": "Email Address:",
+                "ru": "Электронная почта:"
+            },
+            "labelPassword": {
+                "en": "Password:",
+                "ru": "Пароль:"
+            },
+            "labelConfirmPassword": {
+                "en": "Confirm Password:",
+                "ru": "Подтвердите пароль:"
+            }
+        },
+        "refund": {
+            "title": {
+                "en": "Change Request"
+            },
+            "label1": {
+                "en": "We think you may have selected the wrong package!"
+            },
+            "label2": {
+                "en": "We will be glad to issue you a refund. Just fill up the form below:"
+            },
+            "formTitle": {
+                "en": "Refund Form"
+            },
+            "emailTitle": {
+                "en": "Please provide your email address:"
+            },
+            "refundReasonTitle": {
+                "en": "Please provide a reason for refund:"
+            },
+            "refundSuccessTitle": {
+                "en": "Refund Request Processed Successfully"
+            },
+            "refundSuccessMessage": {
+                "en": "<div>Dear customer,</div><div>We have received your request for a refund.</div><div>Please note that the refund will processed within the 5 business days.</div><div class='mb-3'>We might need to contact you in case we have any additional questions.</div><div>Please click the button below to get back to My Personal Portal.</div>"
+            },
+            "refundErrorTitle": {
+                "en": "There was a problem with your Refund Request"
+            }
+        },
+        "updateProfile": {
+            "title": {
+                "en": "Edit your Account",
+                "ru": "Редактировать профайл"
+            },
+            "profileInformation": {
+                "en": "Profile Information",
+                "ru": "Профайл"
+            },
+            "contactInformation": {
+                "en": "Contact Information",
+                "ru": "Контактная информация"
+            },
+            "socialProfiles": {
+                "en": "Social Profiles (Optional)",
+                "ru": "Социальные профили (необязательно)"
+            }
+        },
+        "changePassword": {
+            "title": {
+                "en": "Change Password",
+                "ru": "Изменить пароль"
+            },
+            "oldPassword": {
+                "en": "Old Password",
+                "ru": "Старый пароль"
+            },
+            "newPassword": {
+                "en": "New Password",
+                "ru": "Новый пароль"
+            },
+            "confirmNewPassword": {
+                "en": "Confirm New Password",
+                "ru": "Подтвердите новый пароль"
+            }
+        },
+        "topAdds": {
+            "titleTop": {
+                "en": "Browse Top Ads",
+                "ru": "Просмотреть лучшие объявления"
+            },
+            "titleBottom": {
+                "en": "Make your search quick and effective with Toronto’s top business and community directory",
+                "ru": "Сделайте свой поиск быстрым и эффективным с лучшим бизнесом и общественным справочником Торонто"
+            }
+        },
+        "topClassifiedAdds": {
+            "titleTop": {
+                "en": "Browse Top Ads",
+                "ru": "Просмотреть лучшие объявления"
+            },
+            "titleBottom": {
+                "en": "Make your search quick and effective with Toronto’s top business and community directory",
+                "ru": "Сделайте свой поиск быстрым и эффективным с лучшим бизнесом и общественным справочником Торонто"
+            }
+        },
+        "profile": {
+            "contactInfo": {
+                "address": {
+                    "en": "Address",
+                    "ru": "Адрес"
+                },
+                "city": {
+                    "en": "City",
+                    "ru": "Город"
+                },
+                "province": {
+                    "en": "Province",
+                    "ru": "Провинция"
+                },
+                "postalCode": {
+                    "en": "Postal Code",
+                    "ru": "Почтовый индекс"
+                },
+                "phone": {
+                    "en": "Phone",
+                    "ru": "Телефон"
+                },
+                "contactInfoNote": {
+                    "en": "Fields marked with (*) are mandatory",
+                    "ru": "Поля, отмеченные (*) обязательны для заполнения"
+                },  
+                "contactInfoNote1": {
+                    "en": "If you enter your Address, City and Province OR Postal Code, you address will be properly located on the map.",
+                    "ru": "Если Вы укажете Ваш адрес, город и провинцию ИЛИ почтовый индекс, Ваш адрес будет правильно расположен на карте."
+                },
+                "contactInfoNote2": {
+                    "en": "Please enter only numbers in the Phone field. Do not use spaces, brackets or dashes. It will be formatted properly on the web pages",
+                    "ru": "Пожалуйста, введите номер телефона только цифрами. Не используйте пробелы, скобки и тире. Он будет правильно отформатирован на веб-страницах"
+                }
+            },
+            "profileInfo":{
+                "accountName": {
+                    "en": "Account name",
+                    "ru": "Имя"
+                },
+                "firstName": {
+                    "en": "First name",
+                    "ru": "Имя"
+                },
+                "lastName": {
+                    "en": "Last name",
+                    "ru": "Фамилия"
+                },
+                "businessName": {
+                    "en": "Business Name",
+                    "ru": "Название бизнеса"
+                },
+                "website": {
+                    "en": "Website",
+                    "ru": "Веб-сайт"
+                },
+                "profileInfoNote": {
+                    "en": "Fields marked with (*) are mandatory",
+                    "ru": "Поля, отмеченные (*) обязательны для заполнения"
+                }
+            },
+            "socialProfiles": {
+                "en": "Social Profiles",
+                "ru": "Социальные профили"
+            },
+            "profileImages": {
+
+            },
+            "myListings": {
+                "title": {
+                    "en": "My Listings",
+                    "ru": "Мои объявления"
+                },
+                "hits": {
+                    "en": "Hits",
+                    "ru": "Просмотров"
+                }
+            }
+        },
+        "addPostComponents": {
+            "addPost": {
+                "title": {
+                    "en": "Add Post",
+                    "ru": "Добавить объявление"
+                },
+                "postTitle": {
+                    "en": "Post Title",
+                    "ru": "Заголовок объявления"
+                },
+                "postDescription": {
+                    "en": "Post Description",
+                    "ru": "Описание объявления"
+                },
+                "postCategory": {
+                    "en": "Post Category",
+                    "ru": "Категория объявления"
+                },
+                "postImages": {
+                    "en": "Post Images",
+                    "ru": "Изображения объявления"
+                },
+                "postLocation": {
+                    "en": "Post Location",
+                    "ru": "Местоположение объявления"
+                },
+                "postPrice": {
+                    "en": "Post Price",
+                    "ru": "Цена объявления"
+                },
+                "postContact": {
+                    "en": "Post Contact",
+                    "ru": "Контакт объявления"
+                },
+                "postContactEmail": {
+                    "en": "Post Contact Email",
+                    "ru": "Электронная почта контакта"
+                },
+                "postContactPhone": {
+                    "en": "Post Contact Phone",
+                    "ru": "Телефон контакта"
+                },
+                "postContactName": {
+                    "en": "Post Contact Name",
+                    "ru": "Имя контакта"
+                },
+                "postContactAddress": {
+                    "en": "Post Contact Address",
+                    "ru": "Адрес контакта"
+                },
+                "postContactCity": {
+                    "en": "Post Contact City",
+                    "ru": "Город контакта"
+                },
+                "postContactProvince": {
+                    "en": "Post Contact Province",
+                    "ru": "Провинция контакта"
+                },
+                "postContactPostalCode": {
+                    "en": "Post Contact Postal Code",
+                    "ru": "Почтовый индекс контакта"
+                },
+                "postContactNote": {
+                    "en": "Fields marked with (*) are mandatory",
+                    "ru": "Поля, отмеченные (*) обязательны для заполнения"
+                }
+            }
+        },
+        "tagsComponents": {
+            "relatedTags": {
+                "en": "Related Tags",
+                "ru": "Связанные теги"
+            }
+        },
+        "searchComponents": {
+            "searchPlaceholder": {
+                "en": "What are you looking for...",
+                "ru": "Что вы ищете..."
+            },
+            "selectCategory": {
+                "en": "Select category",
+                "ru": "Выберите категорию"
+            },
+            "subcategory": {
+                "en": "Subcategory",
+                "ru": "Подкатегория"
+            },
+            "selectSubcategory": {
+                "en": "Select subcategory",
+                "ru": "Выберите подкатегорию"
+            },
+            "sortBy": {
+                "en": "Sort by",
+                "ru": "Сортировать"
+            },
+            "selectSorting": {
+                "en": "Select sorting",
+                "ru": "Выберите сортировку"
+            }
+        },
+        "listingMain": {
+            "description": {
+                "en": "Description",
+                "ru": "Описание"
+            }
+        }
+    },
+    "categories": {
+        "category-business-icon": {
+            "label": {
+                "en": "Business directory",
+                "ru": "Бизнес справочник 'Русский Торонто'"
+            }
+        },
+        "category-classified-icon": {
+            "label": {
+                "en": "Classified directory",
+                "ru": "Классифайд"
+            }
+        }
+    },
+    "pages": {
+        "home": {
+            "title": {
+                "en": "Welcome to MasterPages",
+                "ru": "Добро пожаловать - MasterPages"
+            },
+            "description": {
+                "en": "MasterPages is a platform that allows you to create your own website in minutes. It is a simple and easy to use platform that allows you to create your own website without any coding knowledge. You can choose from a variety of templates and customize them to suit your needs. You can add text, images, videos, and more to your website. You can also add a blog, a store, and other features to your website. MasterPages is a great platform for anyone who wants to create a website quickly and easily."
+            }
+        },
+        "business": {
+            "title": {
+                "en": "Business Directory",
+                "ru": "Бизнес справочник"
+            },
+            "description": {
+                "en": "MasterPages is a platform that allows you to create your own website in minutes. It is a simple and easy to use platform that allows you to create your own website without any coding knowledge. You can choose from a variety of templates and customize them to suit your needs. You can add text, images, videos, and more to your website. You can also add a blog, a store, and other features to your website. MasterPages is a great platform for anyone who wants to create a website quickly and easily."
+            }
+        },
+        "classified": {
+            "title": {
+                "en": "Classified",
+                "ru": "Классифайд"
+            },
+            "description": {
+                "en": "MasterPages is a platform that allows you to create your own website in minutes. It is a simple and easy to use platform that allows you to create your own website without any coding knowledge. You can choose from a variety of templates and customize them to suit your needs. You can add text, images, videos, and more to your website. You can also add a blog, a store, and other features to your website. MasterPages is a great platform for anyone who wants to create a website quickly and easily."
+            }
+        },
+        "articles": {
+            "title": {
+                "en": "Articles",
+                "ru": "Статьи"
+            },
+            "description": {
+            }
+        },
+        "listing": {
+            "detailsTitle": {
+                "en": "Listing Details",
+                "ru": "Детали объявления"
+            }
+        },
+        "post": {
+            "addTitle": {
+                "en": "Add new post",
+                "ru": "Добавить новое объявление"
+            },
+            "editTitle": {
+                "en": "Edit post",
+                "ru": "Редактировать объявление"
+            },
+            "deleteTitle": {
+                "en": "Delete post",
+                "ru": "Удалить объявление"
+            },
+            "selectDirectory": {
+                "en": "To which directory do you want to add your post?",
+                "ru": "В какой раздел вы хотите добавить свое объявление?"
+            },
+            "postTitle": {
+                "en": "Title of your post (maximum 50 characters)",
+                "ru": "Заголовок вашего объявления (максимум 50 символов)"
+            },
+            "listingDetails": {
+                "en": "Listing details (maximum 1000 characters)",
+                "ru": "Детали объявления (максимум 1000 символов)"
+            },
+            "phone": {
+                "en": "Phone",
+                "ru": "Телефон"
+            },
+            "website": {
+                "en": "Website",
+                "ru": "Веб-сайт"
+            },
+            "tagsTitle": {
+                "en": "Select relevant tags",
+                "ru": "Выберите соответствующие теги"
+            },
+            "selectCategory": {
+                "en": "Select category",
+                "ru": "Выберите категорию"
+            },
+            "selectSubcategory": {
+                "en": "Select subcategory",
+                "ru": "Выберите подкатегорию"
+            },
+            "postalCode": {
+                "en": "Postal code",
+                "ru": "Почтовый индекс"
+            }
+        }
+    }
+}

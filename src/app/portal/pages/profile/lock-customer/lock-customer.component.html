@@ -1,0 +1,66 @@
+<h1>Lock Customer</h1>
+
+<div class="row" *ngIf="mode==='request'">
+    <div class="col-sm-12 col-md-8 col-lg-6">
+        <app-request-validation-code          
+            [model]="model"
+            [title]="'Lock Customer'"
+            [type]="'lock'"
+            [message1]="'Please enter your email and click Submit button. You will get email with instructions on how to lock your account.'"
+            [message2]="'components.lock.verificationCodeEmail' | translate"
+            (submitForm)="onSubmitForm($event)"
+            (submitFormCode)="onSubmitFormCode($event)"
+            (submitFailed)="onSubmitFailed($event)"
+            (cancelForm)="onCancelForm($event)">
+        </app-request-validation-code>
+
+        <app-error-message *ngIf="serverErrors && mode === 'request'" 
+            [errors]="serverErrors">
+        </app-error-message>
+    </div>
+</div> 
+
+<div class="card" *ngIf="mode==='result'">
+    <div class="card-header">Lock Customer</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="row">
+                    <app-error-message *ngIf="serverErrors" 
+                        [errors]="serverErrors">
+                    </app-error-message>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <button class="btn btn-secondary" (click)="backToPortal()">Return to Portal</button>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<div *ngIf="mode==='message'">
+    <div class="card">
+        <div class="card-header">Lock Customer</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <app-error-message *ngIf="serverErrors" 
+                            [errors]="serverErrors">
+                        </app-error-message>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <button class="btn btn-secondary" (click)="backToPortal()">Return to Login page</button>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>
+

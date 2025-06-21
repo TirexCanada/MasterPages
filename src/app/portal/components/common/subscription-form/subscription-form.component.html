@@ -1,0 +1,39 @@
+<form #subscriptionForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="col-sm-12">
+        <h2 class="text-white">Subscribe to a search or category</h2>
+    </div>
+    <div class="col-sm-12">
+        <div class="row nopadding">
+            <div class="form-group col-sm-7 input-text">
+                <app-one-line-question 
+                    [form]="subscriptionForm"
+                    [controlName]="'searchtext'"
+                    [model]="model"
+                    [attr.name]="'searchtext'" 
+                    [modelName]="'searchtext'"
+                    [defaultValue]=""
+                    [title]="''"
+                    [placeholder]="'Your search (e.g. “used honda civic”)'"
+                    [isRequired]=false
+                    [inlineFlag]=false
+                    minlength="5"
+                    maxlength="50"
+                    [largeFlag]=false
+                    [inputValidator]="'ct4 ct5 ct6'">
+                </app-one-line-question>
+            </div>
+            <div class="form-group col-sm-1 pt-5 h31">OR</div>
+            <div class="col-sm-4">
+               <!--  <app-one-line-question></app-one-line-question> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-12">
+        <div class="input-group p-1">
+            <input type="text" class="form-control input-text" placeholder="Your email (ex. jane@anymail.com)" aria-label="" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-outline-warning btn-subscribe" type="button">Subscribe&nbsp;&nbsp;<i class="fa fa-arrow-right text-white"></i></button>
+            </div>
+          </div>
+    </div>
+</form>

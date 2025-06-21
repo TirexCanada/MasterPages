@@ -1,0 +1,27 @@
+.ff-c {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #103355;
+}
+
+.responsive {
+    min-width: 20px;
+    max-width: 30px;
+    width: 100%;
+    height: auto;
+}
+
+.nopadding { 
+    padding-right: 0px !important; 
+    padding-left: 0px !important;
+} 
+
+
+ /*  .row {
+    display: table;
+}
+
+.row [class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+} */

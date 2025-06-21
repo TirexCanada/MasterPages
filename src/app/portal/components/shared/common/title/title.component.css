@@ -1,0 +1,9 @@
+.scrollable {
+    overflow-y: auto;
+    overflow-x:hidden;
+    max-height: 780px;
+}
+
+.btnNoPadding {padding: 0px 0px 5px 0px !important;}
+
+span {font-size:12.0pt;}

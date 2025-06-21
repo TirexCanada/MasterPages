@@ -1,0 +1,60 @@
+<div class="row" style="background-color: #ccdcff;">
+    <div class="col-sm-12 p-5">
+        <h1>My Orders</h1>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <!-- <div class="text-center">
+            <button type="button" class="btn btn-primary btn-block" (click)="addPost()">Add Post</button>
+        </div> -->
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 p-5">
+       <!--  <div class="row" *ngFor="let listing of listings; index as i">
+            <div class="col-sm-12">
+                <div class="row mt-3 p-3" style="background-color: #eff4ff;">
+                    <div class="col-sm-3">
+                        <img src="{{ listing.listingImageUrl }}" width="100%"/>
+                    </div>
+                    <div class="col-sm-6 listing">
+                        <div class="row mb-3 mt-3 date">
+                            <div class="col-sm-12">
+                                {{ listing.listingDate | dateFormatLong }}
+                            </div>
+                        </div>
+                        <div class="row mb-3 title">
+                            <div class="col-sm-12">
+                                <h3>{{ listing.title }}</h3>
+                            </div>
+                        </div>
+                        <div class="row mb-3 description">
+                            <div class="col-sm-12">
+                                {{ listing.description }}
+                            </div>
+                        </div>
+                        <div class="row mb-3 location">
+                            <div class="col-sm-12">
+                                <i class="fa fa-map-marker">&nbsp;{{ currentCustomer?.customerContactInformation?.city }} - {{ currentCustomer?.customerContactInformation?.province }}</i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick(listing)">Edit</button>
+                        <button type="button" class="btn btn-danger btn-block" (click)="changeStatusClick(false)" *ngIf="listing.activeFlag===true">Deactivate</button>
+                        <button type="button" class="btn btn-info btn-block" (click)="changeStatusClick(true)" *ngIf="listing.activeFlag!==true">Publish</button>
+                        <button type="button" class="btn btn-secondary btn-block" (click)="deleteClick()">Delete</button>
+                        <button type="button" class="btn btn-success btn-block" (click)="boostClick(listing)">Boost</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
+</div>

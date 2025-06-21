@@ -1,0 +1,17 @@
+<div class="articles-categories">
+    <div class="card categories-card">
+        <div class="card-header categories-card-header">Articles Categories</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <button class="badge rounded-pill bg-light text-dark border border-primary w-100 mb-3 p-3" (click)="getCategoryArticles('all-categories')">All categories</button>
+                    </div>
+                    <div class="row" *ngFor="let category of articlesCategories">
+                        <button class="badge rounded-pill bg-light text-dark border border-primary w-100 mb-3 p-3" (click)="getCategoryArticles(category.id)">{{ category.articleCategoryName_RU }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

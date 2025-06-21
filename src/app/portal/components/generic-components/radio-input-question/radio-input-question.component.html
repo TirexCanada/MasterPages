@@ -1,0 +1,27 @@
+<div *ngIf="title && !title.dictionaryType" class="titleHeader">
+    <label class="col-form-label" [innerHTML]="title" *ngIf="title!==''"></label>
+</div>
+
+<div class="form-check mr-5" *ngFor="let item of data; index as i" [ngClass]="{'form-check-inline': inlineFlag===true, 'form-check-space': source==='questionnaire'}">                    
+    <div class="row mb-5 pr-3" *ngIf="inlineFlag===true">
+        <div class="col-sm-12 mr-5">
+            <label class="form-check-label" for="{{controlName + [i]}}" [innerHTML]="item.text"></label>
+        </div>
+    </div>
+         
+    <input class="form-check-input" 
+        class="font-medium"
+        [ngClass]="{'left-margin': inlineFlag===true}"
+        type="radio" 
+        name="{{controlName}}" 
+        id="{{controlName + [i]}}" 
+        [value]="item.code"
+        (change)="writeValue(innerValue)"
+        [(ngModel)]= "innerValue"
+        [attr.name]="controlName"
+        #radioInputCtrl="ngModel"
+        [required]="isRequired"
+        [attr.disabled]="isDisabled? true : null">
+    <label *ngIf="translateService.currentLang==='en'" class="form-check-label font-medium" for="{{controlName + [i]}}" [innerHTML]="item.text"></label>
+    <label *ngIf="translateService.currentLang==='ru'" class="form-check-label font-medium" for="{{controlName + [i]}}" [innerHTML]="item.textRu"></label>
+</div> 

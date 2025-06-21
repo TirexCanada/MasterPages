@@ -1,0 +1,47 @@
+<form #form="ngForm" novalidate (ngSubmit)="onSubmit()">
+    <div class="col-sm-12 p-2 border" style="background-color: #ffffff">
+        <div class="row m-2" >
+            <div class="col-sm-12">   
+                <!-- <app-map
+                    [mapLocation]="mapLocation">
+                </app-map> -->
+            </div>
+        </div>
+
+        <div class="row m-2 mt-5">
+            <div class="col-sm-12 mt-5">   
+                <div class="row p-2">
+                    <div class="col-sm-1 nopadding">
+                        <img class="img-fluid" src="assets/images/listing/pin.png"/>
+                    </div>
+                    <div class="col-sm-9 pt-1" [appDisable]="isDisabled['postalcode']">
+                        <div class="form-group row mb-3">
+                            <app-one-line-question [form]="form"
+                                class="form-inline col-sm-12"
+                                [controlName]="'postalcode'"
+                                [model]="model"
+                                [modelName]="'postalCode'"
+                                [defaultValue]=null
+                                [title]="''"
+                                [placeholder]="'pages.post.postalCode' | translate"
+                                [isRequired]=false
+                                [inlineFlag]=false
+                                [minLength]="validationData['customer']?.postalCode.minLength"
+                                [maxLength]="validationData['customer']?.postalCode.maxLength"
+                                [inputValidator]="'ct4'">
+                            </app-one-line-question>
+                        </div>
+                        <!-- <h3>{{ model.phone }}</h3> -->
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-secondary btn-block" (click)="cancelClick('postalcode')" *ngIf="isDisabled['postalcode']===false"><i class="fa fa-refresh"></i></button>
+                    </div>
+                    <div class="col-sm-1 nopadding">
+                        <button type="button" class="btn btn-primary btn-block" (click)="editClick('postalcode')" *ngIf="isDisabled['postalcode']===true"><i class="fa fa-edit"></i></button>
+                        <button type="button" class="btn btn-success btn-block" (click)="saveClick('postalcode')" *ngIf="isDisabled['postalcode']===false"><i class="fa fa-save"></i></button>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</form>
