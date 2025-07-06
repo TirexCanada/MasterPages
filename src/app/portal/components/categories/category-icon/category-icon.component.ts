@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, ViewEncapsulation, OnInit, Input } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
 import { CommonModule } from '@angular/common';  
 import { Subscription } from 'rxjs';
@@ -16,7 +16,7 @@ import { ICategory } from '../../../../shared/interfaces/category.interface';
   imports: [CommonModule, TranslateModule, RouterModule],
   providers: [TranslateService],
   templateUrl: './category-icon.component.html',
-  styleUrls: ['./category-icon.component.scss']
+  styleUrls: ['./category-icon.component.scss'],
 })
 export class CategoryIconComponent implements OnInit {
   @Input() categoryType: string = "business";

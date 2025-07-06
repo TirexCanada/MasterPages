@@ -39,6 +39,7 @@ export const APPLICATION_ROUTES = {
         'products': 'products',
         'listing': 'listing',
         'help': 'help',
+        'privacyPolicy': 'privacy-policy',
         'articles': {
             'base': 'articles',
             'articles': 'articles',

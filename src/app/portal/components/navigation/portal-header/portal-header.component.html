@@ -1,101 +1,124 @@
-<nav class="navbar navbar-expand-xl navbar-dark header-background" style="padding-top: 0px !important; padding-bottom: 0px !important;">
-  <!-- <nav-bar-header> -->
-    <ul class="navbar-nav mr-auto nav-classified justify-content-end nav-contact pl-3">
-      <li class="nav-item nav-contact">
-        <a class="nav-link h18"><img class="mr-1" src="assets/images/navbar/navbar-email.png" height="36" />info.masterpages.ca</a>
-      </li>
-      <li class="nav-item nav-contact ml-5">
-        <a class="nav-link h18"><img src="assets/images/navbar/navbar-phone.png" height="36" />+1 (416) 663-3999</a>
-      </li>
-    </ul>
-<!--   </nav-bar-header> -->
-  <ul class="navbar-nav mr-auto nav-classified justify-content-end nav-social-link pl-3">
-    <li class="nav-item nav-social-link">
-      <a class="nav-link" target="_blank" href="https://www.facebook.com/groups/1594207680855920/?ref=share"><img class="img-social-link" src="assets/images/navbar/navbar-facebook.png" alt="Facebook"/></a>
-    </li>
-    <li class="nav-item nav-social-link">
-      <a class="nav-link" target="_blank" href="https://twitter.com/russianexpress"><img class="img-social-link" src="assets/images/navbar/navbar-twitter.png" alt="Twitter"/></a>
-    </li>
-    <li class="nav-item nav-social-link">
-      <a class="nav-link" target="_blank" href="https://www.instagram.com/russianexpresstoronto/"><img class="img-social-link" src="assets/images/navbar/navbar-instagram.png" alt="Instagram"/></a>
-    </li>
-    <li class="nav-item nav-social-link">
-      <a class="nav-link" target="_blank" href="https://www.facebook.com/russianexpresstoronto/"><img class="img-social-link" src="assets/images/navbar/navbar-youtube.png" alt="Youtube"/></a>
-    </li>
-  </ul>
+<section>
+    <!-- <div class="str ind2-home">
+        <div class="hom-head"> -->
+            <div class="hom-top"> 
+                <div class="container">
+                    <div class="row">
+                        <div class="hom-nav ">
+                            
+                          
+                          <!--MOBILE MENU-->
+                            <a href="index.html" class="top-log">
+                                <img src="assets/images/home/16077bizbook-white.png" alt="" loading="eager" class="ic-logo">
+                            </a>
+                            <!-- <div class="menu">
+                                <h4>Explore</h4>
+                            </div> -->
+                            <div class="pop-menu"></div>
+                            <!--END MOBILE MENU-->
 
-  <button class="navbar-toggler hidden-sm-up" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsDefault" style="padding-top: 0px !important; padding-bottom: 0px !important;">
-    <ul class="navbar-nav pl-5">
-      <li class="nav-item mr-1">
-        <a class="nav-link h18 w-220" [routerLink]="['/portal/home']" [ngClass]="{ 'active': activeFlag.home, 'notactive': !activeFlag.home }">{{ 'components.header.business' | translate }}</a>
-      </li>
+                            <!-- <div class="top-ser">
+                                <form name="filter_form" id="filter_form" class="filter_form">
+                                    <ul>
+                                        <li class="sr-sea">
+                                            <input type="text" autocomplete="off" id="top-select-search" placeholder="What are you looking for?">
+                                            <ul id="tser-res1" class="tser-res tser-res2"></ul>
+                                        </li>
+                                        <li class="sbtn">
+                                            <button type="button" class="btn btn-success" id="top_filter_submit">
+                                                <i class="material-icons">&nbsp;</i>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div> -->
 
-      <li class="nav-item mr-1">
-        <a class="nav-link h18 w-120" [routerLink]="['/portal/classified']" [ngClass]="{ 'active': activeFlag.classified, 'notactive': !activeFlag.classified }">{{ 'components.header.classified' | translate }}</a>
-      </li>
 
-      <!-- <li class="nav-item mr-1">
-        <a class="nav-link h12 w-110" [routerLink]="['/portal/articles']" [ngClass]="{ 'active': activeFlag.articles, 'notactive': !activeFlag.articles }">{{ 'components.header.articles' | translate }}</a>
-      </li> -->
-
-      <li class="nav-item h18 dropdown">
-        <a class="nav-link dropdown-toggle" href="#" routerLinkActive="active" role="button" data-bs-toggle="dropdown" aria-expanded="false" [ngClass]="{ 'active-help': activeFlag.help, 'notactive-help': !activeFlag.help }">
-            Help
-        </a>
-        <ul class="dropdown-menu ">
-            <li class="dropdown-item h7" *ngFor="let c of contentList"><a class="dropdown-item" [routerLink]="['/portal/help/' + c.contentUrl]" routerLinkActive="active">{{ c.contentName}}</a></li>
-        </ul>
-      </li>
-
-      <li class="nav-item mr-1">
-        <a class="nav-link h18" [routerLink]="['/portal/contact']" [ngClass]="{ 'active': activeFlag.contact, 'notactive': !activeFlag.contact }">{{ 'components.header.contact' | translate }}</a>
-      </li>
-    </ul>
-
-    <span style="text-align: end; width: 100%;">
-      <span class="navbar-nav ml-auto nav-classified nopadding">
-        <ul class="navbar-nav ml-auto nav-classified nopadding">
-          <form class="nav-item form-inline navbar-form">
-            <button type="button" class="nav-link btn btn-link form-link h13" (click)="goToRegistration()">{{ 'components.header.signup' | translate }}</button>
-          </form>
-          <form class="form-inline my-2 my-lg-0 navbar-form pt-2">|</form>
-          <ng-template #loginButton>
-            <form class="form-inline my-2 my-lg-0 navbar-form">
-              <button type="button" class="nav-link btn btn-link form-link h13" (click)="goToLogin()">{{ 'components.header.login' | translate }}</button>
-            </form>
-          </ng-template>
-          <form class="form-inline my-2 my-lg-0 navbar-form" *ngIf="isCustomerLoggedIn; else loginButton">
-            <li class="nav-item dropdown pl-2 pr-2" ngbDropdown>
-              <a class="nav-link dropdown-toggle" id="loggedCustomer" role="button" data-bs-toggle="dropdown" aria-expanded="false"  (click)="onToggleClick()" ngbDropdownToggle>
-                  <img class="mr-1" src="assets/images/navbar/navbar-user.png" height="30" />
-              </a>
-              <div class="dropdown-menu zindex1000" aria-labelledby="loggedCustomer" ngbDropdownMenu>
-                  <a class="dropdown-item h7" [routerLink]="['profile/change-password']">{{ 'components.header.changePassword' | translate }}</a>
-                  <a class="dropdown-item h7" [routerLink]="['profile/profile']">{{ 'components.header.editProfile' | translate }}</a>
-                  <a class="dropdown-item h7" [routerLink]="['profile/my-listings']">{{ 'components.header.myListings' | translate }}</a>
-                  <!-- <a class="dropdown-item h7" [routerLink]="['profile/my-orders']">{{ 'components.header.myOrders' | translate }}</a> -->
-                  <a class="dropdown-item h7" (click)="logout()" href="#">{{ 'components.header.logOut' | translate }}</a>
-              </div>
-            </li>
-
-            <!-- <app-logged-customer [customer]="currentCustomer" *ngIf="isCustomerLoggedIn; else loginButton"></app-logged-customer> -->
-          </form>
-          <form class="form-inline my-lg my-lg-0 navbar-form div-addpost pl-4 pr-4">
-            <button type="button" class="nav-link btn btn-block btn-addpost h18" (click)="addPost()"><i class="fa fa-plus">{{ 'components.header.addPost' | translate }}</i></button>
-          </form> 
-          <form class="nav-item form-inline navbar-form">
-            <button type="button" class="nav-link btn btn-link form-link h13" (click)="langToggle('en')">{{ 'components.header.eng' | translate }}</button>
-          </form>
-          <form class="form-inline my-2 my-lg-0 navbar-form pt-2">|</form>
-          <form class="nav-item form-inline navbar-form">
-            <button type="button" class="nav-link btn btn-link form-link h13" (click)="langToggle('ru')">{{ 'components.header.rus' | translate }}</button>
-          </form>
-        </ul>
-      </span>
-    </span>
-  </div>
-</nav> 
+                            <ul class="bl">
+                                <li>
+                                    <a href="pricing-details.html">Add business</a>
+                                </li>
+                                <li>
+                                    <a href="login.html">Sign in</a>
+                                </li>
+                                <li>
+                                    <a href="login.html?login=register">Create an account</a>
+                                </li>
+                            </ul>
+                           
+                           
+                            <!--MOBILE MENU-->
+                            <div class="mob-menu">
+                                <div class="mob-me-ic">
+                                    <i class="material-icons">menu</i>
+                                </div>
+                                <div class="mob-me-all">
+                                    <div class="mob-me-clo">
+                                        <i class="material-icons">close</i>
+                                    </div>
+                                    <div class="mv-bus">
+                                        <h4></h4>
+                                        <ul>
+                                            <li>
+                                                <a href="pricing-details.html">Add business</a>
+                                            </li>
+                                            <li>
+                                                <a href="login.html">Sign in</a>
+                                            </li>
+                                            <li>
+                                                <a href="login.html?login=register">Create an account</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- <div class="mv-cate">
+                                        <h4>All Categories</h4>
+                                        <ul>
+                                            <li>
+                                                <a href="all-listing.html">Spa and Facial</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Wedding halls</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Automobiles</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Restaurants</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Technology</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Pet shop</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Real Estate</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Sports</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Hospitals</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Education</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Transportation</a>
+                                            </li>
+                                            <li>
+                                                <a href="all-listing.html">Electricals</a>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <!--END MOBILE MENU-->
+                        </div>
+                    </div>
+                </div>
+            <!-- </div>
+        </div> -->
+    </div> 
+</section>

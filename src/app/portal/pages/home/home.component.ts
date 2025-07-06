@@ -9,6 +9,18 @@ import { CategoryIconComponent } from '../../components/categories/category-icon
 import { BusinessComponent } from '../../components/common/business/business.component';
 import { TopAdsComponent } from '../../components/common/top-ads/top-ads.component';
 import { TopBannerComponent } from '../../components/banners/top-banner/top-banner.component';
+import { CarouselBannerComponent } from '../../components/banners/carousel-banner/carousel-banner.component';
+import { MoreServicesComponent } from '../../components/banners/more-services/more-services.component';
+
+import { PricingComponent } from '../../components/common/pricing/pricing.component';
+import { HowItWorksComponent } from '../../components/common/how-it-works/how-it-works.component';
+import { AdsBoxComponent } from '../../components/common/ads-box/ads-box.component';
+import { ListYourAdComponent } from '../../components/common/list-your-ad/list-your-ad.component';
+import { SelectServiceComponent } from '../../components/common/select-service/select-service.component';
+import { PopularServicesComponent } from '../../components/common/popular-services/popular-services.component';
+
+import { MainSearchComponent } from '../../components/search/main-search/main-search.component';
+import { SearchButtonsComponent } from '../../components/search/search-buttons/search-buttons.component';
 
 import { PortalModule } from '../../portal.module';
 
@@ -32,7 +44,7 @@ import { IMessage } from '../../../shared/interfaces/message.interface';
 @Component({
   selector: 'app-home',
   standalone: true, 
-  imports: [TranslateModule, CategoriesComponent, HomeSearchComponent, BusinessComponent, TopAdsComponent, CategoryIconComponent, TopBannerComponent],
+  imports: [TranslateModule, CategoriesComponent, HomeSearchComponent, BusinessComponent, TopAdsComponent, CategoryIconComponent, TopBannerComponent, CarouselBannerComponent, MoreServicesComponent, PricingComponent, HowItWorksComponent, AdsBoxComponent, ListYourAdComponent, SelectServiceComponent, PopularServicesComponent, MainSearchComponent, SearchButtonsComponent],
   providers: [ApplicationService, NavigationService, SessionStorageService, CustomerService, ClassifiedService, TranslateService],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],

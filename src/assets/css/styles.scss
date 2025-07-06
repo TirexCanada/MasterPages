@@ -1205,6 +1205,10 @@ div#review_success {
     display: none
 }
 
+.ban-search.ban-sear-all li.sr-search {
+    width: calc(100% - 150px);
+}
+
 .ser-re-hu {
     color: #333;
     background: #f9fafb;
@@ -2266,7 +2270,7 @@ div#review_success {
 }
 
 .ban-search ul li:before {
-    content: "my_location";
+    // content: "my_location";
     margin: 17px 0 0 15px;
     z-index: 1;
     color: #8592c1

@@ -4,6 +4,7 @@ import { PortalComponent } from './portal.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ClassifiedComponent } from './pages/classified/classified.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { PrivacyPolicyComponent } from './pages/service-pages/privacy-policy/privacy-policy.component';
 
 
 import { ListingComponent } from './pages/listing/listing.component';
@@ -65,6 +66,11 @@ const PORTAL_ROUTES: Routes = [
                 path: APPLICATION_ROUTES.portal.classified,
                 component: ClassifiedComponent,
                 data: { name: 'Registration Page' },
+            },
+            {
+                path: APPLICATION_ROUTES.portal.privacyPolicy,
+                component: PrivacyPolicyComponent,
+                data: { name: 'Privacy Policy Page' },
             },
             {
                 path: APPLICATION_ROUTES.portal.articles.base,
