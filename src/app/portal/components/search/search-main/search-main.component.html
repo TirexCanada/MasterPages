@@ -3,55 +3,492 @@
 </app-classified-search> -->
 
 <form #searchForm="ngForm">
-    <!-- <div class="row" style="background-color: #eff4ff;">
-        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
-        <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5"> -->
-            <div *ngIf="categoryType==='business'" class="row">
-                <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 p-3">
-                    <div class="row" style="background-color: #ffffff;">
-                        <div class="col-sm-12 mr-3">
-                            <app-search-categories
-                                [tagId]="tagId"
-                                (selectTag)="onTagSelected($event)">
-                            </app-search-categories>
+    <div class="all-listing all-jobs">
+        <!--FILTER ON MOBILE VIEW-->
+        <div class="fil-mob fil-mob-act">
+            <h4>
+                Product filters
+                <i class="material-icons">filter_list</i>
+            </h4>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 fil-mob-view">
+                    <div class="all-filt">
+                        <span class="fil-mob-clo">
+                            <i class="material-icons">close</i>
+                        </span>
+                        <div class="all-list-bre">
+                            <div class="sec-all-list-bre">
+                                <h1>All Categories</h1>
+                                <ul>
+                                    <li>
+                                        <a href="index.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="products.html">All Category</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-sm-12 mr-3 mt-5">
-                            <app-search-location></app-search-location>
+                        <!--START-->
+                        <div class="filt-com lhs-cate">
+                            <h4>Categories</h4>
+                            <div class="dropdown">
+                                <select
+                                    onChange="ProductSubcategoryFilter(this.value);"
+                                    class="cat_check chosen-select"
+                                    name="cat_check"
+                                    id="cat_check"
+                                >
+                                    <option value="">Select Category</option>
+                                    ?>
+                                    <option value="15">Clothings</option>
+                                    ?>
+                                    <option value="16">Footwear</option>
+                                    ?>
+                                    <option value="17">Shoes</option>
+                                    ?>
+                                    <option value="18">Jewellery</option>
+                                    ?>
+                                    <option value="19">Toys</option>
+                                    ?>
+                                    <option value="20">Baby care</option>
+                                    ?>
+                                    <option value="21">Fruits</option>
+                                    ?>
+                                    <option value="22">Mens</option>
+                                    ?>
+                                    <option value="23">Health</option>
+                                    ?>
+                                    <option value="8">Sports</option>
+                                    ?>
+                                    <option value="7">Education</option>
+                                    ?>
+                                    <option value="6">Electricals</option>
+                                    ?>
+                                    <option value="5">Automobilers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--END-->
+                        <!--START-->
+                        <div class="filt-com sub_cat_section pro-fil-sub">
+                            <h4>Sub category</h4>
+                            <ul>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="41"
+                                            id="Diet food"
+                                        >
+                                        <label for="Diet food">Diet food</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="40"
+                                            id="Health products"
+                                        >
+                                        <label for="Health products">Health products</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="39"
+                                            id="Protein"
+                                        >
+                                        <label for="Protein">Protein</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="38"
+                                            id="Food"
+                                        >
+                                        <label for="Food">Food</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="37"
+                                            id="Tshirts"
+                                        >
+                                        <label for="Tshirts">Tshirts</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="36"
+                                            id="Smart watches"
+                                        >
+                                        <label for="Smart watches">Smart watches</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="35"
+                                            id="Camera lense"
+                                        >
+                                        <label for="Camera lense">Camera lense</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="34"
+                                            id="Camera light"
+                                        >
+                                        <label for="Camera light">Camera light</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="33"
+                                            id="Camera pouch"
+                                        >
+                                        <label for="Camera pouch">Camera pouch</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="32"
+                                            id="Camera holder"
+                                        >
+                                        <label for="Camera holder">Camera holder</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="31"
+                                            id="Fruits and vegitables"
+                                        >
+                                        <label for="Fruits and vegitables">Fruits and vegitables</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="30"
+                                            id="Vegitables"
+                                        >
+                                        <label for="Vegitables">Vegitables</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="29"
+                                            id="Fruits"
+                                        >
+                                        <label for="Fruits">Fruits</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="28"
+                                            id="Digital products"
+                                        >
+                                        <label for="Digital products">Digital products</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="27"
+                                            id="Digital books"
+                                        >
+                                        <label for="Digital books">Digital books</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="26"
+                                            id="Books"
+                                        >
+                                        <label for="Books">Books</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="25"
+                                            id="Jeans"
+                                        >
+                                        <label for="Jeans">Jeans</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="24"
+                                            id="Shirts"
+                                        >
+                                        <label for="Shirts">Shirts</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="23"
+                                            id="T-shirts"
+                                        >
+                                        <label for="T-shirts">T-shirts</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="22"
+                                            id="PC games"
+                                        >
+                                        <label for="PC games">PC games</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="21"
+                                            id="Playstations games"
+                                        >
+                                        <label for="Playstations games">Playstations games</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="20"
+                                            id="Drone toys"
+                                        >
+                                        <label for="Drone toys">Drone toys</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="19"
+                                            id="Brain games"
+                                        >
+                                        <label for="Brain games">Brain games</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="18"
+                                            id="Educations toys"
+                                        >
+                                        <label for="Educations toys">Educations toys</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="17"
+                                            id="Puma"
+                                        >
+                                        <label for="Puma">Puma</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="16"
+                                            id="Nike"
+                                        >
+                                        <label for="Nike">Nike</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="15"
+                                            id="Adidas"
+                                        >
+                                        <label for="Adidas">Adidas</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="14"
+                                            id="Smart Tech"
+                                        >
+                                        <label for="Smart Tech">Smart Tech</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="13"
+                                            id="Tablets"
+                                        >
+                                        <label for="Tablets">Tablets</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="12"
+                                            id="Camera"
+                                        >
+                                        <label for="Camera">Camera</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="11"
+                                            id="Speakers"
+                                        >
+                                        <label for="Speakers">Speakers</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="10"
+                                            id="Laptop"
+                                        >
+                                        <label for="Laptop">Laptop</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="9"
+                                            id="Smart TV"
+                                        >
+                                        <label for="Smart TV">Smart TV</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="chbox">
+                                        <input
+                                            type="checkbox"
+                                            class="sub_cat_check"
+                                            name="sub_cat_check"
+                                            value="8"
+                                            id="Mobiles"
+                                        >
+                                        <label for="Mobiles">Mobiles</label>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9 p-3">
-                    <app-search-results 
-                        [listings]="listings">
-                    </app-search-results>
-                </div>
             </div>
-        <!-- </div>
-        <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
-    </div> -->
-        
-
-    <div *ngIf="categoryType==='classified'" class="row">
-        <!-- <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 p-3">
-            <div class="row" style="background-color: #ffffff;">
-                <div class="col-sm-12 mr-3">
-                    <app-search-categories
-                        [tagId]="tagId"
-                        (selectTag)="onTagSelected($event)">
-                    </app-search-categories>
-                </div>
-                <div class="col-sm-12 mr-3 mt-5">
-                    <app-search-location></app-search-location>
-                </div>
-            </div>
-        </div> -->
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-3">
-            <app-search-results 
-                [listings]="listings"
-                [categoryType]="categoryType"
-                [tagId]="tagId"
-                [form]="searchForm">
-            </app-search-results>
         </div>
     </div>
 </form>

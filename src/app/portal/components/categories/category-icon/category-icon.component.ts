@@ -10,6 +10,8 @@ import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } fr
 
 import { ICategory } from '../../../../shared/interfaces/category.interface';
 
+import * as _ from 'lodash';
+
 @Component({
   selector: 'app-category-icon',
   standalone: true,
@@ -33,14 +35,16 @@ export class CategoryIconComponent implements OnInit {
       let baseRequest = { "requestModelType": "classifiedCategories" }
       this.classifiedService.getCategories(baseRequest).subscribe( response => {
         allCategories = response;
-        this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.categoryImage !== null);
+        this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.categoryImage !== null && x.showFlag === true);
+        this.categories = _.sortBy(this.categories, ['sortOrder'], ['asc']);
         this.sessionStorageService.setCategories(this.categories);
         this.getCategories(this.categories);
       })
     }
     else {
       //this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.categoryImage !== null);
-      this.categories = allCategories.filter(x => x.categoryParentId === "");
+      this.categories = allCategories.filter(x => x.categoryParentId === "" && x.showFlag === true);
+      this.categories = _.sortBy(this.categories, ['sortOrder'], ['asc']);
       this.getCategories(this.categories);
     }
   }

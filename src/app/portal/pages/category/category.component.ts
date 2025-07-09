@@ -15,12 +15,13 @@ import { CategoryIconComponent } from '../../components/categories/category-icon
 import { HomeSearchComponent } from '../../components/search/home-search/home-search.component';
 import { IListing } from '../../../shared/interfaces/listing.interface';
 import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } from '@ngx-translate/core';
+import { CarouselBannerComponent } from '../../components/banners/carousel-banner/carousel-banner.component';
 
 
 @Component({
   selector: 'app-category',
   standalone: true, 
-  imports: [SearchMainComponent, CategoryIconComponent, HomeSearchComponent, CommonModule, TranslateModule],
+  imports: [SearchMainComponent, CategoryIconComponent, HomeSearchComponent, CommonModule, TranslateModule, CarouselBannerComponent],
   providers: [ApplicationService, ClassifiedService, AuthenticationService, NavigationService, CustomerService, RegistrationService, SessionStorageService, CommonModule],
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']

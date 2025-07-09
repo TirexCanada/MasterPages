@@ -13,10 +13,11 @@
                 </div> -->
                 <!-- <i class="icofont icofont-home" style="color: #000000; font-size: 48px;"></i> -->
                 <div class="text-center p-1" style="vertical-align: middle; border: 3px solid #516394; border-radius: 14px; background-color: #ffffff; height:60px;" >                   
-                    <div class="text-center"><i class="{{category.categoryImage}}" style="color: #242c42; font-size: 48px;"></i></div>
+                    <!-- <div class="text-center"><i class="{{category.categoryImage}}" style="color: #242c42; font-size: 48px;"></i></div> -->
                     <!-- <div class="text-center"><i class="fas fa-house" style="color: #0264ff; font-size: 36px;"></i></div> -->
+                     <div class="text-center"><i class="material-icons" style="color: #0264ff; font-size: 36px; width: 36px; height: 36px;">{{category.categoryImage}}</i></div>
                 </div>
-                <div class="text-center">
+                <div class="text-center" style="color: #0264ff; font-weight: bold; text-shadow: #f2fce2;">
                     <div *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</div>
                     <div *ngIf="translateService.currentLang==='ru'">{{ category.categoryName_RU }}</div>
                     <!-- <h5 *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</h5>

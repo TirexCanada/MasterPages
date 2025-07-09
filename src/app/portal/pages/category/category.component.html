@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <div class="row" style="background-color: #ccdcff;" style="background-color: #ccdcff;">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
@@ -17,8 +17,26 @@
                 [listings]="listings"
                 [categoryType]="categoryType">
             </app-search-main>
-            <!-- <app-full-page-banner></app-full-page-banner> -->  
+            
         </div>
         <div class="col-sm-1"></div>
     </div>
-</div>
+</div> -->
+
+
+<section class="eve-deta-pg">
+    <div class="container">
+        <div class="row">
+            <!-- BANNER CAROUSEL WILL BE HERE --> 
+            <app-carousel-banner></app-carousel-banner>
+        </div>
+    </div>
+<!-- </section>
+
+<section> -->
+    <app-search-main
+        [tagId]="tagId"
+        [listings]="listings"
+        [categoryType]="categoryType">
+    </app-search-main>
+</section>
