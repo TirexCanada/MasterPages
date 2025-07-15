@@ -1,4 +1,4 @@
-<div >
+<!-- <div >
     <div class="row pb-5 ml-5" style="background-color: #ffffff;">
         <div class="col-sm-12">
             <div class="row mb-5">          
@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- 
 <div class="row">
@@ -32,7 +32,7 @@
     </div>
 </div> -->
 
-<div *ngIf="categoryType==='business' && currentView==='list'">
+<!-- <div *ngIf="categoryType==='business' && currentView==='list'">
     <div class="row mb-5" *ngIf="listings!==null && listings!==undefined">          
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 p-5" *ngFor="let listing of listings; index as i">
             <div class="row nopadding-left">
@@ -151,4 +151,45 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+<div class="listng-res">
+    <div class="count_no"> Total of
+        <span>{{ listingsCount }}</span> result(s) Found.
+    </div>
+    <div class="list-res-selt">
+        <span class="product-filters-span" id="health-products" data-type="sub_cat">
+            @if(translateService.currentLang==='ru') {
+                <label [for]="selectedCategory.categoryName_RU">{{ selectedCategory.categoryName_RU }}</label>
+            }
+            @else {
+                <label [for]="selectedCategory.categoryName">{{ selectedCategory.categoryName }}</label>
+            }
+        </span>
+        <span class="product-filters-span" id="tshirts" data-type="sub_cat">Toronto</span>
+    </div>
+</div>
+<div class="all-list-sh all-product-total">
+    <ul class="products-wrapper">
+        @for(listing of listings; track $index) {
+            <li class="products-item w-100">
+                <div class="all-pro-box">
+                    <!-- <div class="all-pro-img">
+                        <img src="images/products/1.jpg">
+                    </div> -->
+                    <div class="all-pro-txt text-start pb-5">
+                        <h4>{{ listing.title }}</h4>
+                        <div>
+                            {{ listing.description }}
+                        </div>
+                    </div>
+                    <div class="pg-pro-buy-cta">
+                        <a href="product-details.html" class="cta-buy-now">Details</a>
+                    </div>
+                </div>
+            </li>
+        }
+    </ul>
+    <div id="product-pagination-container"></div>
 </div>

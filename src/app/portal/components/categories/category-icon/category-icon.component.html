@@ -1,27 +1,29 @@
-<div class="category-icon">
-    <!-- <div class="row mt-1 mb-1 nopadding">
-        <div class="col-sm-12 padding5">
-        <h3 *ngIf="categoryType==='business'">{{ 'categories.category-business-icon.label' | translate }}</h3>
-        <h3 *ngIf="categoryType==='classified'">{{ 'categories.category-classified-icon.label' | translate }}</h3>
-        </div>                   
-    </div> -->
+<!-- <div class="category-icon">
     <div class="row mt-3 mb-1 nopadding">
-        <div class="col-sm-6 col-md-1 col-lg-1 col-xl-1 padding5" *ngFor="let category of categories; index as i">
+        <div class="col-sm-6 col-md-2 col-lg-2 col-xl-1 padding5" *ngFor="let category of categories; index as i">
             <a [routerLink]="['/portal/category/' + categoryType + '/' + category.id]">
-                <!--  <div class="text-center p-1" style="vertical-align: middle; border: 1px solid #ffffff; border-radius: 14px; background-color: #ffffff;" >                   
-                    <img class="img-fluid" [src]="category.categoryImage" />
-                </div> -->
-                <!-- <i class="icofont icofont-home" style="color: #000000; font-size: 48px;"></i> -->
                 <div class="text-center p-1" style="vertical-align: middle; border: 3px solid #516394; border-radius: 14px; background-color: #ffffff; height:60px;" >                   
-                    <!-- <div class="text-center"><i class="{{category.categoryImage}}" style="color: #242c42; font-size: 48px;"></i></div> -->
-                    <!-- <div class="text-center"><i class="fas fa-house" style="color: #0264ff; font-size: 36px;"></i></div> -->
-                     <div class="text-center"><i class="material-icons" style="color: #0264ff; font-size: 36px; width: 36px; height: 36px;">{{category.categoryImage}}</i></div>
+                    <div class="text-center"><i class="{{category.categoryImage1}}" style="color: #0264ff; font-size: 36px;"></i></div>
                 </div>
                 <div class="text-center" style="color: #0264ff; font-weight: bold; text-shadow: #f2fce2;">
                     <div *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</div>
                     <div *ngIf="translateService.currentLang==='ru'">{{ category.categoryName_RU }}</div>
-                    <!-- <h5 *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</h5>
-                    <h5 *ngIf="translateService.currentLang==='ru'">{{ category.categoryName_RU }}</h5> -->
+                </div>
+            </a>
+        </div>                   
+    </div>
+</div> -->
+
+<div class="category-icon">
+    <div class="row mt-3 mb-1 nopadding">
+        <div class="col-sm-6 col-md-3 col-lg-2 col-xl-2 m-3 padding5" style="vertical-align: middle; border: 1px solid #dfdddd; border-radius: 14px; background-color: #0d031b; height:105px;" onmouseover="this.style.background='#6DC6FF';" onmouseout="this.style.background='#0d031b';" *ngFor="let category of categories; index as i">
+            <a [routerLink]="['/portal/category/' + categoryType + '/' + category.id]">
+                <div class="text-center p-1">                   
+                    <div class="text-center"><i class="{{category.categoryImage1}}" style="color: #0264ff; font-size: 48px;"></i></div>
+                </div>
+                <div class="text-center" style="color: #ffffff; font-weight: bold;">
+                    <div *ngIf="translateService.currentLang==='en'">{{ category.categoryName }}</div>
+                    <div *ngIf="translateService.currentLang==='ru'">{{ category.categoryName_RU }}</div>
                 </div>
             </a>
         </div>                   

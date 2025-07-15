@@ -34,6 +34,7 @@ import { SORT_OPTIONS } from '../../../../../app/portal/constants/portal-constan
 export class SearchResultsComponent implements OnInit, OnChanges {
   @Input() listings: any [];
   @Input() categoryType: string;
+  @Input() selectedCategory: any;
   @Input() tagId: any;
   @Input() form: NgForm;
   isRecentActive: boolean = true;
@@ -46,6 +47,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   sortOptionsList: any[] = SORT_OPTIONS;
   model: any = {};
   listingsOrg: any [];
+  listingsCount: number = 0;
   
   constructor(private classifiedService: ClassifiedService,
     private sessionStorageService: SessionStorageService,
@@ -61,6 +63,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     this.currentTag = this.tags.find(tag => tag.id === this.tagId);
     this.listings = _.orderBy(this.listings, ["priorityFlag", "listingDate"], ["desc", "desc"]);
     this.listingsOrg = JSON.parse(JSON.stringify(this.listings)); // deep copy
+    this.listingsCount = this.listings.length;
   }
 
   ngOnChanges(): void {
@@ -89,6 +92,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     else {
       this.subcategories = this.subcategories.filter(x => x.classifiedFlag === true);
     }
+
+    this.listingsCount = this.listings.length;
   }
 
   

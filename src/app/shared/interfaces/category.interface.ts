@@ -7,6 +7,7 @@ export interface ICategory{
     categoryName_RU?: string,
     categoryDescription_RU?: string,
     categoryImage?: string,
+    categoryImage1?: string,
     priorityFlag?: boolean,
     deleteFlag?: boolean,
     showFlag?: boolean,

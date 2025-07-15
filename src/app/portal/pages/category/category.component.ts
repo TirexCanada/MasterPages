@@ -27,7 +27,7 @@ import { CarouselBannerComponent } from '../../components/banners/carousel-banne
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-  listings: IListing [];
+  listings: any [];
   tagId: string;
   categoryType: string;
 
@@ -44,11 +44,11 @@ export class CategoryComponent implements OnInit {
       this.activatedRoute.params.subscribe(params => {
         this.tagId = params['tagid'];
         this.categoryType = params['categorytype'];
-        let baseRequestModel = { "requestModelType": this.categoryType, "tagId": this.tagId };
-        this.classifiedService.getListingsByTagId(baseRequestModel).subscribe(
-          response => this.getOnSuccess(response),
-          response => this.getOnError(response)
-        );   
+        //let baseRequestModel = { "requestModelType": this.categoryType, "tagId": this.tagId };
+        // this.classifiedService.getListingsByTagId(baseRequestModel).subscribe(
+        //   response => this.getOnSuccess(response),
+        //   response => this.getOnError(response)
+        // );   
       });
   }
 

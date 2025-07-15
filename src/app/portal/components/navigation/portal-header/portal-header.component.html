@@ -5,116 +5,56 @@
                 <div class="container">
                     <div class="row">
                         <div class="hom-nav ">
-                            
-                          
-                          <!--MOBILE MENU-->
                             <a href="index.html" class="top-log">
                                 <img src="assets/images/home/16077bizbook-white.png" alt="" loading="eager" class="ic-logo">
                             </a>
-                            <!-- <div class="menu">
-                                <h4>Explore</h4>
-                            </div> -->
-                            <div class="pop-menu"></div>
-                            <!--END MOBILE MENU-->
-
-
-                            <!-- <div class="top-ser">
-                                <form name="filter_form" id="filter_form" class="filter_form">
-                                    <ul>
-                                        <li class="sr-sea">
-                                            <input type="text" autocomplete="off" id="top-select-search" placeholder="What are you looking for?">
-                                            <ul id="tser-res1" class="tser-res tser-res2"></ul>
-                                        </li>
-                                        <li class="sbtn">
-                                            <button type="button" class="btn btn-success" id="top_filter_submit">
-                                                <i class="material-icons">&nbsp;</i>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </form>
-                            </div> -->
+                            <!-- <ul class="navbar-nav mr-auto nav-classified justify-content-end nav-contact pl-3">
+                                <li class="nav-item nav-contact">
+                                    <a class="nav-link h18"><img class="mr-1" src="assets/images/navbar/navbar-email.png" height="36" />info.masterpages.ca</a>
+                                </li>
+                                <li class="nav-item nav-contact ml-5">
+                                    <a class="nav-link h18"><img src="assets/images/navbar/navbar-phone.png" height="36" />+1 (416) 663-3999</a>
+                                </li>
+                            </ul> -->
+                            
+                          
+                         
 
 
                             <ul class="bl">
                                 <li>
-                                    <a href="pricing-details.html">Add business</a>
+                                    <button type="button" class="btn btn-link" (click)="goToRegistration()">{{ 'components.header.signup' | translate }}</button>
                                 </li>
                                 <li>
-                                    <a href="login.html">Sign in</a>
+                                     <ng-template #loginButton>
+                                        <form class="form-inline my-2 my-lg-0 navbar-form">
+                                            <button type="button" class="btn btn-link" (click)="goToLogin()">{{ 'components.header.login' | translate }}</button>
+                                        </form>
+                                    </ng-template>
+                                    <form class="form-inline my-2 my-lg-0 navbar-form" *ngIf="isCustomerLoggedIn; else loginButton">
+                                        <li class="nav-item dropdown pl-2 pr-2" ngbDropdown>
+                                        <a class="nav-link dropdown-toggle" id="loggedCustomer" role="button" data-bs-toggle="dropdown" aria-expanded="false"  (click)="onToggleClick()" ngbDropdownToggle>
+                                            <img class="mr-1" src="assets/images/navbar/navbar-user.png" height="30" />
+                                        </a>
+                                        <div class="dropdown-menu zindex1000" aria-labelledby="loggedCustomer" ngbDropdownMenu>
+                                            <a class="dropdown-item h7" [routerLink]="['profile/change-password']">{{ 'components.header.changePassword' | translate }}</a>
+                                            <a class="dropdown-item h7" [routerLink]="['profile/profile']">{{ 'components.header.editProfile' | translate }}</a>
+                                            <a class="dropdown-item h7" [routerLink]="['profile/my-listings']">{{ 'components.header.myListings' | translate }}</a>
+                                            <!-- <a class="dropdown-item h7" [routerLink]="['profile/my-orders']">{{ 'components.header.myOrders' | translate }}</a> -->
+                                            <a class="dropdown-item h7" (click)="logout()" href="#">{{ 'components.header.logOut' | translate }}</a>
+                                        </div>
+                                        </li>
+
+                                        <!-- <app-logged-customer [customer]="currentCustomer" *ngIf="isCustomerLoggedIn; else loginButton"></app-logged-customer> -->
+                                    </form>
                                 </li>
                                 <li>
-                                    <a href="login.html?login=register">Create an account</a>
+                                    <button type="button" class="btn btn-primary" (click)="addPost()">{{ 'components.header.addPost' | translate }}</button>
+                                    <!-- <a href="login.html?login=register">Create an account</a> -->
                                 </li>
                             </ul>
                            
                            
-                            <!--MOBILE MENU-->
-                            <div class="mob-menu">
-                                <div class="mob-me-ic">
-                                    <i class="material-icons">menu</i>
-                                </div>
-                                <div class="mob-me-all">
-                                    <div class="mob-me-clo">
-                                        <i class="material-icons">close</i>
-                                    </div>
-                                    <div class="mv-bus">
-                                        <h4></h4>
-                                        <ul>
-                                            <li>
-                                                <a href="pricing-details.html">Add business</a>
-                                            </li>
-                                            <li>
-                                                <a href="login.html">Sign in</a>
-                                            </li>
-                                            <li>
-                                                <a href="login.html?login=register">Create an account</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <!-- <div class="mv-cate">
-                                        <h4>All Categories</h4>
-                                        <ul>
-                                            <li>
-                                                <a href="all-listing.html">Spa and Facial</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Wedding halls</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Automobiles</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Restaurants</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Technology</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Pet shop</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Real Estate</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Sports</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Hospitals</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Education</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Transportation</a>
-                                            </li>
-                                            <li>
-                                                <a href="all-listing.html">Electricals</a>
-                                            </li>
-                                        </ul>
-                                    </div> -->
-                                </div>
-                            </div>
-                            <!--END MOBILE MENU-->
                         </div>
                     </div>
                 </div>
