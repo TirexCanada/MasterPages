@@ -6,7 +6,7 @@ import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } fr
 import { NgbPopover } from '@ng-bootstrap/ng-bootstrap';
 import { DateFormatPipe } from '../../../shared/pipes/date-format.pipe';
 import { DateFormatLongPipe } from '../../../shared/pipes/date-format-long.pipe';
-import { GoogleMapsModule } from '@angular/google-maps'
+// import { GoogleMapsModule } from '@angular/google-maps'
 
 import { ApplicationService } from '../../../shared/services/application.service';
 import { ClassifiedService } from '../../../shared/services/classified.service';
@@ -27,7 +27,7 @@ import { IListing } from '../../../shared/interfaces/listing.interface';
 @Component({
   selector: 'app-listing',
   standalone: true, 
-  imports: [CommonModule, TranslateModule, FormsModule, ErrorMessageComponent, ListingComponent, ListingMainComponent, NgbPopover, ListingContactInfoComponent, ListingTagsComponent, MapComponent, GoogleMapsModule, ListingContactFormComponent],
+  imports: [CommonModule, TranslateModule, FormsModule, ErrorMessageComponent, ListingComponent, ListingMainComponent, NgbPopover, ListingContactInfoComponent, ListingTagsComponent, MapComponent, ListingContactFormComponent],
   providers: [ApplicationService, AuthenticationService, NavigationService, SessionStorageService, CustomerService, DateFormatPipe, DateFormatLongPipe, RegistrationService],
   templateUrl: './listing.component.html',
   styleUrls: ['./listing.component.css']

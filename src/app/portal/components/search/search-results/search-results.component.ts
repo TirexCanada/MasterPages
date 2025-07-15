@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { RouterModule } from '@angular/router'; 
+import { CommonModule } from '@angular/common';  
 
 import { DropdownQuestionComponent } from '../../../components/generic-components/dropdown-question/dropdown-question.component';
 import { ApplicationService } from '../../../../shared/services/application.service';
@@ -14,7 +16,6 @@ import { ClassifiedService } from '../../../../shared/services/classified.servic
 import { SessionStorageService } from '../../../../shared/services/session-storage.service';
 import { NavigationService } from '../../../../shared/services/navigation.service';
 import { ListingBlockComponent } from '../../common/listings/listing-block/listing-block.component';
-import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } from '@ngx-translate/core';
 
 import { ICustomer } from '../../../../shared/interfaces/customer.interface';
@@ -26,7 +27,7 @@ import { SORT_OPTIONS } from '../../../../../app/portal/constants/portal-constan
 @Component({
   selector: 'app-search-results',
   standalone: true,
-  imports: [CommonModule, FormsModule, ListingBlockComponent, DropdownQuestionComponent, TranslateModule],
+  imports: [CommonModule, RouterModule, FormsModule, ListingBlockComponent, DropdownQuestionComponent, TranslateModule],
   providers: [ TranslateService],
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.css']
@@ -63,7 +64,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     this.currentTag = this.tags.find(tag => tag.id === this.tagId);
     this.listings = _.orderBy(this.listings, ["priorityFlag", "listingDate"], ["desc", "desc"]);
     this.listingsOrg = JSON.parse(JSON.stringify(this.listings)); // deep copy
-    this.listingsCount = this.listings.length;
+    this.listingsCount = this.listingsOrg.length;
   }
 
   ngOnChanges(): void {
@@ -73,7 +74,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   
     this.tags = this.sessionStorageService.getTags();
     this.currentTag = this.tags.find(tag => tag.id === this.tagId);
-    this.model.categoryId = this.currentTag.id;
+    //this.model.categoryId = this.currentTag.id;
+    this.model.categoryId = this.selectedCategory.id;
 
     this.categories = this.sessionStorageService.getCategories();
     if (this.businessFlag === "1") {
@@ -83,8 +85,8 @@ export class SearchResultsComponent implements OnInit, OnChanges {
       this.categories = this.categories.filter(x => x.classifiedFlag  === true);
     }
 
-    let selectedCategory = this.categories.find(x => x.id === this.model.categoryId);
-    this.subcategories = selectedCategory.subcategoriesInformation;
+    //let selectedCategory = this.categories.find(x => x.id === this.model.categoryId);
+    this.subcategories = this.selectedCategory.subcategoriesInformation;
 
     if (this.businessFlag === "1") {
       this.subcategories = this.subcategories.filter(x => x.businessFlag === true);
@@ -93,7 +95,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
       this.subcategories = this.subcategories.filter(x => x.classifiedFlag === true);
     }
 
-    this.listingsCount = this.listings.length;
+    this.listingsCount = this.listingsOrg.length;
   }
 
   

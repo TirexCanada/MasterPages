@@ -6,6 +6,7 @@ import { DateFormatLongPipe } from '../../../../../shared/pipes/date-format-long
 import { LineBreaksPipe } from '../../../../../shared/pipes/line-breaks.pipe';
 import { environment } from '../../../../../../environments/environment';
 
+
 import { IListing } from '../../../../../shared/interfaces/listing.interface';
 
 @Component({

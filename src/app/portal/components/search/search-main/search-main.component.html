@@ -12,7 +12,8 @@
                 <div class="col-md-3 fil-mob-view">
                     <div class="all-filt">
                         <span class="fil-mob-clo">
-                            <i class="material-icons">close</i>
+                            <!-- <i class="material-icons">close</i> -->
+                            <i class="icofont icofont-close-line"></i>
                         </span>
                         <div class="all-list-bre">
                             <div class="sec-all-list-bre">
@@ -20,6 +21,9 @@
                                 <ul>
                                     <li>
                                         <a href="index.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <i class="icofont icofont-arrow-right"></i>
                                     </li>
                                     <li>
                                         <a href="products.html">All Categories</a>
@@ -61,8 +65,8 @@
                         <!--END-->
 
                         <!--START-->
-                        <div class="filt-com lhs-cate">
-                            <h4>Cities</h4>
+                        <div class="filt-com lhs-cate">           
+                            <h4><i class="icofont icofont-globe me-2" style="font-size: 20px;"></i>Cities</h4>
                             <select class="form-select" aria-label="Default select example">
                                 <option>Select location</option>
                                 <option value="1" selected>Toronto</option>
@@ -72,8 +76,8 @@
 
                         <!--START-->
                         <div class="filt-com lhs-cate">
-                            <h4>Categories</h4>
-                            <select class="form-select" aria-label="Default select example">
+                            <h4><i class="icofont icofont-listing-box me-2" style="font-size: 20px;"></i>Categories</h4>
+                            <select  #mySelect class="form-select" aria-label="Default select example" (change)="onTagSelected( mySelect.value)">
                                 <option>Select category</option>
                                 @for(category of categories; track $index) {
                                     <option [attr.selected]="category.id===tagId ? true : null" [value]="category.id">
@@ -91,7 +95,7 @@
 
                         <!--START-->
                         <div class="filt-com sub_cat_section pro-fil-sub">
-                            <h4>Sub categories</h4>
+                            <h4><i class="icofont icofont-listine-dots me-2" style="font-size: 20px;"></i>Sub categories</h4>
                             <ul>
                                 @for(subcategory of selectedCategory.subcategoriesInformation; track $index) {
                                     <li>

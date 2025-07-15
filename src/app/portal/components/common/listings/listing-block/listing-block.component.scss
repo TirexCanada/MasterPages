@@ -45,3 +45,12 @@
 .size-100 {
   background-size: auto;
 }
+
+.block-listing-height h5 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    white-space: pre;
+    overflow: hidden
+}

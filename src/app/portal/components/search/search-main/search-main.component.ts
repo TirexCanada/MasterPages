@@ -76,6 +76,23 @@ export class SearchMainComponent implements OnInit, OnChanges {
 
   getOnSuccess(response: any): void {
     this.listings = response;
+
+    this.categoryTopListings = cloneDeep(this.listings);
+    this.categoryTopListings = this.categoryTopListings?.filter(x => x.tagId === this.tagId)
+    this.categoryTopListings = sortBy(this.categoryTopListings, ['listingDate'], ['desc'])?.slice(0, 5);
+
+    this.tagId = this.tagId;
+
+    let orgCategories = this.sessionStorageService.getCategories();
+    let categoriesClone1 = JSON.parse(JSON.stringify(orgCategories));
+    let categoriesClone2 = JSON.parse(JSON.stringify(orgCategories));
+    //if (this.businessFlag === "1") {
+      this.categories = categoriesClone1.filter(x => x.businessFlag  === true);
+      this.selectedCategory = categoriesClone2.find(x => x.id  === this.tagId);
+    // }
+    // else {
+    //   this.categories = this.categories.filter(x => x.classifiedFlag  === true);
+    // }
   }
 
   private getOnError(response: any): void {

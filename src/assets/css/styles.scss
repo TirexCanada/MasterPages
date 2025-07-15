@@ -4761,7 +4761,7 @@ div#review_success {
 .filt-com h4 {
     font-size: 14px;
     color: #000;
-    padding-left: 25px;
+    padding-left: 0px;
     margin-bottom: 12px;
     font-weight: 600;
     text-transform: uppercase;
@@ -4774,9 +4774,9 @@ div#review_success {
     text-transform: none
 }
 
-.lhs-cate h4:before {
-    content: "apps"
-}
+// .lhs-cate h4:before {
+//     content: "apps"
+// }
 
 .lhs-featu h4:before {
     content: "verified_user"
@@ -4818,9 +4818,9 @@ div#review_success {
     content: "shopping_cart"
 }
 
-.pro-fil-sub h4:before {
-    content: "layers"
-}
+// .pro-fil-sub h4:before {
+//     content: "layers"
+// }
 
 .pro-fil-sub ul {
     height: 180px;
@@ -4964,21 +4964,21 @@ div#review_success {
     display: inline-block
 }
 
-.list-res-selt span:before {
-    position: absolute;
-    content: 'close';
-    color: #fff;
-    font-size: 12px;
-    padding: 3px 1px;
-    right: 5px;
-    background: #658d48;
-    width: 15px;
-    height: 15px;
-    line-height: 9px;
-    text-align: center;
-    border-radius: 50px;
-    top: 7px
-}
+// .list-res-selt span:before {
+//     position: absolute;
+//     content: 'close';
+//     color: #fff;
+//     font-size: 12px;
+//     padding: 3px 1px;
+//     right: 5px;
+//     background: #658d48;
+//     width: 15px;
+//     height: 15px;
+//     line-height: 9px;
+//     text-align: center;
+//     border-radius: 50px;
+//     top: 7px
+// }
 
 .all-jobs .listng-res {
     border-bottom: 1px solid #e2e1e1;
@@ -13950,12 +13950,12 @@ div#pop_enq_success p {
     display: none
 }
 
-.all-list-bre ul li:after,.eve-bred-crum ul li:after {
-    content: 'keyboard_arrow_right';
-    color: #333;
-    font-size: 16px;
-    padding: 2px
-}
+// .all-list-bre ul li:after,.eve-bred-crum ul li:after {
+//     content: 'keyboard_arrow_right';
+//     color: #333;
+//     font-size: 16px;
+//     padding: 2px
+// }
 
 .eve-bred-crum {
     padding-top: 15px

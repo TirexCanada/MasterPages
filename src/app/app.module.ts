@@ -3,7 +3,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgForm, ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LOCATION_INITIALIZED } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
-import { GoogleMapsModule } from '@angular/google-maps'
+// import { GoogleMapsModule } from '@angular/google-maps'
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
