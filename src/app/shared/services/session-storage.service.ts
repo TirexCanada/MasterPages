@@ -63,6 +63,16 @@ export class SessionStorageService {
     }
 
 
+    //Search Params
+    getSearchParams() {
+        return JSON.parse(this.window.sessionStorage.getItem('searchParams'));
+    }
+
+    setSearchParams(searchParams: any) {
+        this.window.sessionStorage.setItem('searchParams', JSON.stringify(searchParams));
+    }
+
+
     //PaymentStatus
     getPaymentStatus() {
         return null //JSON.parse(this.window.sessionStorage.getItem('paymentStatus'));

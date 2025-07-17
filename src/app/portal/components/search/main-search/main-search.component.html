@@ -16,8 +16,9 @@
 
 
                     <div class="ban-search ban-sear-all">
-                        <form name="filter_form" id="filter_form" class="filter_form">
-                            <ul>                                   
+                        <!-- <form name="filter_form" id="filter_form" class="filter_form"> -->
+                            <app-home-search></app-home-search>
+                            <!-- <ul>                                   
                                 <li class="sr-search">
                                     <input
                                         type="text"
@@ -34,10 +35,11 @@
                                         name="filter_submit"
                                         value="Search"
                                         class="filter_submit"
+                                        (click)="searchListings()"
                                     >
                                 </li>
-                            </ul>
-                        </form>
+                            </ul> -->
+                        <!-- </form> -->
                     </div>
 
                     

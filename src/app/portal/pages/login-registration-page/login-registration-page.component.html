@@ -1,77 +1,80 @@
-
-<div class="row" style="background-color: #eff4ff;">
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 p-5 text-center">
+<section class="eve-deta-pg">
+    <div class="container">
         <div class="row mt-5 mb-5">
-            <div class="col-sm-12 text-center">
-                <h1>{{ 'components.login-registration.title' | translate }}</h1>
+            <div class="col-sm-12 pt-5 text-center">
+                <h3>{{ 'components.login-registration.title' | translate }}</h3>
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-</div>
+</section>
 
-<div class="row" style="background-color: #eff4ff;">
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-    <div class="col-sm-12 col-md-10 col-lg-4 col-xl-4 p-5 text-center border border-dark">
-        <div class="row mb-5 mt-5">
-            <div class="col-sm-12 text-center">
-                <h2>{{ 'components.login.title' | translate }}</h2>
+<section class="login-reg">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 text-center">
+                <div class="login-main add-2-list">
+                    <div class="log-bor">&nbsp;</div>
+                    <span class="steps">{{ 'components.login.title' | translate }}</span>
+                    <div class="log">
+                        <div class="login add-list-off">
+                            <h4>{{ 'components.login.title' | translate }}</h4>
+                            <div class="row mb-3">
+                                <div class="col-sm-12 p-3">
+                                    <form #loginForm="ngForm" novalidate>
+                                        <app-login [isVisible]=true 
+                                            [mainLogin]=true
+                                            (loggedIn)="onLoggedIn($event)" 
+                                            (loginFailed)="onLoginFailed($event)"
+                                            [form]="loginForm"
+                                            [token]="token"
+                                            [(model)]="loginModel">
+                                        </app-login>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <app-error-message *ngIf="serverErrors && mode==='login' && sessionExpired !== 'true'" 
+                            [errors]="serverErrors">
+                        </app-error-message>
+                    </div>
+                </div> -->
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-12 p-3">
-                <form #loginForm="ngForm" novalidate>
-                    <app-login [isVisible]=true 
-                        [mainLogin]=true
-                        (loggedIn)="onLoggedIn($event)" 
-                        (loginFailed)="onLoginFailed($event)"
-                        [form]="loginForm"
-                        [token]="token"
-                        [(model)]="loginModel">
-                    </app-login>
-                </form>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-12">
-                <app-error-message *ngIf="serverErrors && mode==='login' && sessionExpired !== 'true'" 
-                    [errors]="serverErrors">
-                </app-error-message>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-10 col-lg-2 col-xl-2"></div>
-    <div class="col-sm-12 col-md-10 col-lg-4 col-xl-4 p-5 text-center border border-dark">
-        <div class="row mb-5 mt-5">
-            <div class="col-sm-12 text-center">
-                <h2>{{ 'components.registration.title' | translate }}</h2>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-12 p-3 border border-light">
-                <form #registrationForm="ngForm" novalidate>
-                    <app-registration 
-                        [form]="registrationForm"
-                        [(model)]="registrationModel"
-                        (clickRegister)="onClickRegister($event)">
-                    </app-registration>
-                </form>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-sm-12">
-                <app-error-message *ngIf="serverErrors && mode==='registration' && sessionExpired !== 'true'" 
-                    [errors]="serverErrors">
-                </app-error-message>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-</div>
+           
+            <div class="col-sm-6 text-center">
+                <div class="login-main add-2-list">
+                    <div class="log-bor">&nbsp;</div>
+                    <span class="steps">{{ 'components.registration.title' | translate }}</span>
+                    <div class="log">
+                        <div class="login add-list-off">
+                            <h4>{{ 'components.login.title' | translate }}</h4>
+                
+                            <div class="row mb-3">
+                                <div class="col-sm-12 p-3 border border-light">
+                                    <form #registrationForm="ngForm" novalidate>
+                                        <app-registration 
+                                            [form]="registrationForm"
+                                            [(model)]="registrationModel"
+                                            (clickRegister)="onClickRegister($event)">
+                                        </app-registration>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-<div class="row" style="background-color: #eff4ff;">
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-    <div class="col-sm-12 col-md-10 col-lg-10 col-xl-10 p-5 text-center"></div>
-    <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-</div>
+                <!-- <div class="row mb-3">
+                    <div class="col-sm-12">
+                        <app-error-message *ngIf="serverErrors && mode==='registration' && sessionExpired !== 'true'" 
+                            [errors]="serverErrors">
+                        </app-error-message>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>

@@ -19,14 +19,14 @@ import { CarouselBannerComponent } from '../../components/banners/carousel-banne
 
 
 @Component({
-  selector: 'app-category',
+  selector: 'app-calendar-page',
   standalone: true, 
-  imports: [SearchMainComponent, CategoryIconComponent, HomeSearchComponent, CommonModule, TranslateModule, CarouselBannerComponent],
+  imports: [CommonModule, TranslateModule, CarouselBannerComponent],
   providers: [ApplicationService, ClassifiedService, AuthenticationService, NavigationService, CustomerService, RegistrationService, SessionStorageService, CommonModule],
-  templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  templateUrl: './calendar-page.component.html',
+  styleUrls: ['./calendar-page.component.scss']
 })
-export class CategoryComponent implements OnInit {
+export class CalendarPageComponent implements OnInit {
   listings: any [];
   tagId: string;
   categoryType: string;
@@ -44,24 +44,20 @@ export class CategoryComponent implements OnInit {
       this.activatedRoute.params.subscribe(params => {
         this.tagId = params['tagid'];
         this.categoryType = params['categorytype'];
+        //let baseRequestModel = { "requestModelType": this.categoryType, "tagId": this.tagId };
+        // this.classifiedService.getListingsByTagId(baseRequestModel).subscribe(
+        //   response => this.getOnSuccess(response),
+        //   response => this.getOnError(response)
+        // );   
       });
   }
 
   ngOnInit(): void {
-    if (this.tagId === undefined || this.tagId === null) {
-      let searchParams = this.sessionStorageService.getSearchParams();
-      this.classifiedService.getListingsByParams(searchParams).subscribe(
-        response => this.getOnSuccess(response),
-        response => this.getOnError(response)
-      );   
-    }
-    else {
-      let baseRequestModel = { "requestModelType": this.categoryType, "tagId": this.tagId };
-      this.classifiedService.getListingsByTagId(baseRequestModel).subscribe(
-        response => this.getOnSuccess(response),
-        response => this.getOnError(response)
-      );   
-    }
+    let baseRequestModel = { "requestModelType": this.categoryType, "tagId": this.tagId };
+    this.classifiedService.getListingsByTagId(baseRequestModel).subscribe(
+      response => this.getOnSuccess(response),
+      response => this.getOnError(response)
+    );   
   }
 
   getOnSuccess(response: any): void {

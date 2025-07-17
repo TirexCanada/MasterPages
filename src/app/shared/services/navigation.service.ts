@@ -36,6 +36,26 @@ export class NavigationService {
         this.router.navigateByUrl(url);
     }
 
+    navigateToBusinessCatalog() {
+        let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.home}`;   
+        this.router.navigateByUrl(url);
+    }
+
+    navigateToClassified() {
+        let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.home}`;   
+        this.router.navigateByUrl(url);
+    }
+
+    navigateToCalendar() {
+        let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.calendar}`;   
+        this.router.navigateByUrl(url);
+    }
+
+    navigateToSearchResults() {
+        let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.category}`;   
+        this.router.navigateByUrl(url);
+    }
+
     navigateToLoginRegistration() {
         let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.loginRegistration}`;   
         this.router.navigateByUrl(url);

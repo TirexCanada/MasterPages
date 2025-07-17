@@ -1,4 +1,352 @@
-<div class="row pb-5" style="background-color: #ccdcff;">
+<section>
+    <div class="v3-list-ql">
+        <div class="container">
+            <div class="row">
+                <div class="v3-list-ql-inn">
+                    <ul>
+                        <li class="active">
+                            <a href="#ld-abo">
+                                <i class="icofont icofont-user-alt-7"></i> About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ld-ser">
+                                <i class="icofont icofont-briefcase"></i> Services
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#ld-off">
+                                <i class="icofont icofont-tags"></i> Offers
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#location">
+                                <i class="icofont icofont-location-pin"></i> Location
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#ld-rev">
+                                <i class="material-icons">star_half</i> Write Review
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#claim">
+                                <i class="material-icons">store</i>Claim business
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="eve-deta-pg">
+    <div class="container">
+        <div class="row mt-5 mb-5 pt-5">
+            <div class="col-sm-12 pt-5 text-center">
+                <h3>{{ listing?.businessName }}</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="list-pg-bg">
+    <div class="container">
+        <div>
+            <div class="com-padd row">
+                <div class="eve-bred-crum">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="all-listing.html">Real Estate</a>
+                        </li>
+                        <li>
+                            <a href="#!">{{ listing?.businessName }}</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-8 list-pg-lt list-page-com-p">
+                    <div id="ld-abo" class="pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                <span>About</span>
+                                {{ listing?.businessName }}
+                            </h3>
+                        </div>
+                        <div class="list-pg-inn-sp list-pg-inn-abo">
+                            <app-listing-main
+                                [listing]="listing">
+                            </app-listing-main>
+                        </div>
+                    </div>
+
+                    <div id="ld-ser" class="pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                <span>Services</span>
+                                Offered
+                            </h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="row pg-list-ser">
+                               Images will be here
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ld-ser" class="pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                <span>Service</span>
+                                Areas
+                            </h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="pg-list-ser-area">
+                                <span>GTA</span>
+                                <span>Toronto</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="ld-products" class="pglist-bg pglist-p-com pg-list-prod-sec">
+                        <div class="pglist-p-com-ti">
+                            <h3>Products</h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="row plac-hom-all-pla pg-list-prod">
+                               Products can be here
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div id="ld-events" class="pglist-bg pglist-p-com pg-list-prod-sec">
+                        <div class="pglist-p-com-ti">
+                            <h3>Events</h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="row plac-hom-all-pla pg-list-prod">
+                                Events can be here
+                            </div>
+                        </div>
+                    </div>
+                                  
+                    <div id="location" class="pglist-p3 pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                <span>Our</span>
+                                Location
+                            </h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="list-pg-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.35196272633!2d-73.97950600000001!3d40.697141499999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1749870522858!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-sh">
+                        <span class="share-new" data-bs-toggle="modal" data-bs-target="#sharepop">
+                            <i class="icofont icofont-share"></i> Share now
+                        </span>
+                    </div>
+                </div>
+                <div class="list-pg-rt col-md-4">
+                    <div class="pglist-bg pglist-p-com">
+                        <div class="pg-list-ban-info-23">
+                            <div class="pg-list-1-pro">
+                                <img src="images/listings/11.jpg" alt="">
+                                <span class="stat">
+                                        <i class="material-icons">verified_user</i>
+                                    </span>
+                            </div>
+                            <div class="pg-list-1-left">
+                                <h3>{{ listing?.businessName }}</h3>
+                                <div class="pg-list-revi-23 row">
+                                    <div class="pg-list-revi-lhs">
+                                        <div class="list-rat-all">
+                                            <b>4.4</b>
+                                            <label class="rat">
+                                                <i class="icofont icofont-star"></i>
+                                                <i class="icofont icofont-star"></i>
+                                                <i class="icofont icofont-star"></i>
+                                                <i class="icofont icofont-star"></i>
+                                                <i class="icofont icofont-star"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="pglist-revi-lines">
+                                        <!-- RATING PROGERESSBAR -->
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" style="width:80%">
+                                                <span>5*</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" style="width:40%">
+                                                <span>4*</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" style="width:20%">
+                                                <span>3*</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-danger" style="width:20%">
+                                                <span>2*</span>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-secondary" style="width:10%">
+                                                <span>1*</span>
+                                            </div>
+                                        </div>
+                                        <!-- END RATING PROGERESSBAR -->
+                                    </div>
+                                    <p class="txt">
+                                        <span>
+                                                <b>3.5</b> average based on 4 Reviews
+                                            </span>
+                                    </p>
+                                </div>
+                                <div class="list-number pag-p1-phone">
+                                    <app-listing-contact-info
+                                        [listing]="listing">
+                                    </app-listing-contact-info>
+                                </div>
+                            </div>
+                            <div class="list-ban-btn">
+                                <ul class="row">
+                                    <li>
+                                        <a href="tel:{{ listing?.customerContactInformation?.phoneNumber }}" class="cta cta-call">Call Now</a>
+                                    </li>
+                                    <!-- <li>
+                                        <span data-bs-toggle="modal" data-bs-target="#quote" class="pulse cta cta-get">Get quote</span>
+                                    </li> -->
+                                </ul>
+                            </div>
+                            <div class="pg-list-oths">
+                                <ul>
+                                    <li>
+                                        <span class="cta cta-like ldelik Animatedheartfunc653 " data-for="1" data-section="1" data-num="328" data-item="328" data-id="653">
+                                                <i class="material-icons">thumb_up</i>
+                                                <b class="like-content653">1</b> LIKES
+                                            </span>
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.me/987654621" class="cta cta-rev" target="_blank">
+                                            <i class="material-icons">chat</i>WhatsApp
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <span data-bs-toggle="modal" data-bs-target="#sharepop">
+                                                <i class="material-icons">share</i>Share
+                                            </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="pglist-p3 pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                    <span>Company</span>
+                                    Info
+                                </h3>
+                        </div>
+                        <div class="list-pg-inn-sp">
+                            <div class="list-work-hrs">
+                                <div class="today">
+                                    <b>Working hours</b>
+                                    <span class="status">Closed</span>
+                                </div>
+                                <div class="timing">
+                                    <ul>
+                                        <li>Sunday:
+                                            <span class="time">Closed</span>
+                                        </li>
+                                        <li>Monday:
+                                            <span class="time">9:00 am - 6:00 pm</span>
+                                        </li>
+                                        <li>Tuesday:
+                                            <span class="time">9:00 am - 6:00 pm</span>
+                                        </li>
+                                        <li>Wednesday:
+                                            <span class="time">9:00 am - 6:00 pm</span>
+                                        </li>
+                                        <li>Thursday:
+                                            <span class="time">9:00 am - 6:00 pm</span>
+                                        </li>
+                                        <li>Friday:
+                                            <span class="time">9:00 am - 6:00 pm</span>
+                                        </li>
+                                        <li>Saturday:
+                                            <span class="time">Closed</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="list-pg-oth-info">
+                                <!-- <ul>
+                                    <li>Villas available
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>Plots Available
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>Flats available
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>Experience
+                                        <span>15 years</span>
+                                    </li>
+                                    <li>Parking
+                                        <span>Yes</span>
+                                    </li>
+                                    <li>WhatsApp
+                                        <span>65432145</span>
+                                    </li>
+                                    <li>Online booking
+                                        <span>Yes</span>
+                                    </li>
+                                </ul> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="ld-rhs-pro pglist-bg pglist-p-com">
+                        <div class="pglist-p-com-ti">
+                            <h3>
+                                    <span>Listing</span>
+                                    Created by
+                                </h3>
+                        </div>
+                        <div class="lis-pro-badg-23 row">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="b-lazy" data-src="images/user/970813.jpg" alt="" loading="lazy">
+                            <div>
+                                <!--<span class="rat" alt="User rating">4.2</span>-->
+                                <h4></h4>
+                                <p>Member since Sep 2025</p>
+                            </div>
+                            <a href="profile.html" class="fclick" target="_blank">&nbsp;</a>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- <div class="row pb-5" style="background-color: #ccdcff;">
     <div class="col-sm-12 col-md-3 col-lg-2 col-xl-1"></div>
     <div class="col-sm-12 col-md-6 col-lg-8 col-xl-10 pt-5 pb-5">
         <h1>{{ 'pages.listing.detailsTitle' | translate }}</h1>
@@ -50,14 +398,8 @@
             </div>
         </div>
         
-       <!--  <div class="row mb-5" style="background-color: #ffffff">
-            <div class="col-sm-12 p-5"> -->
-                <!-- <app-small-banner>
-
-                </app-small-banner> -->
-           <!--  </div>
-        </div> -->
+       
 
     </div>
     <div class="col-sm-12 col-md-12 col-lg-12 col-xl-1"></div>
-</div>
+</div> -->

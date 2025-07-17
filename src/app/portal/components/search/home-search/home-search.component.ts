@@ -9,6 +9,7 @@ import { OneLineQuestionComponent } from '../../../components/generic-components
 import { SessionStorageService } from '../../../../shared/services/session-storage.service';
 import { ClassifiedService } from '../../../../shared/services/classified.service';
 import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } from '@ngx-translate/core';
+import { NavigationService } from '../../../../shared/services/navigation.service';
 
 import { ICategory } from '../../../../shared/interfaces/category.interface';
 
@@ -29,7 +30,8 @@ export class HomeSearchComponent implements OnInit {
   @ViewChild('form', { static: true }) form: NgForm;
 
   constructor(private sessionStorageService: SessionStorageService,
-    private classifiedService: ClassifiedService) { }
+    private classifiedService: ClassifiedService,
+    private navigationService: NavigationService) { }
 
   ngOnInit(): void {
     this.searchModel = { "searchCategoryId": null, "searchText": null };
@@ -70,16 +72,19 @@ export class HomeSearchComponent implements OnInit {
 
     if (searchParamsItems !== null && searchParamsItems.length > 0) {
       let searchParams = { "searchParams": searchParamsItems };
+      this.sessionStorageService.setSearchParams(searchParams);
+      this.navigationService.navigateToSearchResults();
       
-      this.classifiedService.getListingsByParams(searchParams).subscribe(
-        response => this.getOnSuccess(response),
-        response => this.getOnError(response)
-      );   
+      // this.classifiedService.getListingsByParams(searchParams).subscribe(
+      //   response => this.getOnSuccess(response),
+      //   response => this.getOnError(response)
+      // );   
     }
   }
 
   getOnSuccess(response: any): void {
     //this.listings = response;
+    this.navigationService.navigateToSearchResults();
   }
 
   private getOnError(response: any): void {

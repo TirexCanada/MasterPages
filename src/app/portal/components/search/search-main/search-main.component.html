@@ -80,12 +80,12 @@
                             <select  #mySelect class="form-select" aria-label="Default select example" (change)="onTagSelected( mySelect.value)">
                                 <option>Select category</option>
                                 @for(category of categories; track $index) {
-                                    <option [attr.selected]="category.id===tagId ? true : null" [value]="category.id">
+                                    <option [attr.selected]="category?.id===tagId ? true : null" [value]="category?.id">
                                         @if(translateService.currentLang==='ru') {
-                                            {{ category.categoryName_RU }}
+                                            {{ category?.categoryName_RU }}
                                         }
                                         @else {
-                                            {{ category.categoryName }}
+                                            {{ category?.categoryName }}
                                         }
                                     </option>
                                 }
@@ -97,7 +97,7 @@
                         <div class="filt-com sub_cat_section pro-fil-sub">
                             <h4><i class="icofont icofont-listine-dots me-2" style="font-size: 20px;"></i>Sub categories</h4>
                             <ul>
-                                @for(subcategory of selectedCategory.subcategoriesInformation; track $index) {
+                                @for(subcategory of selectedCategory?.subcategoriesInformation; track $index) {
                                     <li>
                                         <div class="chbox">
                                             <input

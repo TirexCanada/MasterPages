@@ -13,6 +13,7 @@ import { ArticleComponent } from './pages/articles/article/article.component';
 import { ArticlesListComponent } from './pages/articles/articles-list/articles-list.component';
 
 import { HelpPageComponent } from './pages/help/help-page/help-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 // import { ContactComponent } from './pages/contact/contact.component';
 
@@ -63,6 +64,11 @@ const PORTAL_ROUTES: Routes = [
                 pathMatch: 'full'
             },
             {
+                path: APPLICATION_ROUTES.portal.calendar,
+                component: CalendarPageComponent,
+                data: { name: 'Home' }
+            },     
+            {
                 path: APPLICATION_ROUTES.portal.classified,
                 component: ClassifiedComponent,
                 data: { name: 'Registration Page' },
@@ -111,12 +117,12 @@ const PORTAL_ROUTES: Routes = [
             {
                 path: APPLICATION_ROUTES.portal.category,
                 component: CategoryComponent,
-                data: { name: 'Classified Category' },
+                data: { name: 'Category' },
             },
             {
                 path: APPLICATION_ROUTES.portal.category + "/:categorytype/:tagid",
                 component: CategoryComponent,
-                data: { name: 'Classified Category' },
+                data: { name: 'Category' },
             },
             {
                 path: APPLICATION_ROUTES.portal.login,
@@ -131,7 +137,7 @@ const PORTAL_ROUTES: Routes = [
             {
                 path: APPLICATION_ROUTES.portal.listing + "/:listingid",
                 component: ListingComponent,
-                data: { name: 'Classified Listing',
+                data: { name: 'Listing',
                     seo: {
                         title: 'MasterPages | Classified Listing',
                         metaTags: [

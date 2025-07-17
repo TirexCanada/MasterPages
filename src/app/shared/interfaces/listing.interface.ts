@@ -27,6 +27,8 @@ export interface IListing {
     hits?: number,
     categoryType?: string,
 
+    businessName?: string,
+
     updateSection?: string,
     listingTagsInformation?: IListingTag [];
     listingResourcesInformation?: IListingResource [];

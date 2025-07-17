@@ -11,6 +11,7 @@ export const APPLICATION_ROUTES = {
     'portal': {
         'portal': 'portal',
         'home': 'home',
+        'calendar': 'calendar',
         'classified': 'classified',
         'login': 'login',
         'registration': 'registration',

@@ -83,6 +83,18 @@ export class PortalHeaderComponent implements OnInit {
     this.navigationService.navigateToRegistration();
   }
 
+  goToBusinessCatalog() {
+    this.navigationService.navigateToBusinessCatalog();
+  }
+
+  goToClassified() {
+    this.navigationService.navigateToClassified();
+  }
+
+  goToCalendar() {
+    this.navigationService.navigateToCalendar();
+  }
+
   onToggleClick() {
     //console.log('Dropdown toggle clicked');
   }

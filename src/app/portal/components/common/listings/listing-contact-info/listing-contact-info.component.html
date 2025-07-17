@@ -1,4 +1,35 @@
-<div class="row m-2" style="height: 200px; background-image: url('/assets/images/profile/business.jpg'); background-repeat: no-repeat;">
+<div class="row p-2">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-2">
+                <img class="img-fluid" src="/assets/images/listing/phone.png" />
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid" src="/assets/images/listing/facebook.png" />
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid" src="/assets/images/listing/twitter.png" />
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid" src="/assets/images/listing/instagram.png" />
+            </div>
+            <div class="col-sm-2">
+                <img class="img-fluid" src="/assets/images/listing/youtube.png" />
+            </div>
+        </div>
+    </div>
+</div>
+        
+<div class="row p-2">
+    <div class="col-sm-12 pt-3">
+        <img src="/assets/images/listing/phonenumber.png" width=20 height="auto" class="mr-5" /><span class="ml-5 pr-5">{{ phoneNumber }}</span><!-- <button class="btn btn-link ml-5" (click)="getPhoneNumber()">{{ phoneNumberLabel }}</button> -->
+    </div>
+    <div class="col-sm-12 pt-3">
+        <img src="/assets/images/listing/web.png" width=20 height="auto" class="mr-5" /><a class="ml-5 pr-5" [href]="'http://'+listing?.website" target="_blank">{{ listing?.website }}</a>
+    </div>
+</div>
+
+<!-- <div class="row m-2" style="height: 200px; background-image: url('/assets/images/profile/business.jpg'); background-repeat: no-repeat;">
     <div class="col-sm-12">   
         <div class="row" style="height: 150px;">
             <div class="col-sm-12">
@@ -39,9 +70,9 @@
 </div>
 <div class="row p-2 mt-5">
     <div class="col-sm-12 pt-5">
-        <img src="/assets/images/listing/phonenumber.png" width=40 height="auto" class="mr-5" /><span class="phone ml-5 pr-5">{{ phoneNumber }}</span><!-- <button class="btn btn-link ml-5" (click)="getPhoneNumber()">{{ phoneNumberLabel }}</button> -->
+        <img src="/assets/images/listing/phonenumber.png" width=40 height="auto" class="mr-5" /><span class="phone ml-5 pr-5">{{ phoneNumber }}</span><!-- <button class="btn btn-link ml-5" (click)="getPhoneNumber()">{{ phoneNumberLabel }}</button>
     </div>
     <div class="col-sm-12 pt-3">
         <img src="/assets/images/listing/web.png" width=40 height="auto" class="mr-5" /><a class="ml-5 pr-5" [href]="'http://'+listing?.website" target="_blank">{{ listing?.website }}</a>
     </div>
-</div>
+</div> -->

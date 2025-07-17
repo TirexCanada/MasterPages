@@ -5,10 +5,10 @@
     <div class="list-res-selt">
         <span class="product-filters-span" id="health-products" data-type="sub_cat">
             @if(translateService.currentLang==='ru') {
-                <label [for]="selectedCategory.categoryName_RU">{{ selectedCategory.categoryName_RU }}</label>
+                <label [for]="selectedCategory?.categoryName_RU">{{ selectedCategory?.categoryName_RU }}</label>
             }
             @else {
-                <label [for]="selectedCategory.categoryName">{{ selectedCategory.categoryName }}</label>
+                <label [for]="selectedCategory?.categoryName">{{ selectedCategory?.categoryName }}</label>
             }
         </span>
         <span class="product-filters-span" id="tshirts" data-type="sub_cat">Toronto</span>

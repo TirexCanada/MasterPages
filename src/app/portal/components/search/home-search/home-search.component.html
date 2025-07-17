@@ -1,109 +1,48 @@
-<form #form="ngForm" novalidate>
+<form #form="ngForm" novalidate class="filter_form">
     <div class="row">
-        <!-- <div class="col-sm-1"></div> -->
-        <div class="col-sm-12">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-10 col-sm-8">
-                    <!-- <div class="row mt-5">
-                        <div class="col-sm-12">
-                            <h3>{{ 'components.header.home' | translate }}</h3>
-                        </div>
-                    </div> -->
-                   <!--  <div class="row mt-3">
-                        <div class="col-sm-12">
-                            <h1>Toronto’s Top Business & Community Directory</h1>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-sm-8">
-                            <h4>Find it all here - whether you’re buying or selling, this is the best way to reach your community</h4>
-                        </div>
-                        <div class="col-sm-4">                       
-                        </div>
-                    </div> -->
-                    <div class="row mt-5 mb-5">
-                        <div class="col-sm-12">
-                            <div class="row p-2" style="border: 20px solid #516394; border-radius: 14px; background-color: #ffffff;">
-                                <div class="col-sm-10">
-                                    <div class="form-row p-3" style="border: 1px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
-                                        <div class="col-sm-12 mb-1">
-                                            <div class="row">
-                                                <div class="col-sm-1 nopadding pt-3">
-                                                    <img class="img-search" src="assets/images/home/home-search.png" />
-                                                </div>
-                                                <div class="col-sm-11 pl-5">
-                                                    <!-- <div class="h7">Search Here</div>  -->    
-                                                    <div class="p2" style="margin-top: -12px;">        
-                                                        <app-one-line-question 
-                                                            [form]="form"
-                                                            [controlName]="'searchText'"
-                                                            [model]="searchModel"
-                                                            [modelName]="'searchText'"
-                                                            [defaultValue]=""
-                                                            [title]=""
-                                                            [placeholder]="'components.searchComponents.searchPlaceholder' | translate"
-                                                            [isRequired]=false
-                                                            [isDisabled]=false
-                                                            [inlineFlag]=false
-                                                            [inputValidator]="'ct4 ct5 ct6 ct8'">
-                                                        </app-one-line-question>
-                                                    </div>
-                                                        <!-- <input type="text" class="h8 w-100" id="inlineFormInputGroup" placeholder="What are you looking for..."> -->                                    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-sm-4">
-                                    <div class="form-row p-3" style="border: 1px solid #ffffff; border-radius: 10px; background-color: #ffffff;">
-                                        <div class="col-sm-12 mb-1">
-                                            <div class="row">
-                                                <div class="col-sm-1 nopadding pt-3">
-                                                    <img class="img-search" src="assets/images/home/home-select.png" />
-                                                </div>
-                                                <div class="col-sm-11 pl-5">
-                                                    <div class="h7">Select Category</div> 
-                                                    <div class="row">
-                                                        SEARCh DROPDOWN will be here
-                                                        <app-dropdown-question [form]="form"
-                                                            class="input-text-small w-100"
-                                                            [controlName]="'categoryId'"
-                                                            [backgroundColor]=false
-                                                            [id]="'sortBy'"
-                                                            [model]="searchModel"
-                                                            [modelName]="'searchCategoryId'"
-                                                            [defaultValue]=null
-                                                            [defaultText]="'Select...'"
-                                                            [inlineFlag]=false
-                                                            [title]="''"
-                                                            [data]="categories"
-                                                            [isRequired]="true"
-                                                            [isDisabled]="false"
-                                                            (selectItem)="selectSortBy()">
-                                                        </app-dropdown-question>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-                                <div class="col-sm-2 pt-3">
-                                    <button class="btn btn-search btn-block" type="button" (click)="search()">{{ 'common.buttons.search' | translate }}</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-2 col-xl-4">
-                
-                </div>
+        <div class="col-sm-10 pl-5">
+            <div class="p2" style="margin-top: -12px;">        
+                <app-one-line-question 
+                    [form]="form"
+                    [controlName]="'searchText'"
+                    [model]="searchModel"
+                    [modelName]="'searchText'"
+                    [defaultValue]=""
+                    [title]=""
+                    [placeholder]="'components.searchComponents.searchPlaceholder' | translate"
+                    [isRequired]=false
+                    [isDisabled]=false
+                    [inlineFlag]=false
+                    [inputValidator]="'ct4 ct5 ct6 ct8'">
+                </app-one-line-question>
             </div>
-            <!-- <div class="row mb-5">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-10">
-                    <app-category-icon></app-category-icon>
-                </div>
-            </div> -->
         </div>
-        <!-- <div class="col-sm-1"></div> -->
-    </div>
+                          
+        <div class="col-sm-2 pt-2">
+            <button class="btn btn-primary btn-block" type="button" (click)="search()">{{ 'common.buttons.search' | translate }}</button>
+        </div>
+
+
+        <!-- <ul>                                   
+            <li class="sr-search">
+                <input
+                    type="text"
+                    autocomplete="off"
+                    id="select-search"
+                    placeholder="What are you looking for?"
+                    class="search-field"
+                />
+            </li>
+            <li class="sr-btn">
+                <input
+                    type="submit"
+                    id="filter_submit"
+                    name="filter_submit"
+                    value="Search"
+                    class="filter_submit"
+                    (click)="searchListings()"
+                >
+            </li>
+        </ul> -->
+    </div>     
 </form>

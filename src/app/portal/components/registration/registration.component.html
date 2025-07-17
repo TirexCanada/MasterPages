@@ -23,53 +23,6 @@
     </div>
 </div>
 
-<!-- <div class="form-group row mb-2">
-    <div class="col-sm-6">
-        <div class="form-group text-start">
-            <input class="form-control input-text"
-                id="'firstName'" 
-                name="'firstName'" 
-                [attr.name]="'firstName'" 
-                [placeholder]="'components.registration.firstName' | translate"
-                type="text" 
-                [minlength]="validationData?.customer?.firstName.minLength"
-                [maxlength]="validationData?.customer?.firstName.maxLength"
-                [required]=true
-                [(ngModel)]="model.firstName" 
-                appInputValidator
-                InputValidator="'ct1 ct2 ct5 ct6'"
-                #firstNameCtrl="ngModel"/>
-            <div class="text-start" *ngIf="submitted && firstNameCtrl.errors">
-                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['required']">{{validationData['customer']?.firstName.errorMessageRequired}}</small>
-                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['minlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
-                <small class="form-text error-message" invalid *ngIf="firstNameCtrl.errors['maxlength']">{{validationData['customer']?.firstName.errorMessage}}</small>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-6">
-        <div class="form-group text-start">
-            <input class="form-control input-text"
-                id="'lastName'" 
-                name="'lastName'" 
-                [attr.name]="'lastName'" 
-                [placeholder]="'components.registration.lastName' | translate"
-                type="text" 
-                [minlength]="validationData?.customer?.lastName.minLength"
-                [maxlength]="validationData?.customer?.lastName.maxLength"
-                [required]=true
-                [(ngModel)]="model.lastName" 
-                appInputValidator
-                InputValidator="'ct1 ct2 ct5 ct6'"
-                #lastNameCtrl="ngModel"/>
-            <div class="text-start" *ngIf="submitted && lastNameCtrl.errors">
-                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['required']">{{validationData['customer']?.lastName.errorMessageRequired}}</small>
-                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['minlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
-                <small class="form-text error-message" invalid *ngIf="lastNameCtrl.errors['maxlength']">{{validationData['customer']?.lastName.errorMessage}}</small>
-            </div>
-        </div>
-    </div>
-</div>  -->
-
 <div class="row mb-2">
     <div class="col-sm-12">
         <div class="form-group text-start">
@@ -107,9 +60,9 @@
                     [model]="model"
                     appPassword> 
                 </app-password-input>  
-                <button class="btn btn-outline-secondary btn-toggle" (click)="togglePassword()" type="button" tabindex="-1">
+                <!-- <button class="btn btn-outline-secondary btn-toggle" (click)="togglePassword()" type="button" tabindex="-1">
                     <i [ngClass]="buttonClass"></i>
-                </button>
+                </button> -->
             </div>
             <div class="text-start" *ngIf="submitted && form.controls['password']?.errors">
                 <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['required']">{{ 'common.errorMessages.signupErrors.passwordRequiredError' | translate }}</small>
@@ -152,7 +105,7 @@
 </div>
 
 <div class="form-group text-start row mt-5">
-    <div class=" col-sm-12">
+    <div class="col-sm-12">
         <div class="form-check">
             <input class="form-check-input" 
                 type="checkbox" 
@@ -171,7 +124,10 @@
                 [(ngModel)]="model.agreeFlag"
                 #agreeFlag="ngModel">
             <label class="form-check-label" for="agreeCheck">
-                {{ 'components.registration.agreeCheck' | translate }} <button class="btn btn-link" (click)="openLg(content)">{{ 'components.registration.termsAndConditions' | translate }}</button>
+                {{ 'components.registration.agreeCheck' | translate }} 
+                <!-- <button class="btn btn-link" (click)="openLg(content)"> -->
+                    {{ 'components.registration.termsAndConditions' | translate }}
+                <!-- </button> -->
             </label>
         </div>
         <div *ngIf="submitted && !model.agreeFlag">

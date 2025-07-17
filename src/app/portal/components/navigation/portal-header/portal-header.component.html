@@ -5,9 +5,18 @@
                 <div class="container">
                     <div class="row">
                         <div class="hom-nav ">
-                            <a href="index.html" class="top-log">
+                            <a [routerLink]="['/portal/home']">
                                 <img src="assets/images/home/16077bizbook-white.png" alt="" loading="eager" class="ic-logo">
                             </a>
+                            <!-- <a [routerLink]="['/portal/home']">
+                                Business Directory
+                            </a>
+                            <a [routerLink]="['/portal/home']">
+                                Calendar
+                            </a> -->
+                            <!-- <a href="index.html" class="top-log">
+                                <img src="assets/images/home/16077bizbook-white.png" alt="" loading="eager" class="ic-logo">
+                            </a> -->
                             <!-- <ul class="navbar-nav mr-auto nav-classified justify-content-end nav-contact pl-3">
                                 <li class="nav-item nav-contact">
                                     <a class="nav-link h18"><img class="mr-1" src="assets/images/navbar/navbar-email.png" height="36" />info.masterpages.ca</a>
@@ -17,11 +26,17 @@
                                 </li>
                             </ul> -->
                             
-                          
-                         
-
 
                             <ul class="bl">
+                                <li>
+                                    <button type="button" class="btn btn-link" (click)="goToBusinessCatalog()">Business Catalog</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-link" (click)="goToClassified()">Classified</button>
+                                </li>
+                                <li>
+                                    <button type="button" class="btn btn-link" (click)="goToCalendar()">Calendar</button>
+                                </li> 
                                 <li>
                                     <button type="button" class="btn btn-link" (click)="goToRegistration()">{{ 'components.header.signup' | translate }}</button>
                                 </li>
@@ -34,7 +49,7 @@
                                     <form class="form-inline my-2 my-lg-0 navbar-form" *ngIf="isCustomerLoggedIn; else loginButton">
                                         <li class="nav-item dropdown pl-2 pr-2" ngbDropdown>
                                         <a class="nav-link dropdown-toggle" id="loggedCustomer" role="button" data-bs-toggle="dropdown" aria-expanded="false"  (click)="onToggleClick()" ngbDropdownToggle>
-                                            <img class="mr-1" src="assets/images/navbar/navbar-user.png" height="30" />
+                                            <img class="mr-1" src="assets/images/navbar/navbar-user.png" height="10" />
                                         </a>
                                         <div class="dropdown-menu zindex1000" aria-labelledby="loggedCustomer" ngbDropdownMenu>
                                             <a class="dropdown-item h7" [routerLink]="['profile/change-password']">{{ 'components.header.changePassword' | translate }}</a>
