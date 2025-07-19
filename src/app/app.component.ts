@@ -57,6 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
         this.portalService.getTags();
         this.portalService.getActiveBanners();
         this.portalService.getContentList();
+        this.portalService.getLocations();
       //});
   }
 

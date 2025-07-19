@@ -232,6 +232,8 @@
         "updateCategory": "/support/updateCategory",
         "getCategoriesCounts": "/classified/getCategoriesCounts",
 
+        "getLocations": "/support/getLocations",
+
         "getClassifiedCategories": "/support/getClassifiedCategories",
         "updateClassifiedCategory": "/support/updateClassifiedCategory",
         "getClassifiedCategoriesCounts": "/classified/getClassifiedCategoriesCounts",

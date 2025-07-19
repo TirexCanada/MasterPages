@@ -8,16 +8,19 @@ import { OneLineQuestionComponent } from '../../../components/generic-components
 
 import { SessionStorageService } from '../../../../shared/services/session-storage.service';
 import { ClassifiedService } from '../../../../shared/services/classified.service';
-import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavigationService } from '../../../../shared/services/navigation.service';
+import { SupportService } from '../../../../shared/services/support.service';
+
 
 import { ICategory } from '../../../../shared/interfaces/category.interface';
+import { ILocation } from '../../../../shared/interfaces/location.interface';
 
 @Component({
   selector: 'app-home-search',
   standalone: true,
   imports: [CommonModule, TranslateModule, FormsModule, CategoryIconComponent, OneLineQuestionComponent],
-  providers: [SessionStorageService, ClassifiedService, TranslateService],
+  providers: [SessionStorageService, ClassifiedService, SupportService, TranslateService],
   templateUrl: './home-search.component.html',
   styleUrls: ['./home-search.component.scss']
 })
@@ -26,17 +29,25 @@ export class HomeSearchComponent implements OnInit {
   searchModel: any;
   sortByOptionsData: any [];
   categories: ICategory [];
+  locations: ILocation [];
   
   @ViewChild('form', { static: true }) form: NgForm;
 
   constructor(private sessionStorageService: SessionStorageService,
     private classifiedService: ClassifiedService,
+    private supportService: SupportService,
+    public translateService: TranslateService,
     private navigationService: NavigationService) { }
 
   ngOnInit(): void {
     this.searchModel = { "searchCategoryId": null, "searchText": null };
+    this.getCategories();
+    this.getLocations();
    
-    let allCategories = this.sessionStorageService.getCategories();
+  }
+
+  getCategories() {
+     let allCategories = this.sessionStorageService.getCategories();
 
     if (allCategories == null || allCategories === undefined) {
       let baseRequest = { "requestModelType": "classifiedCategories" }
@@ -48,6 +59,22 @@ export class HomeSearchComponent implements OnInit {
     }
     else {
       this.categories = allCategories.filter(x => x.categoryParentId === "");
+    }
+  }
+
+  getLocations() {
+     let locations = this.sessionStorageService.getLocations();
+
+    if (locations == null || locations === undefined) {
+      let baseRequest = { "requestModelType": "locations" }
+      this.supportService.getLocations(baseRequest).subscribe( response => {
+        locations = response;
+        this.sessionStorageService.setLocations(this.locations);
+        this.locations = locations.filter(x => x.showFlag === true);
+      })
+    }
+    else {
+      this.locations = locations.filter(x => x.showFlag === true);
     }
   }
 

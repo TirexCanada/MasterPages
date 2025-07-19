@@ -84,6 +84,15 @@ export class PortalService {
         })
     }
 
+    getLocations() {
+        let baseRequest = { "requestModelType": "locations" }
+        this.supportService.getLocations(baseRequest).subscribe( response => {
+            let locations = response;
+            this.sessionStorageService.setLocations(locations);
+        })
+    }
+    
+
    /*  getEmailSettings() {
         let sectionRequest = {"sectionName": ""};
         this.applicationService.getEmailSettings(sectionRequest).subscribe( response => {

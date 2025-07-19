@@ -147,6 +147,11 @@ export class EndpointsService {
         return this.getUrlFor(this.endPoints.updateCategory);
     }
 
+    //Locations
+    getGetLocations() {
+        return this.getUrlFor(this.endPoints.getLocations);
+    }
+
     //Listings
     getGetTopListings() {
         return this.getUrlFor(this.endPoints.getTopListings);

@@ -12,6 +12,7 @@ import { ITestimonial } from '../interfaces/testimonial.interface';
 import { IEmailSetting } from '../interfaces/email-setting.interface';
 import { IProductCategory } from '../interfaces/product-category.interface';
 import { ICategory } from '../interfaces/category.interface';
+import { ILocation } from '../interfaces/location.interface';
 import { IListing } from '../interfaces/listing.interface';
 import { IBanner } from '../interfaces/banner.interface';
 
@@ -129,6 +130,17 @@ export class SessionStorageService {
     setCategories(categories: ICategory []) {
         this.window.sessionStorage.removeItem('categories');
         this.window.sessionStorage.setItem('categories', JSON.stringify(categories));
+    }
+
+    
+    //Locations
+    getLocations() {        
+        return JSON.parse(this.window.sessionStorage.getItem('locations'));
+    }
+
+    setLocations(locations: ILocation []) {
+        this.window.sessionStorage.removeItem('locations');
+        this.window.sessionStorage.setItem('locations', JSON.stringify(locations));
     }
 
     //ProductCategories

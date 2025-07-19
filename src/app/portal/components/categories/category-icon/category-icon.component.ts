@@ -1,15 +1,10 @@
 import { Component, ViewEncapsulation, OnInit, Input } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
 import { CommonModule } from '@angular/common';  
-import { Subscription } from 'rxjs';
-
-import { ApplicationService } from '../../../../shared/services/application.service';
 import { SessionStorageService } from '../../../../shared/services/session-storage.service';
 import { ClassifiedService } from '../../../../shared/services/classified.service';
 import { TranslateModule, TranslateService, TranslateStore, TranslateLoader } from '@ngx-translate/core';
-
 import { ICategory } from '../../../../shared/interfaces/category.interface';
-
 import * as _ from 'lodash';
 
 @Component({
@@ -30,20 +25,19 @@ export class CategoryIconComponent implements OnInit {
 
   ngOnInit(): void {
     let allCategories = this.sessionStorageService.getCategories();
-
+ 
     if (allCategories == null || allCategories === undefined) {
       let baseRequest = { "requestModelType": "classifiedCategories" }
       this.classifiedService.getCategories(baseRequest).subscribe( response => {
         allCategories = response;
-        this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.categoryImage !== null && x.showFlag === true);
+        this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.showFlag === true);
         this.categories = _.sortBy(this.categories, ['sortOrder'], ['asc']);
-        this.sessionStorageService.setCategories(this.categories);
         this.getCategories(this.categories);
+        this.sessionStorageService.setCategories(allCategories);
       })
     }
     else {
-      //this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.categoryImage !== null);
-      this.categories = allCategories.filter(x => x.categoryParentId === "" && x.showFlag === true);
+      this.categories = allCategories.filter(x => x.categoryParentId === "" && x.priorityFlag === true && x.showFlag === true);
       this.categories = _.sortBy(this.categories, ['sortOrder'], ['asc']);
       this.getCategories(this.categories);
     }

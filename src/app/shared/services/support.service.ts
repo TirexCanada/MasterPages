@@ -11,6 +11,7 @@ import { IFaqCategory } from '../interfaces/faq-category.interface';
 import { ITag } from '../interfaces/tag.interface';
 import { IListingTag } from '../interfaces/listing-tag.interface';
 import { ICategory } from '../interfaces/category.interface';
+import { ILocation } from '../interfaces/location.interface';
 import { ITestimonial } from '../interfaces/testimonial.interface';
 import { IBlog } from '../interfaces/blog.interface';
 import { IArticlesCategory } from '../interfaces/articles-category.interface';
@@ -79,6 +80,12 @@ export class SupportService {
 
     updateCategory(сategory: ICategory): Observable<any>  {
         return this.httpClient.post(this.endpointsService.getUpdateCategory(), сategory);
+    }
+
+    
+    //Locations
+    getLocations(baseRequest: any): Observable<any>  {
+        return this.httpClient.post(this.endpointsService.getGetLocations(), baseRequest);
     }
 
 
