@@ -13,7 +13,11 @@
         <div class="row mb-3">
             <div class="col-sm-12">
                 <div class="input-group no-padding">
-                    <input type="password" class="form-control input-text" id="loginPassword" name="loginPassword" [(ngModel)]="model.password" #loginPassword="ngModel" required [placeholder]="'components.login.password' | translate" maxlength=16 [type]="showPassword ? 'text' : 'password'">
+                    <input type="password" class="form-control input-text" id="loginPassword" 
+                    name="loginPassword" [(ngModel)]="model.password" #loginPassword="ngModel" 
+                    required [placeholder]="'components.login.password' | translate" 
+                    maxlength=16 [type]="showPassword ? 'text' : 'password'">
+                    <span style="border: solid 1px #cdcdcd;"><i class="m-1" [ngClass]="buttonClass" (click)="togglePassword()" tabindex="-1" style="font-size: 24px; color:gray;"></i></span>
                     <!-- <button class="btn btn-outline-secondary btn-toggle" (click)="togglePassword()" type="button" tabindex="-1">
                         <i [ngClass]="buttonClass"></i>
                     </button> -->
@@ -29,11 +33,11 @@
             </div>
             <div class="col-sm-12"></div>
         </div>
-        <!-- <div class="form-group row">
+        <div class="form-group row">
             <div class="col-sm-12">
-                <button class="btn btn-link pl-0" (click)="forgotPassword()">{{ 'common.buttons.forgotPassword' | translate }}</button>
+                <button class="btn btn-secondary pl-0" (click)="forgotPassword()">{{ 'common.buttons.forgotPassword' | translate }}</button>
             </div>
-        </div> -->
+        </div>
     </div>
     <div class="col-sm-2"></div>
 </div>

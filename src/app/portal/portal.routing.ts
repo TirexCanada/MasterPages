@@ -31,6 +31,17 @@ import { LoginRegistrationPageComponent } from './pages/login-registration-page/
 import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
 import { RegistrationCompletedPageComponent } from './pages/registration-completed-page/registration-completed-page.component';
 
+
+import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
+// import { ChangePasswordComponent } from './pages/profile/change-password/change-password.component';
+// import { ForgotPasswordComponent } from './pages/profile/forgot-password/forgot-password.component';
+// import { ProfilePageComponent } from './pages/profile/profile-page/profile-page.component';
+// import { LoginPageComponent } from './pages/login-page/login-page.component';
+// import { LoginRegistrationPageComponent } from './pages/login-registration-page/login-registration-page.component';
+// import { RegistrationPageComponent } from './pages/registration-page/registration-page.component';
+// import { RegistrationCompletedPageComponent } from './pages/registration-completed-page/registration-completed-page.component';
+
+
 // import { RegistrationCompletedPageComponent } from './sections/registration-completed-page/registration-completed-page.component';
 import { PostPageComponent } from './pages/post-page/post-page.component';
 
@@ -237,6 +248,60 @@ const PORTAL_ROUTES: Routes = [
                     // },
                     {
                         path: APPLICATION_ROUTES.portal.profile.changePassword,
+                        component: ChangePasswordComponent,
+                        data: { name: 'Change password' },
+                    }
+                    
+                ]
+            },
+            {
+                path: APPLICATION_ROUTES.portal.dashboard.base,
+                resolve: {
+                    currentCustomer: CurrentCustomerResolver
+                },
+                children: [
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.dashboard,
+                        component: DashboardComponent,
+                        data: { name: 'Dashboard' },
+                    },
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.profile,
+                        component: ProfilePageComponent,
+                        data: { name: 'Profile' },
+                    },
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.myListings,
+                        component: MyListingsComponent,
+                        data: { name: 'My Listings' },
+                    },
+                    /* {
+                        path: APPLICATION_ROUTES.portal.dashboard.myOrders,
+                        component: MyOrdersComponent,
+                        data: { name: 'My Orders' },
+                    }, */
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.post,
+                        component: PostPageComponent,
+                        data: { name: 'Add Post' },
+                    },
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.post + "/:mode",
+                        component: PostPageComponent,
+                        data: { name: 'Add Post' },
+                    },
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.post + "/:mode" + "/:listingid",
+                        component: PostPageComponent,
+                        data: { name: 'Add Post' },
+                    },
+                    // {
+                    //     path: APPLICATION_ROUTES.portal.dashboard.boostPage + "/:listingid",
+                    //     component: BoostPageComponent,
+                    //     data: { name: 'Boost Page' },
+                    // },
+                    {
+                        path: APPLICATION_ROUTES.portal.dashboard.changePassword,
                         component: ChangePasswordComponent,
                         data: { name: 'Change password' },
                     }

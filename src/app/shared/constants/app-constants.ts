@@ -20,7 +20,6 @@ export const APPLICATION_ROUTES = {
         'faq': 'faq',
         'category': 'category',
         'contact': 'contact',
-        'dashboard': 'dashboard',
         'changePassword': 'change-password',
         'requestPassword': 'request-password',
         'forgotPassword': 'forgot-password',
@@ -48,6 +47,16 @@ export const APPLICATION_ROUTES = {
         },
         'profile': {
             'base': 'profile',
+            'changePassword': 'change-password',
+            'profile': 'profile',
+            'myListings': 'my-listings',
+            'post': 'post',
+            'boostPage': 'boost-page',
+            'myOrders': 'my-orders'
+        },
+        'dashboard': {
+            'base': 'dashboard',
+            'dashboard': 'dashboard',
             'changePassword': 'change-password',
             'profile': 'profile',
             'myListings': 'my-listings',

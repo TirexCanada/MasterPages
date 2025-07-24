@@ -107,7 +107,8 @@ export class LoginPageComponent implements OnInit {
     this.sessionStorageService.setAuthHeader(response.jwtToken);     
     this.sessionStorageService.setCurrentCustomer(response); 
     
-    this.navigationService.navigateToProfile();
+    //this.navigationService.navigateToProfile();
+    this.navigationService.navigateToDashboard();
   }
 
   onLoginFailed(response) {

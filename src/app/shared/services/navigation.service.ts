@@ -102,6 +102,11 @@ export class NavigationService {
         this.router.navigateByUrl(url);
     }
 
+    navigateToDashboard() {
+        let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.dashboard.base}/${APPLICATION_ROUTES.portal.dashboard.dashboard}`;
+        this.router.navigateByUrl(url);
+    }
+
     navigateToMyListings() {
         let url = `/${APPLICATION_ROUTES.portal.portal}/${APPLICATION_ROUTES.portal.profile.base}/${APPLICATION_ROUTES.portal.profile.myListings}`;
         this.router.navigateByUrl(url);

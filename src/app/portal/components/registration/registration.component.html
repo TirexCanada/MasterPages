@@ -48,10 +48,10 @@
         
 <div class="row mb-2">
     <div class="col-sm-12"> 
-        <div class="form-group text-start">
+        <!-- <div class="form-group text-start"> -->
             <div class="input-group no-padding">
                 <app-password-input 
-                    class="form-control no-padding"
+                    class="w-90"
                     [isRequired]="true"  
                     [section]="'password'" 
                     [submitted]="submitted" 
@@ -60,6 +60,7 @@
                     [model]="model"
                     appPassword> 
                 </app-password-input>  
+                <span style="border: solid 1px #cdcdcd;"><i class="m-1" [ngClass]="buttonClass" (click)="togglePassword()" tabindex="-1" style="font-size: 24px; color:gray;"></i></span>
                 <!-- <button class="btn btn-outline-secondary btn-toggle" (click)="togglePassword()" type="button" tabindex="-1">
                     <i [ngClass]="buttonClass"></i>
                 </button> -->
@@ -70,7 +71,7 @@
                 <!-- <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['maxlength']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small>
                 <small class="form-text error-message" invalid *ngIf="form.controls['password']?.errors['pattern'] && !form.controls['password']?.errors['minlength']">{{ 'common.errorMessages.signupErrors.passwordValueError' | translate }}</small> -->
             </div>      
-        </div>
+        <!-- </div> -->
     </div>
 </div>
 

@@ -467,8 +467,8 @@
                 "ru": "Забыли пароль"
             },
             "message1": {
-                "en": "Please enter your email and click Submit button. You will get email with instructions on how to reset your password.",
-                "ru": "Пожалуйста, введите свой адрес электронной почты и нажмите кнопку 'Отправить'. Вы получите электронное письмо с инструкциями о том, как изменить пароль."
+                "en": "Please enter your email and click Submit button. <br/>You will get email with instructions on how to reset your password.",
+                "ru": "Пожалуйста, введите свой адрес электронной почты и нажмите кнопку 'Отправить'. <br/>Вы получите электронное письмо с инструкциями о том, как изменить пароль."
             },
             "verificationCodeEmail": {
                 "en": "We have sent you an email with your verification code. Please check your spam folder if you do not get an email with the verification code in a few minutes. Once you get your verification code, please, type it in below and click the <b>'Submit'</b> button. You will get a form to reset you password.",
